@@ -1,99 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAX FILING GURU</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Filing Services</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 </head>
-<body>
-    <header>
-    <nav>
-        <div class="logo">
-    <a href="#">
-    <img src="images/TAXFILINGGURULOG.jpeg" alt="Tax Filing Logo">
-    </a>
-</div>
-    <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-    </nav>
-</header>
-    <main>
-    <section class="hero">
-        <h2>File Your ITR Online</h2>
-        <p>
-            Simple, secure and fast income tax filing for Residents and NRIs.
-        </p>
+<body class="h-full overflow-auto">
+  <div class="w-full min-h-full">
+    <!-- Top Bar -->
+    <div class="w-full bg-blue-900 text-white py-2 px-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+          <span>📧 info@taxfilingguru.com</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span>📞</span>
+          <span id="top-phone" class="font-semibold">+91 98765 43210</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w-full bg-white shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-3">
+            <img src="images/TFG LOGO.png" alt="Logo" class="h-12 w-auto" onerror="this.style.display='none';">
+            <div>
+              <h1 id="company-name" class="text-2xl font-bold text-gray-900">Tax Filing Guru</h1>
+              <p id="tagline" class="text-xs text-blue-600 font-medium">Resident & NRI ITR Filing</p>
+            </div>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+            <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
+            <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition">About</a>
+            <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
+          </nav>
+          <button class="md:hidden text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="w-full hero-bg py-24 px-4 relative">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="text-white">
+            <h2 id="hero-title" class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Expert Tax Filing Services</h2>
+            <p id="hero-subtitle" class="text-xl mb-8 text-blue-100">Professional tax solutions for residents and NRIs. Get maximum refunds with our expert guidance.</p>
+            <div class="flex flex-wrap gap-4">
+              <button id="hero-cta" class="primary-btn">Get Started Today</button>
+              <button class="secondary-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="stats-card">
+              <div class="text-5xl font-bold text-blue-600 mb-2">10,000+</div>
+              <div class="text-gray-600 font-medium">Happy Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wave-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f9fafb"></path>
+        </svg>
+      </div>
     </section>
-    <section class="how-it-works">
-    <h2>How It Works</h2>
 
-    <div class="steps">
-        <div class="step">
-            <h3>1. Choose Category</h3>
-            <p>Select Resident or NRI filing based on your status.</p>
+    <!-- Services Section -->
+    <section id="services" class="w-full py-20 px-4 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 id="services-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Service Card 1 -->
+          <div class="service-card rounded-2xl p-8">
+            <div class="service-icon">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 id="service-1-title" class="text-xl font-bold text-gray-900 mb-3">Individual ITR Filing</h3>
+            <p id="service-1-desc" class="text-gray-600 leading-relaxed">Complete tax filing services for salaried individuals and professionals.</p>
+          </div>
 
-        <div class="step">
-            <h3>2. Enter Details</h3>
-            <p>Fill income details or upload documents securely.</p>
+          <!-- Service Card 2 -->
+          <div class="service-card rounded-2xl p-8">
+            <div class="service-icon">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 id="service-2-title" class="text-xl font-bold text-gray-900 mb-3">NRI Tax Services</h3>
+            <p id="service-2-desc" class="text-gray-600 leading-relaxed">Specialized tax solutions for Non-Resident Indians worldwide.</p>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card rounded-2xl p-8">
+            <div class="service-icon">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 id="service-3-title" class="text-xl font-bold text-gray-900 mb-3">Business Tax Filing</h3>
+            <p id="service-3-desc" class="text-gray-600 leading-relaxed">Comprehensive tax services for businesses and corporations.</p>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card rounded-2xl p-8">
+            <div class="service-icon">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+              </svg>
+            </div>
+            <h3 id="service-4-title" class="text-xl font-bold text-gray-900 mb-3">Tax Consultation</h3>
+            <p id="service-4-desc" class="text-gray-600 leading-relaxed">Expert tax planning and consultation services for all needs.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="step">
-            <h3>3. File Your ITR</h3>
-            <p>Review tax summary and submit your return.</p>
+    <!-- Features Section -->
+    <section class="w-full py-20 px-4 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div class="p-6">
+            <div class="text-5xl mb-4">✅</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">100% Accuracy</h3>
+            <p class="text-gray-600">Error-free tax filing with expert verification</p>
+          </div>
+          <div class="p-6">
+            <div class="text-5xl mb-4">⚡</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Quick Processing</h3>
+            <p class="text-gray-600">Fast turnaround time for all tax services</p>
+          </div>
+          <div class="p-6">
+            <div class="text-5xl mb-4">🔒</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Secure & Confidential</h3>
+            <p class="text-gray-600">Your data is safe with us always</p>
+          </div>
         </div>
-    </div>
-</section>
-<section class="why-us">
-    <h2>Why Choose Us</h2>
+      </div>
+    </section>
 
-    <div class="features">
-        <div class="feature">🔒 Secure & Confidential</div>
-        <div class="feature">📋 Guided Filing</div>
-        <div class="feature">👨‍💼 Expert Assistance</div>
-        <div class="feature">⏱ Saves Time</div>
-    </div>
-</section>
-<section class="who-can-file">
-    <h2>Who Can File Using This Platform?</h2>
-    <p>
-        Salaried individuals, freelancers, business owners, and NRIs
-        who want a simple and secure tax filing experience.
-    </p>
-</section>
+    <!-- CTA Section -->
+    <section class="w-full cta-section py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 id="cta-heading" class="text-4xl md:text-5xl font-bold mb-6">Ready to File Your Taxes?</h2>
+        <p class="text-xl mb-8 text-purple-100">Get started today and experience hassle-free tax filing</p>
+        <button id="cta-button" class="primary-btn bg-purple-600 text-white">Contact Us Now</button>
+      </div>
+    </section>
 
-    <section class="filing-options">
-    <div class="option resident">
-        <h3>Resident</h3>
-        <p>
-            File your income tax return as an Indian resident with guided steps.
-        </p>
-        <a href="#" class="btn">Start Filing</a>
-    </div>
+    <!-- Footer -->
+    <footer class="w-full bg-gray-900 py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">About Us</h4>
+            <p class="text-gray-400 text-sm">Professional tax filing services for individuals and businesses.</p>
+          </div>
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">About</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">NRI Services</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Business Tax</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+            <ul class="space-y-2 text-sm">
+              <li class="text-gray-400">📧 info@taxfilingguru.com</li>
+              <li class="text-gray-400">📞 +91 98765 43210</li>
+              <li class="text-gray-400">📍 India</li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <p id="footer-text" class="text-gray-400 text-sm">© 2024 Tax Filing Guru. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-    <div class="option nri">
-        <h3>NRI</h3>
-        <p>
-            Specialized tax filing for Non-Resident Indians with foreign income.
-        </p>
-        <a href="#" class="btn">Start Filing</a>
-    </div>
-</section>
-</main>
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2025 TaxFiling. All rights reserved.</p>
-
-        <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-</footer>
+  <script src="script.js"></script>
 </body>
 </html>
