@@ -116,6 +116,29 @@
   height: 80px;
 }
 
+/* Top bar announcement centering */
+.topbar-container {
+  position: relative;
+}
+
+.topbar-announcement {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(6, 50, 94, 0.902);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #ffffff;
+  pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+  .topbar-announcement {
+    display: none;
+  }
+}
+
 .cta-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
@@ -131,6 +154,20 @@
 
 @view-transition { 
   navigation: auto; 
+}
+
+/* Client Login button positioning */
+a[href="/client-login"] {
+  transition: top 0.2s ease;
+}
+
+/* Logo and company name clickable */
+header a[href="#home"] {
+  transition: opacity 0.2s ease;
+}
+
+header a[href="#home"]:hover {
+  opacity: 0.8;
 }
 
 

@@ -89,6 +89,45 @@ async function onConfigChange(config) {
   });
 }
 
+// Position client login button to align with header
+function positionClientLoginButton() {
+  const loginButton = document.querySelector('a[href="/client-login"]');
+  const header = document.querySelector('header');
+  const topBar = document.querySelector('.w-full.bg-blue-900');
+  
+  if (loginButton && header) {
+    const headerRect = header.getBoundingClientRect();
+    const headerHeight = headerRect.height;
+    const headerTop = headerRect.top;
+    
+    // Calculate button position to align with header center vertically
+    // When header is sticky (top = 0), position button at header center
+    // When header is in normal position, position button relative to header
+    if (headerTop <= 0) {
+      // Header is sticky at top, align with center of header
+      loginButton.style.top = `${headerHeight / 2}px`;
+      loginButton.style.transform = 'translateY(-50%)';
+    } else {
+      // Header is in normal position, align with header center
+      loginButton.style.top = `${headerTop + (headerHeight / 2)}px`;
+      loginButton.style.transform = 'translateY(-50%)';
+    }
+  }
+}
+
+// Run on load and scroll
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    positionClientLoginButton();
+    window.addEventListener('scroll', positionClientLoginButton);
+    window.addEventListener('resize', positionClientLoginButton);
+  });
+} else {
+  positionClientLoginButton();
+  window.addEventListener('scroll', positionClientLoginButton);
+  window.addEventListener('resize', positionClientLoginButton);
+}
+
 if (window.elementSdk) {
   window.elementSdk.init({
     defaultConfig,
