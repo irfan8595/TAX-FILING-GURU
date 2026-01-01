@@ -37,7 +37,20 @@ async function onConfigChange(config) {
   const baseFontStack = 'sans-serif';
 
   // Apply text content
-  document.getElementById('company-name').textContent = config.company_name || defaultConfig.company_name;
+  const companyName = config.company_name || defaultConfig.company_name;
+  const companyNameElement = document.getElementById('company-name');
+  if (companyNameElement) {
+    // Split the name to keep "Guru" in purple
+    const nameParts = companyName.split(' ');
+    const guruIndex = nameParts.findIndex(part => part.toLowerCase() === 'guru');
+    if (guruIndex !== -1) {
+      const beforeGuru = nameParts.slice(0, guruIndex).join(' ');
+      const guru = nameParts[guruIndex];
+      companyNameElement.innerHTML = beforeGuru ? `${beforeGuru} <span class="text-purple-600">${guru}</span>` : `<span class="text-purple-600">${guru}</span>`;
+    } else {
+      companyNameElement.textContent = companyName;
+    }
+  }
   document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
   document.getElementById('top-phone').textContent = config.phone_number || defaultConfig.phone_number;
   document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;

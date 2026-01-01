@@ -4,9 +4,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-* {
-  font-family: 'Poppins', sans-serif;
-}
 
 .hero-bg {
   background: linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
@@ -131,6 +128,28 @@
   border-radius: 8px;
   color: #ffffff;
   pointer-events: auto;
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.announcement-scroll {
+  display: inline-block;
+  animation: scroll-text 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.announcement-scroll:hover {
+  animation-play-state: paused;
 }
 
 @media (max-width: 767px) {
@@ -161,6 +180,7 @@ a[href="/client-login"] {
   transition: top 0.2s ease;
 }
 
+
 /* Logo and company name clickable */
 header a[href="#home"] {
   transition: opacity 0.2s ease;
@@ -168,6 +188,32 @@ header a[href="#home"] {
 
 header a[href="#home"]:hover {
   opacity: 0.8;
+}
+
+/* Trusted badge above hero title */
+.trusted-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.18);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fadeInUp 900ms ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 
