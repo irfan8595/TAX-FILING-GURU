@@ -215,5 +215,23 @@ header a[href="#home"]:hover {
     transform: translateY(0) scale(1);
   }
 }
+/* Continuous Fading Animation */
+@keyframes loopFade {
+  0% { 
+    opacity: 0.2; /* Starts nearly invisible */
+  }
+  50% { 
+    opacity: 1;   /* Fully visible in the middle */
+  }
+  100% { 
+    opacity: 0.2; /* Fades back out */
+  }
+}
+
+.fade-loop {
+  /* infinite = loop forever */
+  /* ease-in-out = smooth start and end */
+  animation: loopFade 3s infinite ease-in-out; 
+}
 
 
