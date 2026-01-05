@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="h-full">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,380 +10,458 @@
   <link rel="stylesheet" href="styles.css">
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 </head>
+
 <body class="h-full overflow-auto">
-  <div class="w-full min-h-full">
-    <!-- Top Bar -->
-    <div class="w-full bg-blue-900 text-white py-2 px-4">
-      <div class="max-w-7xl mx-auto flex justify-between items-center text-sm topbar-container">
-        <div class="flex items-center space-x-4">
-          <span>📧 info@taxfilingguru.com</span>
-        </div>
+  <!-- Top Bar -->
+  <div class="w-full bg-blue-900 text-white py-2 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center text-sm topbar-container">
+      <div class="flex items-center space-x-4">
+        <span>📧 info@taxfilingguru.com</span>
+      </div>
 
-        <!-- Center announcement (visible on md+ screens) -->
-        <div class="topbar-announcement hidden md:block text-center text-sm font-medium overflow-hidden">
-          <div class="announcement-scroll">
-            <span>🔔 Limited time: Free tax consultation this week — Book now!</span>
-          </div>
-        </div>
-
-        <div class="flex items-center space-x-2">
-          <span>📞</span>
-          <span id="top-phone" class="font-semibold">+91 9811945176</span>
+      <!-- Center announcement (visible on md+ screens) -->
+      <div class="topbar-announcement hidden md:block text-center text-sm font-medium overflow-hidden">
+        <div class="announcement-scroll">
+          <span>🔔 Limited time: Free tax consultation this week — Book now!</span>
         </div>
       </div>
-    </div>
 
-    <!-- Header -->
-    <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-6 py-4">
-        <div class="flex justify-between items-center relative">
-          <div class="flex items-center space-x-3">
-            <a href="#home" class="flex items-center">
-              <img src="images/TFG LOGO.png" alt="Logo" class="h-16 w-auto" onerror="this.style.display='none';">
+      <div class="flex items-center space-x-2">
+        <span>📞</span>
+        <span id="top-phone" class="font-semibold">+91 9811945176</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-6 py-4">
+      <div class="flex justify-between items-center min-h-[80px] relative">
+
+        <div class="flex items-center space-x-3">
+          <a href="/index.html" class="flex items-center">
+            <img src="images/TFG LOGO.png" alt="Logo" class="h-16 w-auto" onerror="this.style.display='none';">
+          </a>
+          <div>
+            <a href="/index.html" class="block">
+              <h1 id="company-name" class="text-3xl font-bold text-gray-900">Tax Filing <span
+                  class="text-blue-600">Guru</span></h1>
             </a>
+            <p id="tagline" class="text-xs text-blue-600 font-medium"></p>
+          </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8 leading-none">
+
+          <a href="residents.html"
+            class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Residents</a>
+          <a href="nri.html"
+            class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">NRI</a>
+          <a href="#" class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">About</a>
+          <a href="tools.html"
+            class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Tools</a>
+          <a href="contact.html"
+            class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
+          <a href="/client-login" class=" buttonclient h-10">Client Login</a>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Client Login button (desktop) - Fixed position -->
+
+  <!-- Hero Section -->
+  <section id="home" class="w-full hero-bg py-24 px-4 relative">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="text-white">
+          <div class="trusted-badge mx-auto mb-6 fade-loop">
+            ✨ Trusted by 10,000+ Indians Globally
+          </div>
+          <h2 id="hero-title" class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Expert Tax Filing Services
+          </h2>
+          <p id="hero-subtitle" class="text-xl mb-8 text-blue-100">Professional tax solutions for residents and NRIs.
+            Get maximum refunds with our expert guidance.</p>
+          <div class="flex flex-wrap gap-4">
+            <button id="hero-cta" class="primary-btn">Get Started Today</button>
+            <button class="secondary-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="hidden md:grid grid-cols-2 gap-6">
+          <!-- Residents Card -->
+          <div class="rounded-2xl p-8 bg-blue-600 text-white flex flex-col justify-between shadow-lg">
             <div>
-              <a href="#home" class="block">
-                <h1 id="company-name" class="text-3xl font-bold text-gray-900">Tax Filing <span class="text-blue-600">Guru</span></h1>
-              </a>
-              <p id="tagline" class="text-xs text-blue-600 font-medium"></p>
+              <h3 class="text-2xl font-bold mb-3">Residents</h3>
+              <p class="text-blue-100 mb-6">
+                File your income tax return easily with guided steps and maximum deductions.
+              </p>
             </div>
+            <a href="#Residents"
+              class="inline-flex items-center justify-center bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition">
+              File ITR Now →
+            </a>
           </div>
-          <nav class="hidden md:flex space-x-8 md:absolute md:left-[80%] md:transform md:-translate-x-1/2">
-            <a href="residents.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Residents</a>
-            <a href="nri.html" class="text-gray-700 hover:text-blue-600 font-medium transition">NRI</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition">About</a>
-            <a href="tools.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Tools</a>
-            <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
-          </nav>
 
-          <button class="md:hidden text-gray-700">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <!-- NRI Card -->
+          <div class="rounded-2xl p-8 bg-green-600 text-white flex flex-col justify-between shadow-lg">
+            <div>
+              <h3 class="text-2xl font-bold mb-3">NRI</h3>
+              <p class="text-green-100 mb-6">
+                Specialized filing for foreign income, DTAA benefits, and compliance.
+              </p>
+            </div>
+            <a href="#NRI"
+              class="inline-flex items-center justify-center bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition">
+              Start NRI Filing →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="w-full py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 id="services-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service Card 1 -->
+        <div class="service-card rounded-2xl p-8">
+          <div class="service-icon">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+              </path>
             </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Client Login button (desktop) - Fixed position -->
-     <a href="/client-login" class="hidden md:inline-flex fixed right-12 z-[9999] items-center bg-blue-600 text-white font-medium px-6 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">Client Login</a>
-
-    <!-- Hero Section -->
-    <section id="home" class="w-full hero-bg py-24 px-4 relative">
-      <div class="max-w-7xl mx-auto relative z-10">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="text-white">
-            <div class="trusted-badge mx-auto mb-6 fade-loop">
-    ✨ Trusted by 10,000+ Indians Globally
-</div>
-            <h2 id="hero-title" class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Expert Tax Filing Services</h2>
-            <p id="hero-subtitle" class="text-xl mb-8 text-blue-100">Professional tax solutions for residents and NRIs. Get maximum refunds with our expert guidance.</p>
-            <div class="flex flex-wrap gap-4">
-              <button id="hero-cta" class="primary-btn">Get Started Today</button>
-              <button class="secondary-btn">Learn More</button>
-            </div>
           </div>
-          <div class="hidden md:grid grid-cols-2 gap-6">
-  <!-- Residents Card -->
-  <div class="rounded-2xl p-8 bg-blue-600 text-white flex flex-col justify-between shadow-lg">
-    <div>
-      <h3 class="text-2xl font-bold mb-3">Residents</h3>
-      <p class="text-blue-100 mb-6">
-        File your income tax return easily with guided steps and maximum deductions.
-      </p>
-    </div>
-    <a href="#Residents"
-       class="inline-flex items-center justify-center bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition">
-      File ITR Now →
-    </a>
-  </div>
-
-  <!-- NRI Card -->
-  <div class="rounded-2xl p-8 bg-green-600 text-white flex flex-col justify-between shadow-lg">
-    <div>
-      <h3 class="text-2xl font-bold mb-3">NRI</h3>
-      <p class="text-green-100 mb-6">
-        Specialized filing for foreign income, DTAA benefits, and compliance.
-      </p>
-    </div>
-    <a href="#NRI"
-       class="inline-flex items-center justify-center bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition">
-      Start NRI Filing →
-    </a>
-  </div>
-
-</div>
+          <h3 id="service-1-title" class="text-xl font-bold text-gray-900 mb-3">Individual ITR Filing</h3>
+          <p id="service-1-desc" class="text-gray-600 leading-relaxed">Complete tax filing services for salaried
+            individuals and professionals.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="w-full py-20 px-4 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 id="services-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Service Card 1 -->
-          <div class="service-card rounded-2xl p-8">
-            <div class="service-icon">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-              </svg>
-            </div>
-            <h3 id="service-1-title" class="text-xl font-bold text-gray-900 mb-3">Individual ITR Filing</h3>
-            <p id="service-1-desc" class="text-gray-600 leading-relaxed">Complete tax filing services for salaried individuals and professionals.</p>
+        <!-- Service Card 2 -->
+        <div class="service-card rounded-2xl p-8">
+          <div class="service-icon">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+              </path>
+            </svg>
           </div>
+          <h3 id="service-2-title" class="text-xl font-bold text-gray-900 mb-3">NRI Tax Services</h3>
+          <p id="service-2-desc" class="text-gray-600 leading-relaxed">Specialized tax solutions for Non-Resident
+            Indians worldwide.</p>
+        </div>
 
-          <!-- Service Card 2 -->
-          <div class="service-card rounded-2xl p-8">
-            <div class="service-icon">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h3 id="service-2-title" class="text-xl font-bold text-gray-900 mb-3">NRI Tax Services</h3>
-            <p id="service-2-desc" class="text-gray-600 leading-relaxed">Specialized tax solutions for Non-Resident Indians worldwide.</p>
+        <!-- Service Card 3 removed -->
+
+        <!-- Service Card 4 -->
+        <div class="service-card rounded-2xl p-8">
+          <div class="service-icon">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+              </path>
+            </svg>
           </div>
-
-          <!-- Service Card 3 removed -->
-
-          <!-- Service Card 4 -->
-          <div class="service-card rounded-2xl p-8">
-            <div class="service-icon">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-              </svg>
-            </div>
-            <h3 id="service-4-title" class="text-xl font-bold text-gray-900 mb-3">Tax Consultation</h3>
-            <p id="service-4-desc" class="text-gray-600 leading-relaxed">Expert tax planning and consultation services for all needs.</p>
-          </div>
+          <h3 id="service-4-title" class="text-xl font-bold text-gray-900 mb-3">Tax Consultation</h3>
+          <p id="service-4-desc" class="text-gray-600 leading-relaxed">Expert tax planning and consultation services
+            for all needs.</p>
         </div>
-      </div>
-    </section>
-
-   <section id="how-it-works" class="w-full py-20 px-4 bg-gray-50">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-      <p class="text-gray-600 text-lg">File your taxes in 3 simple steps without leaving your home.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-      
-      <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
-        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">1. Upload Docs</h3>
-        <p class="text-gray-600">Simply upload your Form-16, Capital Gains statement, or bank sheets.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
-        <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">2. AI Analysis</h3>
-        <p class="text-gray-600">Our AI engine scans for deductions, exemptions, and errors automatically.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
-        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">3. Expert Filing</h3>
-        <p class="text-gray-600">A CA reviews the draft and files it with the IT Department instantly.</p>
       </div>
     </div>
+  </section>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      
-      <div class="bg-white p-6 rounded-xl flex items-start space-x-4 border border-gray-100 shadow-sm">
-        <div class="bg-orange-100 p-3 rounded-lg text-orange-600">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-2 10h9L7 22l2-10H3L13 2z"/></svg>
+  <section id="how-it-works" class="w-full py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+        <p class="text-gray-600 text-lg">File your taxes in 3 simple steps without leaving your home.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
+          <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" x2="12" y1="3" y2="15" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">1. Upload Docs</h3>
+          <p class="text-gray-600">Simply upload your Form-16, Capital Gains statement, or bank sheets.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
+          <div
+            class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+              <path d="M5 3v4" />
+              <path d="M19 17v4" />
+              <path d="M3 5h4" />
+              <path d="M17 19h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">2. AI Analysis</h3>
+          <p class="text-gray-600">Our AI engine scans for deductions, exemptions, and errors automatically.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">3. Expert Filing</h3>
+          <p class="text-gray-600">A CA reviews the draft and files it with the IT Department instantly.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-white p-6 rounded-xl flex items-start space-x-4 border border-gray-100 shadow-sm">
+          <div class="bg-orange-100 p-3 rounded-lg text-orange-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m13 2-2 10h9L7 22l2-10H3L13 2z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Express Filing</h4>
+            <p class="text-gray-600 text-sm">Automatic Form-16 parsing for filing in under 7 minutes.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl flex items-start space-x-4 border border-gray-100 shadow-sm">
+          <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Secure Storage</h4>
+            <p class="text-gray-600 text-sm">AES-256 encrypted storage for your tax documents.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl flex items-start space-x-4 border border-gray-100 shadow-sm">
+          <div class="bg-indigo-100 p-3 rounded-lg text-indigo-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">NRI Specialist</h4>
+            <p class="text-gray-600 text-sm">Dedicated experts for DTAA and foreign asset reporting.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="w-full py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Trusted by Indians Worldwide</h2>
+        <p class="text-gray-600 text-lg">Join thousands of taxpayers who file with confidence every year.</p>
+
+        <div class="flex flex-wrap justify-center gap-6 mt-6 opacity-75">
+          <div class="flex items-center space-x-2">
+            <span class="text-yellow-500 text-xl font-bold">4.9/5</span>
+            <span class="text-gray-500 text-sm">Customer Rating</span>
+          </div>
+          <div class="h-6 w-px bg-gray-300 hidden md:block"></div>
+          <div class="flex items-center space-x-2">
+            <span class="text-gray-900 font-semibold">100%</span>
+            <span class="text-gray-500 text-sm">Data Privacy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div
+          class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-lg transition duration-300">
+          <div class="flex text-yellow-400 mb-4">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <p class="text-gray-700 italic mb-6 flex-grow leading-relaxed">
+            "Living in Dubai, handling Indian taxes was a nightmare. Tax Filing Guru made it incredibly simple. The
+            DTAA advice saved me a lot."
+          </p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+              RM
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Rahul M.</h4>
+              <p class="text-gray-500 text-sm font-medium">NRI, UAE</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-lg transition duration-300">
+          <div class="flex text-yellow-400 mb-4">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <p class="text-gray-700 italic mb-6 flex-grow leading-relaxed">
+            "The AI detection for deductions is amazing. I missed claiming my HRA properly, but the system flagged it.
+            Highly recommended!"
+          </p>
+          <div class="flex items-center">
+            <div
+              class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+              PS</div>
+            <div>
+              <h4 class="font-bold text-gray-900">Priya S.</h4>
+              <p class="text-gray-500 text-sm font-medium">Software Engineer, Bangalore</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-lg transition duration-300">
+          <div class="flex text-yellow-400 mb-4">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <p class="text-gray-700 italic mb-6 flex-grow leading-relaxed">
+            "Fast, secure, and professional. The CA assigned to me was very knowledgeable about freelance income and
+            Section 44ADA."
+          </p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+              AK</div>
+            <div>
+              <h4 class="font-bold text-gray-900">Amit K.</h4>
+              <p class="text-gray-500 text-sm font-medium">Freelancer, Delhi</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="w-full py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="p-6">
+          <div class="text-5xl mb-4">✅</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">100% Accuracy</h3>
+          <p class="text-gray-600">Error-free tax filing with expert verification</p>
+        </div>
+        <div class="p-6">
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Quick Processing</h3>
+          <p class="text-gray-600">Fast turnaround time for all tax services</p>
+        </div>
+        <div class="p-6">
+          <div class="text-5xl mb-4">🔒</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Secure & Confidential</h3>
+          <p class="text-gray-600">Your data is safe with us always</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="w-full cta-section py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center text-white">
+      <h2 id="cta-heading" class="text-4xl md:text-5xl font-bold mb-6">Ready to File Your Taxes?</h2>
+      <p class="text-xl mb-8 text-purple-100">Get started today and experience hassle-free tax filing</p>
+      <a id="cta-button" href="contact.html"
+        class="primary-btn bg-purple-600 text-white inline-flex items-center justify-center">Contact Us Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full bg-gray-900 py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">About Us</h4>
+          <p class="text-gray-400 text-sm">Professional tax filing services for individuals and businesses.</p>
         </div>
         <div>
-          <h4 class="font-bold text-gray-900 mb-1">Express Filing</h4>
-          <p class="text-gray-600 text-sm">Automatic Form-16 parsing for filing in under 7 minutes.</p>
-        </div>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl flex items-start space-x-4 border border-gray-100 shadow-sm">
-        <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
+            <li><a href="nri.html" class="text-gray-400 hover:text-white text-sm transition">NRI Services</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
+          </ul>
         </div>
         <div>
-          <h4 class="font-bold text-gray-900 mb-1">Secure Storage</h4>
-          <p class="text-gray-600 text-sm">AES-256 encrypted storage for your tax documents.</p>
-        </div>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl flex items-start space-x-4 border border-gray-100 shadow-sm">
-        <div class="bg-indigo-100 p-3 rounded-lg text-indigo-600">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
+            <li><a href="tools.html" class="text-gray-400 hover:text-white text-sm transition">Tools</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition">Contact</a></li>
+          </ul>
         </div>
         <div>
-          <h4 class="font-bold text-gray-900 mb-1">NRI Specialist</h4>
-          <p class="text-gray-600 text-sm">Dedicated experts for DTAA and foreign asset reporting.</p>
+          <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="text-gray-400">📧 info@taxfilingguru.com</li>
+            <li class="text-gray-400">📞 +91 9811945176</li>
+            <li class="text-gray-400">📍 India</li>
+          </ul>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-<!-- Testimonials Section -->
-<section id="testimonials" class="w-full py-20 px-4 bg-white">
-  <div class="max-w-7xl mx-auto">
-    
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">Trusted by Indians Worldwide</h2>
-      <p class="text-gray-600 text-lg">Join thousands of taxpayers who file with confidence every year.</p>
-      
-      <div class="flex flex-wrap justify-center gap-6 mt-6 opacity-75">
-        <div class="flex items-center space-x-2">
-          <span class="text-yellow-500 text-xl font-bold">4.9/5</span>
-          <span class="text-gray-500 text-sm">Customer Rating</span>
-        </div>
-        <div class="h-6 w-px bg-gray-300 hidden md:block"></div>
-        <div class="flex items-center space-x-2">
-          <span class="text-gray-900 font-semibold">100%</span>
-          <span class="text-gray-500 text-sm">Data Privacy</span>
-        </div>
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p id="footer-text" class="text-gray-400 text-sm">© 2024 Tax Filing Guru. All rights reserved.</p>
       </div>
     </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      
-      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-lg transition duration-300">
-        <div class="flex text-yellow-400 mb-4">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-        </div>
-        <p class="text-gray-700 italic mb-6 flex-grow leading-relaxed">
-          "Living in Dubai, handling Indian taxes was a nightmare. Tax Filing Guru made it incredibly simple. The DTAA advice saved me a lot."
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">RM</div>
-          <div>
-            <h4 class="font-bold text-gray-900">Rahul M.</h4>
-            <p class="text-gray-500 text-sm font-medium">NRI, UAE</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-lg transition duration-300">
-        <div class="flex text-yellow-400 mb-4">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-        <p class="text-gray-700 italic mb-6 flex-grow leading-relaxed">
-          "The AI detection for deductions is amazing. I missed claiming my HRA properly, but the system flagged it. Highly recommended!"
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">PS</div>
-          <div>
-            <h4 class="font-bold text-gray-900">Priya S.</h4>
-            <p class="text-gray-500 text-sm font-medium">Software Engineer, Bangalore</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-lg transition duration-300">
-        <div class="flex text-yellow-400 mb-4">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-        </div>
-        <p class="text-gray-700 italic mb-6 flex-grow leading-relaxed">
-          "Fast, secure, and professional. The CA assigned to me was very knowledgeable about freelance income and Section 44ADA."
-        </p>
-        <div class="flex items-center">
-          <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">AK</div>
-          <div>
-            <h4 class="font-bold text-gray-900">Amit K.</h4>
-            <p class="text-gray-500 text-sm font-medium">Freelancer, Delhi</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
- <!-- Features Section -->
-    <section class="w-full py-20 px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-          <div class="p-6">
-            <div class="text-5xl mb-4">✅</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">100% Accuracy</h3>
-            <p class="text-gray-600">Error-free tax filing with expert verification</p>
-          </div>
-          <div class="p-6">
-            <div class="text-5xl mb-4">⚡</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Quick Processing</h3>
-            <p class="text-gray-600">Fast turnaround time for all tax services</p>
-          </div>
-          <div class="p-6">
-            <div class="text-5xl mb-4">🔒</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Secure & Confidential</h3>
-            <p class="text-gray-600">Your data is safe with us always</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="w-full cta-section py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center text-white">
-        <h2 id="cta-heading" class="text-4xl md:text-5xl font-bold mb-6">Ready to File Your Taxes?</h2>
-        <p class="text-xl mb-8 text-purple-100">Get started today and experience hassle-free tax filing</p>
-        <a id="cta-button" href="contact.html" class="primary-btn bg-purple-600 text-white inline-flex items-center justify-center">Contact Us Now</a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="w-full bg-gray-900 py-12 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h4 class="text-white font-bold text-lg mb-4">About Us</h4>
-            <p class="text-gray-400 text-sm">Professional tax filing services for individuals and businesses.</p>
-          </div>
-          <div>
-            <h4 class="text-white font-bold text-lg mb-4">Services</h4>
-            <ul class="space-y-2">
-              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
-              <li><a href="nri.html" class="text-gray-400 hover:text-white text-sm transition">NRI Services</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
-            </ul>
-          </div>
-<div>
-            <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
-              <li><a href="tools.html" class="text-gray-400 hover:text-white text-sm transition">Tools</a></li>
-              <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
-            <ul class="space-y-2 text-sm">
-              <li class="text-gray-400">📧 info@taxfilingguru.com</li>
-              <li class="text-gray-400">📞 +91 9811945176</li>
-              <li class="text-gray-400">📍 India</li>
-            </ul>
-          </div>
-        </div>
-        <div class="border-t border-gray-800 pt-8 text-center">
-          <p id="footer-text" class="text-gray-400 text-sm">© 2024 Tax Filing Guru. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>

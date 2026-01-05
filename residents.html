@@ -1,114 +1,157 @@
 <!doctype html>
 <html lang="en" class="h-full">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Residents — Coming Soon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Residents - Tax Filing Guru</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .font-serif { font-family: 'Playfair Display', serif; }
-  </style>
+    .hero-banner {
+      background-image: url('images/coming-soon-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .coming-soon-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .coming-soon-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1E3A8A; /* Tailwind's blue-800 */
+    }
+    </style>
 </head>
-<body class="h-full flex flex-col bg-white">
 
-  <div class="w-full bg-blue-900 text-white py-2 px-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center text-sm topbar-container">
-       <div class="flex items-center space-x-4">
-         <span>📧 info@taxfilingguru.com</span>
-       </div>
+<body class="h-full overflow-auto">
+  
+    <!-- Top Bar -->
+    <div class="w-full bg-blue-900 text-white py-2 px-4"> 
+      <div class="max-w-7xl mx-auto flex justify-between items-center text-sm topbar-container">
+        <div class="flex items-center space-x-4">
+          <span>📧 info@taxfilingguru.com</span>
+        </div>
 
-       <!-- Center announcement (visible on md+ screens) -->
-       <div class="topbar-announcement hidden md:block text-center text-sm font-medium overflow-hidden">
-         <div class="announcement-scroll">
-           <span>🔔 Limited time: Free tax consultation this week — Book now!</span>
-         </div>
-       </div>
+        <!-- Center announcement (visible on md+ screens) -->
+        <div class="topbar-announcement hidden md:block text-center text-sm font-medium overflow-hidden">
+          <div class="announcement-scroll">
+            <span>🔔 Limited time: Free tax consultation this week — Book now!</span>
+          </div>
+        </div>
 
-       <div class="flex items-center space-x-2">
-         <span>📞</span>
-         <span class="font-semibold">+91 9811945176</span>
-       </div>
+        <div class="flex items-center space-x-2">
+          <span>📞</span>
+          <span id="top-phone" class="font-semibold">+91 9811945176</span>
+        </div>
+      </div>
     </div>
+
+    <!-- Header -->
+    <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-6 py-4">
+        <div class="flex justify-between items-center min-h-[80px] relative">
+
+          <div class="flex items-center space-x-3">
+            <a href="/index.html" class="flex items-center">
+              <img src="images/TFG LOGO.png" alt="Logo" class="h-16 w-auto" onerror="this.style.display='none';">
+            </a>
+            <div>
+              <a href="/index.html" class="block">
+                <h1 id="company-name" class="text-3xl font-bold text-gray-900">Tax Filing <span
+                    class="text-blue-600">Guru</span></h1>
+              </a>
+              <p id="tagline" class="text-xs text-blue-600 font-medium"></p>
+            </div>
+          </div>
+          <nav class="hidden md:flex items-center space-x-8 leading-none">
+
+            <a href="residents.html"
+              class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Residents</a>
+            <a href="nri.html"
+              class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">NRI</a>
+            <a href="#"
+              class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">About</a>
+            <a href="tools.html"
+              class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Tools</a>
+            <a href="contact.html"
+              class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
+            <a href="/client-login" class=" buttonclient h-10">Client Login</a>
+          </nav>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Client Login button (desktop) - Fixed position -->
+  <main class="w-full py-20 px-4 bg-gray-50">
+   <div class="menu-overlay" id="menuOverlay"></div>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Coming Soon</h1>
+        </div>
+    </section>
+
+    <section class="coming-soon-section">
+        <h2 class="coming-soon-text">Coming Soon</h2>
+    </section>
+  </main>
+ <footer class="w-full bg-gray-900 py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">About Us</h4>
+          <p class="text-gray-400 text-sm">Professional tax filing services for individuals and businesses.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
+            <li><a href="nri.html" class="text-gray-400 hover:text-white text-sm transition">NRI Services</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
+            <li><a href="tools.html" class="text-gray-400 hover:text-white text-sm transition">Tools</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="text-gray-400">📧 info@taxfilingguru.com</li>
+            <li class="text-gray-400">📞 +91 9811945176</li>
+            <li class="text-gray-400">📍 India</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p id="footer-text" class="text-gray-400 text-sm">© 2024 Tax Filing Guru. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
   </div>
 
-  <header class="w-full bg-white shadow-sm border-b border-gray-100 relative z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <a href="index.html" class="flex items-center">
-          <img src="images/TFG LOGO.png" alt="Logo" class="h-16 w-auto" onerror="this.style.display='none';">
-        </a>
-        <div>
-          <a href="index.html" class="block">
-             <h1 class="text-2xl font-bold text-gray-900">Tax Filing <span class="text-blue-600">Guru</span></h1>
-          </a>
-          <p class="text-xs text-blue-600 font-medium"></p>
-        </div>
-      </div>
-
-      <nav class="hidden md:flex space-x-8 text-sm font-medium">
-        <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Home</a>
-        
-        <a href="#" class="text-blue-600 font-bold">Residents</a>
-        
-        <a href="nri.html" class="text-gray-600 hover:text-blue-600 transition">NRI Services</a>
-        
-        <a href="tools.html" class="text-gray-600 hover:text-blue-600 transition">Tools</a>
-        
-        <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
-      </nav>
-
-      <button class="md:hidden text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-      </button>
-    </div>
-  </header>
-
-  <main class="flex-grow flex flex-col items-center justify-center text-center px-4 relative overflow-hidden bg-gray-50">
-    
-    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-        <div class="absolute right-0 top-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl mix-blend-multiply filter transform translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute left-0 bottom-0 w-96 h-96 bg-emerald-600 rounded-full blur-3xl mix-blend-multiply filter transform -translate-x-1/2 translate-y-1/2"></div>
-    </div>
-
-    <div class="relative z-10 max-w-3xl mx-auto">
-        <p class="text-blue-600 font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6">
-            Simplified Domestic Filing
-        </p>
-        
-        <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl text-gray-900 mb-8 leading-tight italic">
-            Coming <span class="not-italic">Soon</span>
-        </h2>
-
-        <div class="w-24 h-px bg-gray-300 mx-auto mb-8"></div>
-
-        <p class="text-gray-600 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
-            We are building the ultimate filing experience for Indian residents. 
-            From maximizing refunds to automating 80C deductions, your hassle-free tax season is almost here.
-        </p>
-
-        <div class="mt-12">
-            <a href="contact.html" class="inline-flex items-center text-gray-900 font-semibold border-b-2 border-blue-600 pb-1 hover:text-blue-600 transition-colors">
-                Need to file ITR-1 or ITR-2 now? Contact Us &rarr;
-            </a>
-        </div>
-    </div>
-
-  </main>
-
-  <footer class="w-full bg-gray-900 text-white py-8 px-4">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-        <p>© 2024 Tax Filing Guru. All rights reserved.</p>
-        <div class="mt-4 md:mt-0 flex space-x-6">
-            <a href="index.html" class="hover:text-white transition">Home</a>
-            <a href="contact.html" class="hover:text-white transition">Support</a>
-        </div>
-      </div>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
+
 </html>

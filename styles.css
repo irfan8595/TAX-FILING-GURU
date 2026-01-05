@@ -10,6 +10,29 @@
   position: relative;
   overflow: hidden;
 }
+.buttonclient {
+  /* position: relative; */
+  height: 40px;                  /* 🔑 SAME height as nav items */
+  padding: 0 22px;               /* horizontal only */
+  background-color: #2973eb;
+  color: white;
+  font-weight: 500;
+  border-radius: 9999px;
+  box-shadow: 0 4px 15px rgba(0, 82, 212, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  margin-top: 40px;
+}
+
+
+.buttonclient:hover {
+  background-color: #003ea8;
+  /* transform: translateY(-1px); */
+}
+
 
 .hero-bg::before {
   content: '';
@@ -176,9 +199,9 @@
 }
 
 /* Client Login button positioning */
-a[href="/client-login"] {
+/* a[href="/client-login"] {
   transition: top 0.2s ease;
-}
+} */
 
 
 /* Logo and company name clickable */
