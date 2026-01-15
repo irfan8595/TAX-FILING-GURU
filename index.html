@@ -45,13 +45,28 @@
           <a href="/index.html" class="flex items-center">
             <img src="images/TFG_LOGO.png" alt="Logo" class="h-16 w-auto" onerror="this.style.display='none';">
           </a>
-          <div>
-            <a href="/index.html" class="block">
-              <h1 id="company-name" class="text-3xl font-bold text-gray-900">Tax Filing <span
-                  class="text-blue-600">Guru</span></h1>
+          <div class="flex flex-col items-center leading-none text-center">
+            <a href="/index.html" class="inline-block">
+              <!-- Wrapper shrinks to content width -->
+              <div class="inline-flex flex-col items-center">
+
+                <h1 id="company-name" class="text-3xl font-bold text-gray-900 leading-none">
+                  Tax Filing <span class="text-blue-600">Guru</span>
+                </h1>
+
+                <!-- Divider exactly matches heading width -->
+                <span class="h-[2px] bg-blue-600 w-full mt-1"></span>
+
+                <!-- Tagline now clickable -->
+                <span class="text-xs text-black font-medium leading-none mt-1 text-center">
+                  Because Smart Taxes Need a Guru.
+                </span>
+
+              </div>
             </a>
-            <p id="tagline" class="text-xs text-blue-600 font-medium"></p>
           </div>
+
+
         </div>
         <nav class="hidden md:flex items-center space-x-8 leading-none">
           <div class="relative group h-10 flex items-center">
@@ -84,7 +99,8 @@
               </div>
             </div>
           </div>
-          <a href="/about.html" class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">About</a>
+          <a href="/about.html"
+            class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">About</a>
 
           <div class="relative group h-10 flex items-center">
             <a href="tools.html"
@@ -795,10 +811,30 @@
   <footer class="w-full bg-gray-900 py-12 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <h4 class="text-white font-bold text-lg mb-4">About Us</h4>
-          <p class="text-gray-400 text-sm">Professional tax filing services for individuals and businesses.</p>
+        <div class="flex flex-col items-start">
+          <a href="/index.html" class="inline-block">
+            <div class="inline-flex flex-col items-start leading-none">
+
+              <!-- Logo + Name -->
+              <div class="flex items-center space-x-2">
+                <img src="images/TFG_LOGO.png" alt="Tax Filing Guru Logo" class="h-10 w-auto">
+                <h4 class="text-white font-bold text-lg">
+                  Tax Filing <span class="text-blue-500">Guru</span>
+                </h4>
+              </div>
+
+              <!-- Divider -->
+              <span class="h-[2px] bg-white w-full mt-1"></span>
+
+              <!-- Tagline -->
+              <p class="text-xs text-white mt-1 text-center">
+                Because Smart Taxes Need a Guru.
+              </p>
+
+            </div>
+          </a>
         </div>
+
         <div>
           <h4 class="text-white font-bold text-lg mb-4">Services</h4>
           <ul class="space-y-2">
