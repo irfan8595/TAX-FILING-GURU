@@ -16,25 +16,7 @@
 
 <body class="h-full overflow-auto">
   <!-- Top Bar -->
-  <div class="w-full bg-blue-900 text-white py-2 px-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center text-sm topbar-container">
-      <div class="flex items-center space-x-4">
-        <span>📧 info@taxfilingguru.com</span>
-      </div>
-
-      <!-- Center announcement (visible on md+ screens) -->
-      <div class="topbar-announcement hidden md:block text-center text-sm font-medium overflow-hidden">
-        <div class="announcement-scroll">
-          <span>🔔 Limited time: Free tax consultation this week — Book now!</span>
-        </div>
-      </div>
-
-      <div class="flex items-center space-x-2">
-        <span>📞</span>
-        <span id="top-phone" class="font-semibold">+91 9811945176</span>
-      </div>
-    </div>
-  </div>
+  
 
   <!-- Header -->
   <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
@@ -215,116 +197,25 @@
     </div>
   </section>
   <!-- ITR Popup Modal -->
-  <div id="itrPopup"
-    class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center px-4">
-
-    <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-8 relative animate-scaleIn">
-
-      <!-- Close Button -->
-      <button onclick="closeItrPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
-        ✕
-      </button>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <!-- Residents Card -->
-        <div class="rounded-2xl p-10 bg-blue-600 text-white flex flex-col justify-between shadow-lg min-h-[320px]">
-
-          <div>
-            <h3 class="text-2xl font-bold mb-3">Existing User Login</h3>
-            <p class="text-blue-100 mb-6">
-              Click Continue if you are an Indian resident who already filed income tax return atleast once.
-            </p>
-          </div>
-          <a href="reg.html?type=resident"
-          onclick="setUserType('residentexisting')"
-            class="inline-flex items-center justify-center bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition">
-            Continue →
-          </a>
-        </div>
-
-        <!-- Resident Card -->
-        <div class="rounded-2xl p-10 bg-green-600 text-white flex flex-col justify-between shadow-lg min-h-[320px]">
-
-          <div>
-            <h3 class="text-2xl font-bold mb-3">Beginner</h3>
-            <p class="text-green-100 mb-6">
-              Click Continue if you are an Indian resident who is filing income tax return for first time.
-            </p>
-          </div>
-          <a href="reg.html?type=resident"
-          onclick="setUserType('residentbeginner')"
-            class="inline-flex items-center justify-center bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition">
-            Continue →
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <div id="itrPopup1"
-    class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center px-4">
-
-    <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-8 relative animate-scaleIn">
-
-      <!-- Close Button -->
-      <button onclick="closeItrPopup1()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
-        ✕
-      </button>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <!-- Nri Card -->
-        <div class="rounded-2xl p-10 bg-blue-600 text-white flex flex-col justify-between shadow-lg min-h-[320px]">
-
-          <div>
-            <h3 class="text-2xl font-bold mb-3">Existing User Login</h3>
-            <p class="text-blue-100 mb-6">
-              Click Continue if you are an NRI who already filed income tax return atleast once.
-            </p>
-          </div>
-          <a href="reg.html?type=nri"
-          onclick="setUserType('nriexisting')"
-            class="inline-flex items-center justify-center bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition">
-            Continue →
-          </a>
-        </div>
-
-        <!-- NRI Card -->
-        <div class="rounded-2xl p-10 bg-green-600 text-white flex flex-col justify-between shadow-lg min-h-[320px]">
-
-          <div>
-            <h3 class="text-2xl font-bold mb-3">Beginner</h3>
-            <p class="text-green-100 mb-6">
-              Click Continue if you are an NRI who is filing income tax return for first time.
-            </p>
-          </div>
-          <a href="reg.html?type=nri"
-            onclick="setUserType('nribeginner')"
-            class="inline-flex items-center justify-center bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition">
-            Continue →
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
   <div class="w-full bg-blue-900 text-white py-2 overflow-hidden">
     <div class="marquee">
       <div class="marquee__content">
         <span>💡 Don’t understand tax language? Don’t worry — the Gurus will guide you.</span>
         <span>🤝 Tax experts you can truly trust</span>
+        <span>🎉 Offer For New individuals Filing For First time </span>
         <span>📞 Professional support from start to finish</span>
         <span>🛡️ Filed correctly. Fully legal. Completely protected.</span>
+        <span>🎉 Offer For New individuals Filing For First time </span>
       </div>
-
+      
       <!-- duplicate for seamless flow -->
       <div class="marquee__content">
         <span>💡 Don’t understand tax language? Don’t worry — the Gurus will guide you.</span>
         <span>🤝 Tax experts you can truly trust</span>
+        <span>🎉 Offer For New individuals Filing For First time </span>
         <span>📞 Professional support from start to finish</span>
         <span>🛡️ Filed correctly. Fully legal. Completely protected.</span>
+        <span>🎉 Offer For New individuals Filing For First time </span>
       </div>
     </div>
   </div>
@@ -346,7 +237,7 @@
               </path>
             </svg>
           </div>
-          <h3 id="service-1-title" class="text-xl font-bold text-gray-900 mb-3">Individual ITR Filing</h3>
+          <h3 id="service-1-title" class="text-xl font-bold text-gray-900 mb-3">Resident ITR Filing</h3>
           <p id="service-1-desc" class="text-gray-600 leading-relaxed">Complete tax filing services for salaried
             individuals and professionals.</p>
         </div>
@@ -374,7 +265,7 @@
               </path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">GST Compliance</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Tax Notice</h3>
           <p class="text-gray-600 leading-relaxed">
             Complete GST registration, monthly filing, and annual return services for businesses.
           </p>
@@ -389,7 +280,7 @@
               </path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">TDS Compliance</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Advance Tax Calculation</h3>
           <p class="text-gray-600 leading-relaxed">
             Timely TDS return filing, certificate generation, and correction statement services.
           </p>
