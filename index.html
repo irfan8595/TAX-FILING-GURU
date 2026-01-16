@@ -235,13 +235,14 @@
               Click Continue if you are an Indian resident who already filed income tax return atleast once.
             </p>
           </div>
-          <a href="#residentexisting"
+          <a href="reg.html?type=resident"
+          onclick="setUserType('residentexisting')"
             class="inline-flex items-center justify-center bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition">
             Continue →
           </a>
         </div>
 
-        <!-- NRI Card -->
+        <!-- Resident Card -->
         <div class="rounded-2xl p-10 bg-green-600 text-white flex flex-col justify-between shadow-lg min-h-[320px]">
 
           <div>
@@ -250,7 +251,8 @@
               Click Continue if you are an Indian resident who is filing income tax return for first time.
             </p>
           </div>
-          <a href="#residentbeginer"
+          <a href="reg.html?type=resident"
+          onclick="setUserType('residentbeginner')"
             class="inline-flex items-center justify-center bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition">
             Continue →
           </a>
@@ -272,7 +274,7 @@
       </button>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        <!-- Residents Card -->
+        <!-- Nri Card -->
         <div class="rounded-2xl p-10 bg-blue-600 text-white flex flex-col justify-between shadow-lg min-h-[320px]">
 
           <div>
@@ -281,7 +283,8 @@
               Click Continue if you are an NRI who already filed income tax return atleast once.
             </p>
           </div>
-          <a href="#nriexisting"
+          <a href="reg.html?type=nri"
+          onclick="setUserType('nriexisting')"
             class="inline-flex items-center justify-center bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition">
             Continue →
           </a>
@@ -296,7 +299,8 @@
               Click Continue if you are an NRI who is filing income tax return for first time.
             </p>
           </div>
-          <a href="#nribeginer"
+          <a href="reg.html?type=nri"
+            onclick="setUserType('nribeginner')"
             class="inline-flex items-center justify-center bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition">
             Continue →
           </a>

@@ -249,3 +249,7 @@ document.getElementById("itrPopup1").addEventListener("click", function (e) {
   if (e.target === this) closeItrPopup1();
 });
 
+function setUserType(type) {
+    localStorage.setItem("loginType", type);
+  }
+  
