@@ -227,8 +227,10 @@ let selectedTime = "";
 
     // 👉 Set minimum selectable date = today
     const dateInput = document.getElementById("appointmentDate");
-    const today = new Date().toISOString().split("T")[0];
-    dateInput.min = today;
+    const minDate = new Date();
+  minDate.setDate(minDate.getDate() + 1); // 👈 move to tomorrow
+
+  const today = minDate.toISOString().split("T")[0];
 
     function openBookingModal() {
       document.getElementById("bookingModal").classList.remove("hidden");
@@ -332,17 +334,18 @@ let vcSelectedTime = "";
 function vcOpenBooking() {
   const overlay = document.getElementById("bookingOverlay");
   const tab = document.getElementById("rightTab");
-
+vcSetMinDate();
   overlay.classList.remove("hidden");
   requestAnimationFrame(() => overlay.classList.add("show"));
   tab.classList.add("hide");
+  if (vcSelectedDuration) {
+    vcGenerateSlots(vcSelectedDuration);
+  }
 }
 
 function vcCloseBooking() {
   const overlay = document.getElementById("bookingOverlay");
   const tab = document.getElementById("rightTab");
-
-  vcSetMinDate();
 
   overlay.classList.remove("show");
   setTimeout(() => overlay.classList.add("hidden"));
@@ -362,11 +365,17 @@ function vcSelectDuration(minutes) {
   vcGenerateSlots(minutes);
 }
 // ---------- DISABLE PAST DATES (VIDEO CONSULTATION) ----------
+// ---------- DATE SETUP ----------
 function vcSetMinDate() {
   const dateInput = document.getElementById("datePicker");
-  const today = new Date().toISOString().split("T")[0];
-  dateInput.min = today;
-  dateInput.value = today;
+const today = new Date();
+  today.setDate(today.getDate() + 1); // 👈 move to tomorrow
+
+  const minDate = today.toISOString().split("T")[0];
+
+  const todayStr = minDate;
+  dateInput.min = todayStr;
+  dateInput.value = todayStr; // auto-select today
 }
 
 
@@ -375,6 +384,10 @@ function vcGenerateSlots(gap) {
   const slotsBox = document.getElementById("timeSlots");
   slotsBox.innerHTML = "";
 
+  const dateInput = document.getElementById("datePicker");
+  const selectedDate = dateInput.value;
+  const now = new Date();
+
   let startMinutes = 9 * 60;   // 9:00 AM
   let endMinutes   = 21 * 60;  // 9:00 PM
 
@@ -382,18 +395,34 @@ function vcGenerateSlots(gap) {
     const h = Math.floor(startMinutes / 60);
     const m = startMinutes % 60;
 
-    const timeLabel = vcFormatTime(h, m);
+    const slotTime = vcFormatTime(h, m);
+
+    const slotDateTime = new Date(selectedDate);
+    slotDateTime.setHours(h, m, 0, 0);
+
+    // ❌ Skip past slots if date = today
+    if (selectedDate === now.toISOString().split("T")[0] && slotDateTime <= now) {
+      startMinutes += gap;
+      continue;
+    }
 
     const btn = document.createElement("button");
+    btn.textContent = slotTime;
     btn.className = "vc-time-slot";
-    btn.textContent = timeLabel;
+    btn.onclick = () => vcSelectTime(btn, slotTime);
 
-    btn.onclick = () => vcSelectTime(btn, timeLabel);
     slotsBox.appendChild(btn);
-
     startMinutes += gap;
   }
+
+  // Reset selected time if invalid
+  vcSelectedTime = "";
 }
+document.getElementById("datePicker").addEventListener("change", () => {
+  if (vcSelectedDuration) {
+    vcGenerateSlots(vcSelectedDuration);
+  }
+});
 
 // ---------- SELECT TIME ----------
 function vcSelectTime(btn, time) {
@@ -422,15 +451,19 @@ function vcBookNow() {
     return;
   }
 
-  const message =
-    `📹 *Video Consultation Booking*%0A` +
-    `👤 Name: ${name}%0A` +
-    `📅 Date: ${date}%0A` +
-    `⏰ Time: ${vcSelectedTime}%0A` +
+
+   const rawMessage =
+    `📹 Video Consultation Booking\n` +
+    `👤 Name: ${name}\n` +
+    `📅 Date: ${date}\n` +
+    `⏰ Time: ${vcSelectedTime}\n` +
     `⏳ Duration: ${vcSelectedDuration} Minutes`;
 
-  const phone = "91XXXXXXXXXX"; // ← replace
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+  const encodedMessage = encodeURIComponent(rawMessage);
+  const phone = "919811945176";
+
+  window.location.href =
+    `whatsapp://send?phone=${phone}&text=${encodedMessage}`;
 
   vcCloseBooking();
 }
