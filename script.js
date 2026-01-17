@@ -283,17 +283,15 @@ let selectedTime = "";
       }
 
       const message =
-        `Hello Tax Filing Guru,%0A` +
-        `I would like to Schedule a free consultation%0A` +
-        `Date: ${date}%0A` +
-        `Time: ${selectedTime}`;
+        `🄸🅃🄶 Hello Tax Filing Guru,%\n` +
+        `📞 I would like to Schedule a free consultation\n` +
+        `📅 Date: ${date}\n` +
+        `⏰ Time: ${selectedTime}`;
+const encodedmessage = encodeURIComponent(message);
+  const phone = "919811945176";
 
-      const phoneNumber = "919811945176"; // WhatsApp number
-
-      window.open(
-        `https://wa.me/${phoneNumber}?text=${message}`,
-        "_blank"
-      );
+  window.location.href =
+    `whatsapp://send?phone=${phone}&text=${encodedmessage}`;
 
       closeBookingModal();
     }
@@ -453,6 +451,7 @@ function vcBookNow() {
 
 
    const rawMessage =
+   `🄸🅃🄶  Hello Tax Filing Guru,\n` +
     `📹 Video Consultation Booking\n` +
     `👤 Name: ${name}\n` +
     `📅 Date: ${date}\n` +

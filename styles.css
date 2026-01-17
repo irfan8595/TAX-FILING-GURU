@@ -24,7 +24,7 @@
   justify-content: center;
   line-height: 1;
   white-space: nowrap;
-  margin-top: 40px;
+  margin-top: 0px;
 }
 
 /* strips */
@@ -113,7 +113,7 @@
 }
 
 .booking-box {
-  width: 360px;
+  width: 390px;
   max-height: 550px;   /* ⬅️ NOT full height */
   background: #fff;
   padding: 24px;

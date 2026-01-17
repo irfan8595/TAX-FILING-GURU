@@ -19,7 +19,7 @@
 
 
   <!-- Header -->
-  <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
+    <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-6 py-4">
       <div class="flex justify-between items-center min-h-[80px] relative">
 
@@ -98,8 +98,40 @@
       </div>
     </div>
   </header>
- <a href="https://wa.me/919811555255" class="whatsapp-float" target="_blank" rel="nofollow noopener"
+ <a href="whatsapp://send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website"
+  onclick="setTimeout(()=>{window.location.href='https://api.whatsapp.com/send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website'},400)"
+   class="whatsapp-float" target="_blank" rel="nofollow noopener"
         aria-label="Chat on WhatsApp">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-            alt="WhatsApp chat with Arjanmal Attarchand Delhi NCR" />
+            alt="WhatsApp chat with TaxFilingGuru" />
     </a>
+    <div id="rightTab" onclick="vcOpenBooking()">
+  Book Video Consultation
+</div>
+<div id="bookingOverlay" class="overlay hidden">
+  <div class="booking-box">
+    <button class="close-btn" onclick="vcCloseBooking()">×</button>
+
+    <h3>📹 Book Video Consultation</h3>
+    <p class="subtitle" style="text-align: center;">Book Your Video Consultation Here</p>
+
+    <!-- Duration -->
+    <div class="duration">
+      <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
+      <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
+    </div>
+
+    <!-- Name -->
+    <input id="clientName" placeholder="Your Name" required>
+
+    <!-- Date -->
+    <input type="date" id="datePicker" required>
+
+    <!-- Time Slots -->
+    <div id="timeSlots" class="times"></div>
+
+    <!-- Book -->
+    <button class="book-btn" onclick="vcBookNow()">Book Now</button>
+  </div>
+</div>
+
