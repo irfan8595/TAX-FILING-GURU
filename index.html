@@ -103,20 +103,20 @@
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
             alt="WhatsApp chat with Arjanmal Attarchand Delhi NCR" />
     </a>
-  <div id="rightTab" onclick="openBooking()">
+  <div id="rightTab" onclick="vcOpenBooking()">
   Book Video Consultation
 </div>
 <div id="bookingOverlay" class="overlay hidden">
   <div class="booking-box">
-    <button class="close-btn" onclick="closeBooking()">×</button>
+    <button class="close-btn" onclick="vcCloseBooking()">×</button>
 
     <h3>📹 Book Video Consultation</h3>
     <p class="subtitle">Choose duration, date & time</p>
 
     <!-- Duration -->
     <div class="duration">
-      <button onclick="selectDuration(45)" id="d45">45 Minutes</button>
-      <button onclick="selectDuration(60)" id="d60">1 Hour</button>
+      <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
+      <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
     </div>
 
     <!-- Name -->
@@ -129,7 +129,7 @@
     <div id="timeSlots" class="times"></div>
 
     <!-- Book -->
-    <button class="book-btn" onclick="bookNow()">Book Now</button>
+    <button class="book-btn" onclick="vcBookNow()">Book Now</button>
   </div>
 </div>
 
@@ -840,102 +840,7 @@
   <script src="script.js"></script>
 
   <script>
-    let selectedTime = "";
-
-    // 👉 Set minimum selectable date = today
-    const dateInput = document.getElementById("appointmentDate");
-    const today = new Date().toISOString().split("T")[0];
-    dateInput.min = today;
-
-    function openBookingModal() {
-      document.getElementById("bookingModal").classList.remove("hidden");
-      dateInput.value = today;
-      handleDateChange();
-    }
-
-    function closeBookingModal() {
-      document.getElementById("bookingModal").classList.add("hidden");
-    }
-
-    function selectTime(button) {
-      document.querySelectorAll(".time-slot").forEach(btn =>
-        btn.classList.remove("active")
-      );
-      button.classList.add("active");
-      selectedTime = button.innerText;
-    }
-
-    function handleDateChange() {
-      const selectedDate = dateInput.value;
-      const now = new Date();
-
-      document.querySelectorAll(".time-slot").forEach(btn => {
-        const slotTime = btn.dataset.time; // HH:MM
-        const [h, m] = slotTime.split(":");
-
-        const slotDateTime = new Date(selectedDate);
-        slotDateTime.setHours(h, m, 0, 0);
-
-        // 👉 If selected date is today, hide past slots
-        if (selectedDate === today && slotDateTime <= now) {
-          btn.style.display = "none";
-          btn.classList.remove("active");
-          if (btn.innerText === selectedTime) {
-            selectedTime = "";
-          }
-        } else {
-          btn.style.display = "block";
-        }
-      });
-    }
-
-    function bookNow() {
-      const date = dateInput.value;
-
-      if (!date || !selectedTime) {
-        alert("❌ Please select a valid date and time.");
-        return;
-      }
-
-      const message =
-        `Hello Tax Filing Guru,%0A` +
-        `I would like to Schedule a free consultation%0A` +
-        `Date: ${date}%0A` +
-        `Time: ${selectedTime}`;
-
-      const phoneNumber = "919811945176"; // WhatsApp number
-
-      window.open(
-        `https://wa.me/${phoneNumber}?text=${message}`,
-        "_blank"
-      );
-
-      closeBookingModal();
-    }
-    function toggleFaq(button) {
-      const answer = button.nextElementSibling;
-      const icon = button.querySelector('.icon-wrapper');
-
-      // Close all other open FAQs (Optional: remove this block if you want multiple open at once)
-      document.querySelectorAll('.faq-answer').forEach(el => {
-        if (el !== answer) {
-          el.classList.add('hidden');
-          el.previousElementSibling.querySelector('.icon-wrapper').classList.remove('rotate-180', 'bg-blue-600', 'text-white');
-          el.previousElementSibling.querySelector('.icon-wrapper').classList.add('bg-blue-50', 'text-blue-600');
-        }
-      });
-
-      // Toggle current
-      if (answer.classList.contains('hidden')) {
-        answer.classList.remove('hidden');
-        icon.classList.add('rotate-180', 'bg-blue-600', 'text-white'); // Active state styles
-        icon.classList.remove('bg-blue-50', 'text-blue-600');
-      } else {
-        answer.classList.add('hidden');
-        icon.classList.remove('rotate-180', 'bg-blue-600', 'text-white');
-        icon.classList.add('bg-blue-50', 'text-blue-600');
-      }
-    }
+    
   </script>
 </body>
 

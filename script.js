@@ -222,71 +222,218 @@ if (window.elementSdk) {
   });
 
 }
-let duration = 45;
-let selectedTime = null;
+// book free consultation 
+let selectedTime = "";
 
-const dateInput = document.getElementById("datePicker");
-const slotsBox = document.getElementById("timeSlots");
+    // 👉 Set minimum selectable date = today
+    const dateInput = document.getElementById("appointmentDate");
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.min = today;
 
-// Min date = today
-const today = new Date().toISOString().split("T")[0];
-dateInput.min = today;
+    function openBookingModal() {
+      document.getElementById("bookingModal").classList.remove("hidden");
+      dateInput.value = today;
+      handleDateChange();
+    }
 
-// Open / Close
-function openBooking() {
-  document.getElementById("bookingOverlay").classList.remove("hidden");
+    function closeBookingModal() {
+      document.getElementById("bookingModal").classList.add("hidden");
+    }
+
+    function selectTime(button) {
+      document.querySelectorAll(".time-slot").forEach(btn =>
+        btn.classList.remove("active")
+      );
+      button.classList.add("active");
+      selectedTime = button.innerText;
+    }
+
+    function handleDateChange() {
+      const selectedDate = dateInput.value;
+      const now = new Date();
+
+      document.querySelectorAll(".time-slot").forEach(btn => {
+        const slotTime = btn.dataset.time; // HH:MM
+        const [h, m] = slotTime.split(":");
+
+        const slotDateTime = new Date(selectedDate);
+        slotDateTime.setHours(h, m, 0, 0);
+
+        // 👉 If selected date is today, hide past slots
+        if (selectedDate === today && slotDateTime <= now) {
+          btn.style.display = "none";
+          btn.classList.remove("active");
+          if (btn.innerText === selectedTime) {
+            selectedTime = "";
+          }
+        } else {
+          btn.style.display = "block";
+        }
+      });
+    }
+
+    function bookNow() {
+      const date = dateInput.value;
+
+      if (!date || !selectedTime) {
+        alert("❌ Please select a valid date and time.");
+        return;
+      }
+
+      const message =
+        `Hello Tax Filing Guru,%0A` +
+        `I would like to Schedule a free consultation%0A` +
+        `Date: ${date}%0A` +
+        `Time: ${selectedTime}`;
+
+      const phoneNumber = "919811945176"; // WhatsApp number
+
+      window.open(
+        `https://wa.me/${phoneNumber}?text=${message}`,
+        "_blank"
+      );
+
+      closeBookingModal();
+    }
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.icon-wrapper');
+
+      // Close all other open FAQs (Optional: remove this block if you want multiple open at once)
+      document.querySelectorAll('.faq-answer').forEach(el => {
+        if (el !== answer) {
+          el.classList.add('hidden');
+          el.previousElementSibling.querySelector('.icon-wrapper').classList.remove('rotate-180', 'bg-blue-600', 'text-white');
+          el.previousElementSibling.querySelector('.icon-wrapper').classList.add('bg-blue-50', 'text-blue-600');
+        }
+      });
+
+      // Toggle current
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-180', 'bg-blue-600', 'text-white'); // Active state styles
+        icon.classList.remove('bg-blue-50', 'text-blue-600');
+      } else {
+        answer.classList.add('hidden');
+        icon.classList.remove('rotate-180', 'bg-blue-600', 'text-white');
+        icon.classList.add('bg-blue-50', 'text-blue-600');
+      }
+    }
+
+    /* ================================
+   VIDEO CONSULTATION SCRIPT
+   (Isolated – no conflicts)
+================================ */
+
+let vcSelectedDuration = null;
+let vcSelectedTime = "";
+
+// ---------- OPEN / CLOSE ----------
+function vcOpenBooking() {
+  const overlay = document.getElementById("bookingOverlay");
+  const tab = document.getElementById("rightTab");
+
+  overlay.classList.remove("hidden");
+  requestAnimationFrame(() => overlay.classList.add("show"));
+  tab.classList.add("hide");
 }
-function closeBooking() {
-  document.getElementById("bookingOverlay").classList.add("hidden");
+
+function vcCloseBooking() {
+  const overlay = document.getElementById("bookingOverlay");
+  const tab = document.getElementById("rightTab");
+
+  vcSetMinDate();
+
+  overlay.classList.remove("show");
+  setTimeout(() => overlay.classList.add("hidden"));
+  tab.classList.remove("hide");
 }
 
-// Duration select
-function selectDuration(min) {
-  duration = min;
-  document.getElementById("d45").classList.remove("active");
-  document.getElementById("d60").classList.remove("active");
-  document.getElementById(min === 45 ? "d45" : "d60").classList.add("active");
-  generateSlots();
+// ---------- DURATION ----------
+function vcSelectDuration(minutes) {
+  vcSelectedDuration = minutes;
+  vcSelectedTime = "";
+
+  document.querySelectorAll(".duration button").forEach(btn =>
+    btn.classList.remove("active")
+  );
+
+  document.getElementById(minutes === 45 ? "d45" : "d90").classList.add("active");
+  vcGenerateSlots(minutes);
+}
+// ---------- DISABLE PAST DATES (VIDEO CONSULTATION) ----------
+function vcSetMinDate() {
+  const dateInput = document.getElementById("datePicker");
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.min = today;
+  dateInput.value = today;
 }
 
-// Generate Time Slots
-dateInput.addEventListener("change", generateSlots);
 
-function generateSlots() {
+// ---------- TIME SLOTS ----------
+function vcGenerateSlots(gap) {
+  const slotsBox = document.getElementById("timeSlots");
   slotsBox.innerHTML = "";
-  selectedTime = null;
 
-  const selectedDate = dateInput.value;
-  if (!selectedDate) return;
+  let startMinutes = 9 * 60;   // 9:00 AM
+  let endMinutes   = 21 * 60;  // 9:00 PM
 
-  const now = new Date();
-  const isToday = selectedDate === today;
+  while (startMinutes + gap <= endMinutes) {
+    const h = Math.floor(startMinutes / 60);
+    const m = startMinutes % 60;
 
-  let startHour = 9;
-  let endHour = 18;
-
-  for (let h = startHour; h <= endHour; h++) {
-    const slotTime = `${String(h).padStart(2, "0")}:00`;
-    const slotDateTime = new Date(`${selectedDate}T${slotTime}`);
-
-    if (isToday && slotDateTime <= now) continue;
-
-    if (h + duration / 60 > endHour) continue;
+    const timeLabel = vcFormatTime(h, m);
 
     const btn = document.createElement("button");
-    btn.innerText = slotTime;
+    btn.className = "vc-time-slot";
+    btn.textContent = timeLabel;
 
-    btn.onclick = () => {
-      document.querySelectorAll(".times button").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      selectedTime = slotTime;
-    };
-
+    btn.onclick = () => vcSelectTime(btn, timeLabel);
     slotsBox.appendChild(btn);
+
+    startMinutes += gap;
   }
 }
 
+// ---------- SELECT TIME ----------
+function vcSelectTime(btn, time) {
+  vcSelectedTime = time;
 
+  document.querySelectorAll("#timeSlots button").forEach(b =>
+    b.classList.remove("active")
+  );
+  btn.classList.add("active");
+}
+
+// ---------- FORMAT TIME ----------
+function vcFormatTime(h, m) {
+  const ampm = h >= 12 ? "PM" : "AM";
+  const hour = h % 12 || 12;
+  return `${hour}:${m.toString().padStart(2, "0")} ${ampm}`;
+}
+
+// ---------- BOOK NOW ----------
+function vcBookNow() {
+  const name = document.getElementById("clientName").value.trim();
+  const date = document.getElementById("datePicker").value;
+
+  if (!name || !date || !vcSelectedTime || !vcSelectedDuration) {
+    alert("❌ Please fill all details");
+    return;
+  }
+
+  const message =
+    `📹 *Video Consultation Booking*%0A` +
+    `👤 Name: ${name}%0A` +
+    `📅 Date: ${date}%0A` +
+    `⏰ Time: ${vcSelectedTime}%0A` +
+    `⏳ Duration: ${vcSelectedDuration} Minutes`;
+
+  const phone = "91XXXXXXXXXX"; // ← replace
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+
+  vcCloseBooking();
+}
 
 function setUserType(type) {
     localStorage.setItem("loginType", type);
