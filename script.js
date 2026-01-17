@@ -283,10 +283,10 @@ let selectedTime = "";
       }
 
       const message =
-        `🄸🅃🄶 Hello Tax Filing Guru,%\n` +
-        `📞 I would like to Schedule a free consultation\n` +
-        `📅 Date: ${date}\n` +
-        `⏰ Time: ${selectedTime}`;
+        `🄸🅃🄶  Hello Tax Filing Guru, \n` +
+        `📞  I would like to Schedule a free consultation\n` +
+        `📅  Date: ${date}\n` +
+        `⏰  Time: ${selectedTime}`;
 const encodedmessage = encodeURIComponent(message);
   const phone = "919811945176";
 
@@ -453,10 +453,10 @@ function vcBookNow() {
    const rawMessage =
    `🄸🅃🄶  Hello Tax Filing Guru,\n` +
     `📹 Video Consultation Booking\n` +
-    `👤 Name: ${name}\n` +
-    `📅 Date: ${date}\n` +
-    `⏰ Time: ${vcSelectedTime}\n` +
-    `⏳ Duration: ${vcSelectedDuration} Minutes`;
+    `👤  Name: ${name}\n` +
+    `📅  Date: ${date}\n` +
+    `⏰  Time: ${vcSelectedTime}\n` +
+    `⏳  Duration: ${vcSelectedDuration} Minutes`;
 
   const encodedMessage = encodeURIComponent(rawMessage);
   const phone = "919811945176";

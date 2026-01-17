@@ -77,7 +77,7 @@
 #rightTab {
   position: fixed;
   top: 50%;
-  right: -100px; /* ⬅️ pull into edge (IMPORTANT) */
+  right: -110px; /* ⬅️ pull into edge (IMPORTANT) */
   transform: translateY(-50%) rotate(-90deg);
 
   background: #2563eb;
