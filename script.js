@@ -222,32 +222,71 @@ if (window.elementSdk) {
   });
 
 }
-// OPEN
-function openItrPopup() {
-  document.getElementById("itrPopup").classList.remove("hidden");
+let duration = 45;
+let selectedTime = null;
+
+const dateInput = document.getElementById("datePicker");
+const slotsBox = document.getElementById("timeSlots");
+
+// Min date = today
+const today = new Date().toISOString().split("T")[0];
+dateInput.min = today;
+
+// Open / Close
+function openBooking() {
+  document.getElementById("bookingOverlay").classList.remove("hidden");
+}
+function closeBooking() {
+  document.getElementById("bookingOverlay").classList.add("hidden");
 }
 
-function openItrPopup1() {
-  document.getElementById("itrPopup1").classList.remove("hidden");
+// Duration select
+function selectDuration(min) {
+  duration = min;
+  document.getElementById("d45").classList.remove("active");
+  document.getElementById("d60").classList.remove("active");
+  document.getElementById(min === 45 ? "d45" : "d60").classList.add("active");
+  generateSlots();
 }
 
-// CLOSE
-function closeItrPopup() {
-  document.getElementById("itrPopup").classList.add("hidden");
+// Generate Time Slots
+dateInput.addEventListener("change", generateSlots);
+
+function generateSlots() {
+  slotsBox.innerHTML = "";
+  selectedTime = null;
+
+  const selectedDate = dateInput.value;
+  if (!selectedDate) return;
+
+  const now = new Date();
+  const isToday = selectedDate === today;
+
+  let startHour = 9;
+  let endHour = 18;
+
+  for (let h = startHour; h <= endHour; h++) {
+    const slotTime = `${String(h).padStart(2, "0")}:00`;
+    const slotDateTime = new Date(`${selectedDate}T${slotTime}`);
+
+    if (isToday && slotDateTime <= now) continue;
+
+    if (h + duration / 60 > endHour) continue;
+
+    const btn = document.createElement("button");
+    btn.innerText = slotTime;
+
+    btn.onclick = () => {
+      document.querySelectorAll(".times button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedTime = slotTime;
+    };
+
+    slotsBox.appendChild(btn);
+  }
 }
 
-function closeItrPopup1() {
-  document.getElementById("itrPopup1").classList.add("hidden");
-}
 
-// CLOSE ON BACKDROP CLICK
-document.getElementById("itrPopup").addEventListener("click", function (e) {
-  if (e.target === this) closeItrPopup();
-});
-
-document.getElementById("itrPopup1").addEventListener("click", function (e) {
-  if (e.target === this) closeItrPopup1();
-});
 
 function setUserType(type) {
     localStorage.setItem("loginType", type);
