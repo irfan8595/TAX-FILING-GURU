@@ -5,6 +5,21 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Animation for the scrolling strip */
+@keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.animate-strip {
+    animation: scroll-left 25s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+}
+/* Pause animation on hover so users can read it */
+.ticker-container:hover .animate-strip {
+    animation-play-state: paused;
+}
+
 .hero-bg {
   background: linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
   position: relative;
