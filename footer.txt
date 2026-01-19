@@ -18,7 +18,7 @@
 
               <!-- Tagline -->
               <p class="text-xs text-white mt-1 text-center">
-                Because Smart Taxes Need a Guru.
+                Smart Taxes Need a Guru.
               </p>
 
             </div>

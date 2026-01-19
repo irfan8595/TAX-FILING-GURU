@@ -129,9 +129,9 @@
 
 .booking-box {
   width: 390px;
-  max-height: 550px;   /* ⬅️ NOT full height */
+  max-height: 620px;   /* ⬅️ NOT full height */
   background: #fff;
-  padding: 24px;
+  padding: 15px;
   border-radius: 14px;
   box-shadow: 0 25px 60px rgba(0,0,0,.3);
   position: relative;
@@ -146,6 +146,7 @@
 .booking-box h3 {
   font-size: 22px;
   font-weight: 700;
+  margin-left: 6px;
 }
 .subtitle {
   color: #555;

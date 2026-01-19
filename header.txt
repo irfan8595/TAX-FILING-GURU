@@ -19,7 +19,7 @@
 
 
   <!-- Header -->
-    <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
+  <header class="w-full bg-white shadow-md sticky top-0 z-50 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-6 py-4">
       <div class="flex justify-between items-center min-h-[80px] relative">
 
@@ -41,7 +41,7 @@
 
                 <!-- Tagline now clickable -->
                 <span class="text-xs text-black font-medium leading-none mt-1 text-center">
-                  Because Smart Taxes Need a Guru.
+                  Smart Taxes Need a Guru.
                 </span>
 
               </div>
@@ -123,6 +123,8 @@
 
     <!-- Name -->
     <input id="clientName" placeholder="Your Name" required>
+    <input id="clientEmail" placeholder="Your Email" required>
+    <input id="clientNo" placeholder="Your Mobile No." required>
 
     <!-- Date -->
     <input type="date" id="datePicker" required>

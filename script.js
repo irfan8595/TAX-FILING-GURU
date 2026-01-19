@@ -228,7 +228,7 @@ let selectedTime = "";
     // 👉 Set minimum selectable date = today
     const dateInput = document.getElementById("appointmentDate");
     const minDate = new Date();
-  minDate.setDate(minDate.getDate() + 1); // 👈 move to tomorrow
+  minDate.setDate(minDate.getDate()); // 👈 move to tomorrow
 
   const today = minDate.toISOString().split("T")[0];
 
@@ -367,7 +367,7 @@ function vcSelectDuration(minutes) {
 function vcSetMinDate() {
   const dateInput = document.getElementById("datePicker");
 const today = new Date();
-  today.setDate(today.getDate() + 1); // 👈 move to tomorrow
+  today.setDate(today.getDate()); // 👈 move to tomorrow
 
   const minDate = today.toISOString().split("T")[0];
 
@@ -442,9 +442,11 @@ function vcFormatTime(h, m) {
 // ---------- BOOK NOW ----------
 function vcBookNow() {
   const name = document.getElementById("clientName").value.trim();
+  const email = document.getElementById("clientEmail").value.trim();
+  const number = document.getElementById("clientNo").value.trim();
   const date = document.getElementById("datePicker").value;
 
-  if (!name || !date || !vcSelectedTime || !vcSelectedDuration) {
+  if (!name || !email ||!number || !date || !vcSelectedTime || !vcSelectedDuration) {
     alert("❌ Please fill all details");
     return;
   }
@@ -454,6 +456,8 @@ function vcBookNow() {
    `🄸🅃🄶  Hello Tax Filing Guru,\n` +
     `📹 Video Consultation Booking\n` +
     `👤  Name: ${name}\n` +
+    `👤  Email: ${email}\n` +
+    `👤  Mobile No.: ${number}\n` +
     `📅  Date: ${date}\n` +
     `⏰  Time: ${vcSelectedTime}\n` +
     `⏳  Duration: ${vcSelectedDuration} Minutes`;
