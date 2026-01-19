@@ -492,3 +492,45 @@ function setUserType(type) {
     localStorage.setItem("loginType", type);
   }
   
+function togglePackage(button) {
+  const card = button.closest('div');
+  const packageName = card.querySelector('h3').textContent.trim();
+
+  // Check current state
+  const isAdded = button.dataset.added === "true";
+
+  if (!isAdded) {
+    // ADD PACKAGE
+    alert(`You have successfully added ${packageName} package`);
+
+    button.textContent = "Package Added";
+    button.dataset.added = "true";
+
+    button.classList.remove(
+      "from-blue-600",
+      "to-blue-700",
+      "hover:-translate-y-1",
+      "hover:scale-105"
+    );
+    button.classList.add("bg-gray-400", "cursor-pointer");
+  } else {
+    // ASK TO REMOVE
+    const confirmRemove = confirm(`Do you want to remove ${packageName} package?`);
+
+    if (confirmRemove) {
+      // REMOVE PACKAGE
+      button.textContent = "Add Plan";
+      button.dataset.added = "false";
+
+      button.classList.remove("bg-gray-400", "cursor-pointer");
+      button.classList.add(
+        "from-blue-600",
+        "to-blue-700",
+        "hover:-translate-y-1",
+        "hover:scale-105"
+      );
+    }
+    // If CANCEL → do nothing
+  }
+}
+
