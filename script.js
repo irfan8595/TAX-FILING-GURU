@@ -473,8 +473,8 @@ function vcBookNow() {
    `🄸🅃🄶  Hello Tax Filing Guru,\n` +
     `📹 Video Consultation Booking\n` +
     `👤  Name: ${name}\n` +
-    `👤  Email: ${email}\n` +
-    `👤  Mobile No.: ${number}\n` +
+    `📧  Email: ${email}\n` +
+    `📞  Mobile No.: ${number}\n` +
     `📅  Date: ${date}\n` +
     `⏰  Time: ${vcSelectedTime}\n` +
     `⏳  Duration: ${vcSelectedDuration} Minutes`;
