@@ -332,10 +332,20 @@ let vcSelectedTime = "";
 function vcOpenBooking() {
   const overlay = document.getElementById("bookingOverlay");
   const tab = document.getElementById("rightTab");
-vcSetMinDate();
+  const closeTab = document.getElementById("closeTab");
+
+  vcSetMinDate();
+
   overlay.classList.remove("hidden");
-  requestAnimationFrame(() => overlay.classList.add("show"));
+  closeTab.classList.remove("hidden");
+
+  requestAnimationFrame(() => {
+    overlay.classList.add("show");
+    closeTab.classList.add("show");
+  });
+
   tab.classList.add("hide");
+
   if (vcSelectedDuration) {
     vcGenerateSlots(vcSelectedDuration);
   }
@@ -344,11 +354,18 @@ vcSetMinDate();
 function vcCloseBooking() {
   const overlay = document.getElementById("bookingOverlay");
   const tab = document.getElementById("rightTab");
+  const closeTab = document.getElementById("closeTab");
 
   overlay.classList.remove("show");
-  setTimeout(() => overlay.classList.add("hidden"));
-  tab.classList.remove("hide");
+  closeTab.classList.remove("show");
+
+  setTimeout(() => {
+    overlay.classList.add("hidden");
+    closeTab.classList.add("hidden");
+    tab.classList.remove("hide");
+  }); // MUST match CSS transition
 }
+
 
 // ---------- DURATION ----------
 function vcSelectDuration(minutes) {

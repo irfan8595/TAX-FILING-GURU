@@ -111,6 +111,28 @@
   pointer-events: none; /* 👈 important */
 }
 
+#closeTab {
+  position: fixed;
+  top: 50%;
+  right: 385px; /* ⬅️ pull into edge (IMPORTANT) */
+  transform: translateY(-50%) rotate(-90deg);
+
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 26px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 9998;
+
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+#closeTab.hide {
+  transform: translateX(120%);
+  opacity: 0;
+  pointer-events: none; /* 👈 important */
+}
+
 /* Overlay */
 .overlay {
   position: fixed;
@@ -217,15 +239,7 @@
 }
 
 /* Close */
-.close-btn {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+
 
 /* whatsapp floating */
 .whatsapp-float {
