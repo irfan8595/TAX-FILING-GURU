@@ -122,13 +122,13 @@
       <div class="date-time-row">
   <!-- Date -->
   <div class="date-box">
-    <label>Date</label>
+    <label>Select Date</label>
     <input type="date" id="datePicker" required>
   </div>
 
   <!-- Time -->
   <div class="time-box">
-    <label>Time</label>
+    <label>Select Time</label>
 
     <div class="clock-picker small">
       <button class="arrow" onclick="vcTimeUp()">▲</button>

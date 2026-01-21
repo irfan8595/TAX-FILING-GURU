@@ -223,102 +223,163 @@ if (window.elementSdk) {
 
 }
 // book free consultation 
-let selectedTime = "";
+/* ================================
+   GLOBAL STATE
+================================ */
+let hour = 4;
+let minute = 0;
+let isPM = false;
 
-    // 👉 Set minimum selectable date = today
-    const dateInput = document.getElementById("appointmentDate");
-    const minDate = new Date();
-  minDate.setDate(minDate.getDate()); // 👈 move to tomorrow
+const STEP = 10;                 // 10-minute interval
+const RANGE_START = 4 * 60;      // 4:00 AM
+const RANGE_END = 26 * 60;       // 2:00 AM (next day)
 
-  const today = minDate.toISOString().split("T")[0];
+const dateInput = document.getElementById("appointmentDate");
 
-    function openBookingModal() {
-      document.getElementById("bookingModal").classList.remove("hidden");
-      dateInput.value = today;
-      handleDateChange();
-    }
+/* ================================
+   OPEN / CLOSE MODAL
+================================ */
+function openBookingModal() {
+  document.getElementById("bookingModal").classList.remove("hidden");
 
-    function closeBookingModal() {
-      document.getElementById("bookingModal").classList.add("hidden");
-    }
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.min = today;
+  dateInput.value = today;
 
-    function selectTime(button) {
-      document.querySelectorAll(".time-slot").forEach(btn =>
-        btn.classList.remove("active")
-      );
-      button.classList.add("active");
-      selectedTime = button.innerText;
-    }
+  updateTimeDisplay();
+}
 
-    function handleDateChange() {
-      const selectedDate = dateInput.value;
-      const now = new Date();
+function closeBookingModal() {
+  document.getElementById("bookingModal").classList.add("hidden");
+}
 
-      document.querySelectorAll(".time-slot").forEach(btn => {
-        const slotTime = btn.dataset.time; // HH:MM
-        const [h, m] = slotTime.split(":");
+/* ================================
+   TIME CORE (FREE MOVEMENT)
+================================ */
+function addMinutes(mins) {
+  let total =
+    (hour % 12) * 60 +
+    minute +
+    (isPM ? 720 : 0) +
+    mins;
 
-        const slotDateTime = new Date(selectedDate);
-        slotDateTime.setHours(h, m, 0, 0);
+  total = (total + 1440) % 1440;
 
-        // 👉 If selected date is today, hide past slots
-        if (selectedDate === today && slotDateTime <= now) {
-          btn.style.display = "none";
-          btn.classList.remove("active");
-          if (btn.innerText === selectedTime) {
-            selectedTime = "";
-          }
-        } else {
-          btn.style.display = "block";
-        }
-      });
-    }
+  isPM = total >= 720;
 
-    function bookNow() {
-      const date = dateInput.value;
+  let h24 = Math.floor(total / 60);
+  minute = total % 60;
 
-      if (!date || !selectedTime) {
-        alert("❌ Please select a valid date and time.");
-        return;
-      }
+  hour = h24 % 12;
+  if (hour === 0) hour = 12;
 
-      const message =
-        `🄸🅃🄶  Hello Tax Filing Guru, \n` +
-        `📞  I would like to Schedule a free consultation\n` +
-        `📅  Date: ${date}\n` +
-        `⏰  Time: ${selectedTime}`;
-const encodedmessage = encodeURIComponent(message);
-  const phone = "919811945176";
+  updateTimeDisplay();
+}
+
+function timeUp() {
+  addMinutes(STEP);
+}
+
+function timeDown() {
+  addMinutes(-STEP);
+}
+
+/* ================================
+   DISPLAY
+================================ */
+function updateTimeDisplay() {
+  document.getElementById("timeDisplay").textContent =
+    `${hour.toString().padStart(2, "0")}:${minute
+      .toString()
+      .padStart(2, "0")} ${isPM ? "PM" : "AM"}`;
+}
+
+/* ================================
+   BOOK NOW
+================================ */
+function bookNow() {
+  const date = dateInput.value;
+  if (!date) {
+    alert("❌ Please select date");
+    return;
+  }
+
+  /* ----- convert selected time to minutes ----- */
+  let selectedMinutes =
+    (hour % 12) * 60 +
+    minute +
+    (isPM ? 720 : 0);
+
+  let logicalMinutes =
+    selectedMinutes < RANGE_START
+      ? selectedMinutes + 1440
+      : selectedMinutes;
+
+  /* ----- RANGE CHECK (4 AM → 2 AM) ----- */
+  if (logicalMinutes < RANGE_START || logicalMinutes > RANGE_END) {
+    alert("❌ Booking allowed only between 4:00 AM and 2:00 AM");
+
+    // force reset to 4:00 AM
+    hour = 4;
+    minute = 0;
+    isPM = false;
+    updateTimeDisplay();
+    return;
+  }
+
+  /* ----- PAST TIME CHECK FOR TODAY ----- */
+  const now = new Date();
+  const bookingTime = new Date(date);
+
+  let hour24 = hour % 12;
+  if (isPM) hour24 += 12;
+
+  bookingTime.setHours(hour24, minute, 0, 0);
+
+  if (bookingTime <= now) {
+    alert("❌ Selected time already passed");
+    return;
+  }
+
+  /* ----- WHATSAPP REDIRECT ----- */
+  const msg =
+    `🄸🅃🄶 Hello Tax Filing Guru,
+📞 I would like to Schedule a free consultation
+📅 Date: ${date}
+⏰ Time: ${bookingTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+Please assist me with the process.\n Thank you!`;
 
   window.location.href =
-    `whatsapp://send?phone=${phone}&text=${encodedmessage}`;
+    `whatsapp://send?phone=919811945176&text=${encodeURIComponent(msg)}`;
 
-      closeBookingModal();
+  closeBookingModal();
+}
+
+
+function toggleFaq(button) {
+  const answer = button.nextElementSibling;
+  const icon = button.querySelector('.icon-wrapper');
+
+  // Close all other open FAQs (Optional: remove this block if you want multiple open at once)
+  document.querySelectorAll('.faq-answer').forEach(el => {
+    if (el !== answer) {
+      el.classList.add('hidden');
+      el.previousElementSibling.querySelector('.icon-wrapper').classList.remove('rotate-180', 'bg-blue-600', 'text-white');
+      el.previousElementSibling.querySelector('.icon-wrapper').classList.add('bg-blue-50', 'text-blue-600');
     }
-    function toggleFaq(button) {
-      const answer = button.nextElementSibling;
-      const icon = button.querySelector('.icon-wrapper');
+  });
 
-      // Close all other open FAQs (Optional: remove this block if you want multiple open at once)
-      document.querySelectorAll('.faq-answer').forEach(el => {
-        if (el !== answer) {
-          el.classList.add('hidden');
-          el.previousElementSibling.querySelector('.icon-wrapper').classList.remove('rotate-180', 'bg-blue-600', 'text-white');
-          el.previousElementSibling.querySelector('.icon-wrapper').classList.add('bg-blue-50', 'text-blue-600');
-        }
-      });
-
-      // Toggle current
-      if (answer.classList.contains('hidden')) {
-        answer.classList.remove('hidden');
-        icon.classList.add('rotate-180', 'bg-blue-600', 'text-white'); // Active state styles
-        icon.classList.remove('bg-blue-50', 'text-blue-600');
-      } else {
-        answer.classList.add('hidden');
-        icon.classList.remove('rotate-180', 'bg-blue-600', 'text-white');
-        icon.classList.add('bg-blue-50', 'text-blue-600');
-      }
-    }
+  // Toggle current
+  if (answer.classList.contains('hidden')) {
+    answer.classList.remove('hidden');
+    icon.classList.add('rotate-180', 'bg-blue-600', 'text-white'); // Active state styles
+    icon.classList.remove('bg-blue-50', 'text-blue-600');
+  } else {
+    answer.classList.add('hidden');
+    icon.classList.remove('rotate-180', 'bg-blue-600', 'text-white');
+    icon.classList.add('bg-blue-50', 'text-blue-600');
+  }
+}
 // video consultation booking
 /* ================================
    GLOBAL STATE
@@ -510,7 +571,7 @@ function vcBookNow() {
     `${vcIsPM ? "PM" : "AM"}`;
 
   const msg =
-`📹 Video Consultation Booking
+    `📹 Video Consultation Booking
 👤 Name: ${name}
 📧 Email: ${email}
 📞 Mobile: ${mobile}
@@ -529,9 +590,9 @@ vcSetMinDate();
 vcUpdateTimeDisplay();
 
 function setUserType(type) {
-    localStorage.setItem("loginType", type);
-  }
-  
+  localStorage.setItem("loginType", type);
+}
+
 function togglePackage(button) {
   const card = button.closest('div');
   const packageName = card.querySelector('h3').textContent.trim();

@@ -212,49 +212,61 @@
     </div>
   </section>
   <!-- Booking Modal -->
-  <div id="bookingModal" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-50">
+  <!-- Booking Modal -->
+<div id="bookingModal"
+     class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-50">
 
-    <div class="bg-white rounded-2xl p-6 w-full max-w-md relative">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-md relative">
 
-      <!-- Close -->
-      <button onclick="closeBookingModal()" class="absolute top-3 right-3 text-gray-500 text-xl">✕</button>
+    <!-- Close -->
+    <button onclick="closeBookingModal()"
+            class="absolute top-3 right-3 text-gray-500 text-xl">
+      ✕
+    </button>
 
-      <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">
-        Book an Appointment
-      </h3>
+    <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">
+      Book Free Consultation
+    </h3>
+
+    <p class="text-sm text-gray-500 text-center mb-4">
+      Select your preferred date and time
+    </p>
+
+    <!-- DATE + TIME (SAME AS VIDEO CONSULTATION DESIGN) -->
+    <div class="date-time-row">
 
       <!-- Date -->
-      <label class="block text-sm font-medium text-gray-700 mb-1">
-        Select Date
-      </label>
-      <input id="appointmentDate" type="date"
-        class="w-full mb-4 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-        onchange="handleDateChange()">
-
-
-      <!-- Time Slots -->
-      <label class="block text-sm font-medium text-gray-700 mb-2">
-        Select Time Slot
-      </label>
-
-      <div class="grid grid-cols-3 gap-2 mb-6">
-        <button onclick="selectTime(this)" class="time-slot" data-time="10:00">10:00 AM</button>
-        <button onclick="selectTime(this)" class="time-slot" data-time="11:00">11:00 AM</button>
-        <button onclick="selectTime(this)" class="time-slot" data-time="12:00">12:00 PM</button>
-        <button onclick="selectTime(this)" class="time-slot" data-time="14:00">2:00 PM</button>
-        <button onclick="selectTime(this)" class="time-slot" data-time="15:00">3:00 PM</button>
-        <button onclick="selectTime(this)" class="time-slot" data-time="16:00">4:00 PM</button>
-        <button onclick="selectTime(this)" class="time-slot" data-time="21:00">9:00 PM</button>
+      <div class="date-box">
+        <label>Select Date</label>
+        <input type="date"
+               id="appointmentDate"
+               required>
       </div>
 
+      <!-- Time -->
+      <div class="time-box">
+        <label>Select Time</label>
 
-      <!-- Book -->
-      <button onclick="bookNow()"
-        class="w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 transition">
-        Book Now
-      </button>
+        <div class="clock-picker small">
+          <button class="arrow" onclick="timeUp()">▲</button>
+
+          <span id="timeDisplay">04:00 AM</span>
+
+          <button class="arrow" onclick="timeDown()">▼</button>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Book Button -->
+    <button onclick="bookNow()"
+            class="w-full mt-6 bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 transition">
+      Book Now
+    </button>
+
   </div>
+</div>
+
 
   <!-- Marquee Section -->
   <div class="w-full bg-blue-900 text-white py-2 overflow-hidden">
