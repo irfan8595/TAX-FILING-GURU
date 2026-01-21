@@ -319,16 +319,21 @@ const encodedmessage = encodeURIComponent(message);
         icon.classList.add('bg-blue-50', 'text-blue-600');
       }
     }
-
-    /* ================================
-   VIDEO CONSULTATION SCRIPT
-   (Isolated – no conflicts)
+// video consultation booking
+/* ================================
+   GLOBAL STATE
 ================================ */
-
 let vcSelectedDuration = null;
-let vcSelectedTime = "";
+let vcHour = 4;
+let vcMinute = 0;
+let vcIsPM = false;
+const VC_MIN_MINUTES = 4 * 60;   // 4:00 AM
+const VC_MAX_MINUTES = 26 * 60;  // 2:00 AM (next day)
 
-// ---------- OPEN / CLOSE ----------
+
+/* ================================
+   OPEN / CLOSE OVERLAY
+================================ */
 function vcOpenBooking() {
   const overlay = document.getElementById("bookingOverlay");
   const tab = document.getElementById("rightTab");
@@ -345,10 +350,6 @@ function vcOpenBooking() {
   });
 
   tab.classList.add("hide");
-
-  if (vcSelectedDuration) {
-    vcGenerateSlots(vcSelectedDuration);
-  }
 }
 
 function vcCloseBooking() {
@@ -363,130 +364,169 @@ function vcCloseBooking() {
     overlay.classList.add("hidden");
     closeTab.classList.add("hidden");
     tab.classList.remove("hide");
-  }); // MUST match CSS transition
+  }, 300);
 }
 
-
-// ---------- DURATION ----------
-function vcSelectDuration(minutes) {
-  vcSelectedDuration = minutes;
-  vcSelectedTime = "";
-
-  document.querySelectorAll(".duration button").forEach(btn =>
-    btn.classList.remove("active")
-  );
-
-  document.getElementById(minutes === 45 ? "d45" : "d90").classList.add("active");
-  vcGenerateSlots(minutes);
-}
-// ---------- DISABLE PAST DATES (VIDEO CONSULTATION) ----------
-// ---------- DATE SETUP ----------
+/* ================================
+   DATE
+================================ */
 function vcSetMinDate() {
   const dateInput = document.getElementById("datePicker");
-const today = new Date();
-  today.setDate(today.getDate()); // 👈 move to tomorrow
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.min = today;
+  dateInput.value = today;
+}
 
-  const minDate = today.toISOString().split("T")[0];
+/* ================================
+   DURATION
+================================ */
+function vcSelectDuration(minutes) {
+  vcSelectedDuration = minutes;
+  vcMinute = 0;
 
-  const todayStr = minDate;
-  dateInput.min = todayStr;
-  dateInput.value = todayStr; // auto-select today
+  document.querySelectorAll(".duration button")
+    .forEach(b => b.classList.remove("active"));
+
+  document.getElementById(minutes === 45 ? "d45" : "d90")
+    .classList.add("active");
+
+  vcUpdateTimeDisplay();
+}
+
+/* ================================
+   TIME DISPLAY
+================================ */
+function vcUpdateTimeDisplay() {
+  const hh = vcHour < 10 ? "0" + vcHour : vcHour;
+  const mm = vcMinute < 10 ? "0" + vcMinute : vcMinute;
+  const ap = vcIsPM ? "PM" : "AM";
+
+  document.getElementById("timeDisplay").textContent =
+    `${hh}:${mm} ${ap}`;
+}
+
+/* ================================
+   TIME CORE LOGIC (IMPORTANT)
+================================ */
+function vcAddMinutes(mins) {
+  let totalMinutes =
+    (vcHour % 12) * 60 +
+    vcMinute +
+    (vcIsPM ? 720 : 0) +
+    mins;
+
+  totalMinutes = (totalMinutes + 1440) % 1440;
+
+  vcIsPM = totalMinutes >= 720;
+
+  let h24 = Math.floor(totalMinutes / 60);
+  vcMinute = totalMinutes % 60;
+
+  vcHour = h24 % 12;
+  if (vcHour === 0) vcHour = 12;
+
+  vcUpdateTimeDisplay();
 }
 
 
-// ---------- TIME SLOTS ----------
-function vcGenerateSlots(gap) {
-  const slotsBox = document.getElementById("timeSlots");
-  slotsBox.innerHTML = "";
 
-  const dateInput = document.getElementById("datePicker");
-  const selectedDate = dateInput.value;
-  const now = new Date();
-
-  let startMinutes = 9 * 60;   // 9:00 AM
-  let endMinutes   = 21 * 60;  // 9:00 PM
-
-  while (startMinutes + gap <= endMinutes) {
-    const h = Math.floor(startMinutes / 60);
-    const m = startMinutes % 60;
-
-    const slotTime = vcFormatTime(h, m);
-
-    const slotDateTime = new Date(selectedDate);
-    slotDateTime.setHours(h, m, 0, 0);
-
-    // ❌ Skip past slots if date = today
-    if (selectedDate === now.toISOString().split("T")[0] && slotDateTime <= now) {
-      startMinutes += gap;
-      continue;
-    }
-
-    const btn = document.createElement("button");
-    btn.textContent = slotTime;
-    btn.className = "vc-time-slot";
-    btn.onclick = () => vcSelectTime(btn, slotTime);
-
-    slotsBox.appendChild(btn);
-    startMinutes += gap;
+/* ================================
+   TIME UP / DOWN
+================================ */
+function vcTimeUp() {
+  if (!vcSelectedDuration) {
+    alert("Select duration first");
+    return;
   }
-
-  // Reset selected time if invalid
-  vcSelectedTime = "";
+  vcAddMinutes(vcSelectedDuration);
 }
-document.getElementById("datePicker").addEventListener("change", () => {
-  if (vcSelectedDuration) {
-    vcGenerateSlots(vcSelectedDuration);
+
+function vcTimeDown() {
+  if (!vcSelectedDuration) {
+    alert("Select duration first");
+    return;
   }
-});
-
-// ---------- SELECT TIME ----------
-function vcSelectTime(btn, time) {
-  vcSelectedTime = time;
-
-  document.querySelectorAll("#timeSlots button").forEach(b =>
-    b.classList.remove("active")
-  );
-  btn.classList.add("active");
+  vcAddMinutes(-vcSelectedDuration);
 }
 
-// ---------- FORMAT TIME ----------
-function vcFormatTime(h, m) {
-  const ampm = h >= 12 ? "PM" : "AM";
-  const hour = h % 12 || 12;
-  return `${hour}:${m.toString().padStart(2, "0")} ${ampm}`;
-}
-
-// ---------- BOOK NOW ----------
+/* ================================
+   BOOK NOW
+================================ */
 function vcBookNow() {
   const name = document.getElementById("clientName").value.trim();
   const email = document.getElementById("clientEmail").value.trim();
-  const number = document.getElementById("clientNo").value.trim();
+  const mobile = document.getElementById("clientNo").value.trim();
   const date = document.getElementById("datePicker").value;
 
-  if (!name || !email ||!number || !date || !vcSelectedTime || !vcSelectedDuration) {
+  if (!name || !email || !mobile || !date || !vcSelectedDuration) {
     alert("❌ Please fill all details");
     return;
   }
 
+  if (!/^[6-9]\d{9}$/.test(mobile)) {
+    alert("❌ Enter valid 10-digit mobile number");
+    return;
+  }
 
-   const rawMessage =
-   `🄸🅃🄶  Hello Tax Filing Guru,\n` +
-    `📹 Video Consultation Booking\n` +
-    `👤  Name: ${name}\n` +
-    `📧  Email: ${email}\n` +
-    `📞  Mobile No.: ${number}\n` +
-    `📅  Date: ${date}\n` +
-    `⏰  Time: ${vcSelectedTime}\n` +
-    `⏳  Duration: ${vcSelectedDuration} Minutes`;
+  /* ---------- TIME RANGE CHECK (4 AM to 2 AM) ---------- */
+  let selectedMinutes =
+    (vcHour % 12) * 60 +
+    vcMinute +
+    (vcIsPM ? 720 : 0);
 
-  const encodedMessage = encodeURIComponent(rawMessage);
-  const phone = "919811945176";
+  // convert to logical 22-hour window
+  let logicalMinutes =
+    selectedMinutes < 4 * 60
+      ? selectedMinutes + 1440
+      : selectedMinutes;
+
+  if (logicalMinutes < 4 * 60 || logicalMinutes > 26 * 60) {
+    alert("❌ Booking allowed only between 4:00 AM and 2:00 AM");
+
+    // force reset to 4:00 AM
+    vcHour = 4;
+    vcMinute = 0;
+    vcIsPM = false;
+    vcUpdateTimeDisplay();
+
+    return; // stop booking
+  }
+  /* ---------- END RANGE CHECK ---------- */
+
+  let hour24 = vcHour % 12;
+  if (vcIsPM) hour24 += 12;
+
+  const selectedDateTime = new Date(date);
+  selectedDateTime.setHours(hour24, vcMinute, 0, 0);
+
+  if (selectedDateTime <= new Date()) {
+    alert("❌ Selected time already passed");
+    return;
+  }
+
+  const timeText =
+    `${vcHour < 10 ? "0" : ""}${vcHour}:` +
+    `${vcMinute < 10 ? "0" : ""}${vcMinute} ` +
+    `${vcIsPM ? "PM" : "AM"}`;
+
+  const msg =
+`📹 Video Consultation Booking
+👤 Name: ${name}
+📧 Email: ${email}
+📞 Mobile: ${mobile}
+📅 Date: ${date}
+⏰ Time: ${timeText}
+⏳ Duration: ${vcSelectedDuration} Minutes`;
 
   window.location.href =
-    `whatsapp://send?phone=${phone}&text=${encodedMessage}`;
-
-  vcCloseBooking();
+    `whatsapp://send?phone=919811945176&text=${encodeURIComponent(msg)}`;
 }
+
+/* ================================
+   INIT
+================================ */
+vcSetMinDate();
+vcUpdateTimeDisplay();
 
 function setUserType(type) {
     localStorage.setItem("loginType", type);

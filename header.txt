@@ -119,11 +119,30 @@
                 <input id="clientEmail" placeholder="Your Email" required>
                 <input id="clientNo" placeholder="Your Mobile No." required>
         
-                <!-- Date -->
-                <input type="date" id="datePicker" required>
-        
-                <!-- Time Slots -->
-                <div id="timeSlots" class="times"></div>
+      <div class="date-time-row">
+  <!-- Date -->
+  <div class="date-box">
+    <label>Date</label>
+    <input type="date" id="datePicker" required>
+  </div>
+
+  <!-- Time -->
+  <div class="time-box">
+    <label>Time</label>
+
+    <div class="clock-picker small">
+      <button class="arrow" onclick="vcTimeUp()">▲</button>
+
+      <span id="timeDisplay">09:00 AM</span>
+
+      <button class="arrow" onclick="vcTimeDown()">▼</button>
+    </div>
+  </div>
+</div>
+
+
+
+
         
                 <!-- Book -->
                 <button class="book-btn" onclick="vcBookNow()">Book Now</button>
