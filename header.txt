@@ -45,10 +45,10 @@
                 </div>
 
                 <nav class="hidden md:flex items-center space-x-8 leading-none">
+                    <a href="individualpackage.html"
+                        class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Residents</a>
                     <a href="nri.html"
                         class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">NRI</a>
-                    <a href="residents.html"
-                        class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Residents</a>
 
                     <div class="relative group h-10 flex items-center">
                         <a href="tools.html"
