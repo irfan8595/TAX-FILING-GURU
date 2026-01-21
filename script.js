@@ -571,7 +571,8 @@ function vcBookNow() {
     `${vcIsPM ? "PM" : "AM"}`;
 
   const msg =
-    `📹 Video Consultation Booking
+    `🄸🅃🄶 Hello Tax Filing Guru,
+📹 Video Consultation Booking
 👤 Name: ${name}
 📧 Email: ${email}
 📞 Mobile: ${mobile}
