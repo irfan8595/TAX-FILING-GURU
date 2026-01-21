@@ -92,7 +92,7 @@
 #rightTab {
   position: fixed;
   top: 50%;
-  right: -110px; /* ⬅️ pull into edge (IMPORTANT) */
+  right: -120px; /* ⬅️ pull into edge (IMPORTANT) */
   transform: translateY(-50%) rotate(-90deg);
 
   background: #2563eb;
@@ -111,6 +111,11 @@
   pointer-events: none; /* 👈 important */
 }
 
+.video-icon {
+    font-size: 20px;          /* BIG */
+    display: inline-block;
+    transform: rotate(95deg); /* ROTATE */
+}
 #closeTab {
   position: fixed;
   top: 50%;

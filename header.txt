@@ -98,37 +98,37 @@
             alt="WhatsApp chat with TaxFilingGuru" />
 </a>
 <div id="rightTab" onclick="vcOpenBooking()">
-  Book Video Consultation
-</div>
-<div id="bookingOverlay" class="overlay hidden">
-  <div class="booking-box">
-    <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
-    
-    <h3>📹 Book Video Consultation</h3>
-    <p class="subtitle" style="text-align: center;">Book Your Video Consultation Here</p>
-    
-    <!-- Duration -->
-    <div class="duration">
-      <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
-      <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
-    </div>
-    
-    <!-- Name -->
-    <input id="clientName" placeholder="Your Name" required>
-    <input id="clientEmail" placeholder="Your Email" required>
-    <input id="clientNo" placeholder="Your Mobile No." required>
-    
-    <!-- Date -->
-    <input type="date" id="datePicker" required>
-    
-    <!-- Time Slots -->
-    <div id="timeSlots" class="times"></div>
-    
-    <!-- Book -->
-    <button class="book-btn" onclick="vcBookNow()">Book Now</button>
-  </div>
-</div>
-<div id="closeTab" class="overflow hidden" onclick="vcCloseBooking()">
-  Close
-</div>
-
+            Book Video Consultation 
+            <span class="video-icon">📹</span>
+        </div>
+        <div id="bookingOverlay" class="overlay hidden">
+            <div class="booking-box">
+                <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
+        
+                <h3>📹 Book Video Consultation</h3>
+                <p class="subtitle" style="text-align: center;">Book Your Video Consultation Here</p>
+        
+                <!-- Duration -->
+                <div class="duration">
+                    <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
+                    <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
+                </div>
+        
+                <!-- Name -->
+                <input id="clientName" placeholder="Your Name" required>
+                <input id="clientEmail" placeholder="Your Email" required>
+                <input id="clientNo" placeholder="Your Mobile No." required>
+        
+                <!-- Date -->
+                <input type="date" id="datePicker" required>
+        
+                <!-- Time Slots -->
+                <div id="timeSlots" class="times"></div>
+        
+                <!-- Book -->
+                <button class="book-btn" onclick="vcBookNow()">Book Now</button>
+            </div>
+        </div>
+        <div id="closeTab" class="overflow hidden" onclick="vcCloseBooking()">
+            Close
+        </div>
