@@ -343,7 +343,7 @@ function bookNow() {
   // ✅ WhatsApp redirect
   var timeText = document.getElementById("freeTimeDisplay").innerText;
   var msg =
-    `🄸🅃🄶 Hello Tax Filing Guru,
+    `🅃🄵🄶 Hello Tax Filing Guru,
 📞 I would like to Schedule a free consultation
 📅 Date: ${date}
 ⏰ Time: ${timeText}
@@ -574,7 +574,7 @@ function vcBookNow() {
     `${vcIsPM ? "PM" : "AM"}`;
 
   const msg =
-    `🄸🅃🄶 Hello Tax Filing Guru,
+    `🅃🄵🄶 Hello Tax Filing Guru,
 📹 Video Consultation Booking
 👤 Name: ${name}
 📧 Email: ${email}
