@@ -222,27 +222,25 @@ if (window.elementSdk) {
   });
 
 }
-// book free consultation 
-/* ================================
-   GLOBAL STATE
-================================ */
-let hour = 4;
-let minute = 0;
-let isPM = false;
+// ================================
+// FREE CONSULTATION BOOKING
+// ================================
 
-const STEP = 10;                 // 10-minute interval
-const RANGE_START = 4 * 60;      // 4:00 AM
-const RANGE_END = 26 * 60;       // 2:00 AM (next day)
+/* -------- STATE -------- */
+var hour = 4;
+var minute = 0;
+var isPM = false;
 
-const dateInput = document.getElementById("appointmentDate");
+var STEP = 10;                 // 🔒 ONLY 10-minute gap
+var RANGE_START = 4 * 60;      // 4:00 AM
+var RANGE_END = 26 * 60;       // 2:00 AM (next day)
 
-/* ================================
-   OPEN / CLOSE MODAL
-================================ */
+/* -------- MODAL -------- */
 function openBookingModal() {
   document.getElementById("bookingModal").classList.remove("hidden");
 
-  const today = new Date().toISOString().split("T")[0];
+  var dateInput = document.getElementById("appointmentDate");
+  var today = new Date().toISOString().split("T")[0];
   dateInput.min = today;
   dateInput.value = today;
 
@@ -253,22 +251,20 @@ function closeBookingModal() {
   document.getElementById("bookingModal").classList.add("hidden");
 }
 
-/* ================================
-   TIME CORE (FREE MOVEMENT)
-================================ */
+/* -------- TIME CORE (DO NOT CHANGE) -------- */
 function addMinutes(mins) {
-  let total =
+  var totalMinutes =
     (hour % 12) * 60 +
     minute +
     (isPM ? 720 : 0) +
     mins;
 
-  total = (total + 1440) % 1440;
+  totalMinutes = (totalMinutes + 1440) % 1440;
 
-  isPM = total >= 720;
+  isPM = totalMinutes >= 720;
 
-  let h24 = Math.floor(total / 60);
-  minute = total % 60;
+  var h24 = Math.floor(totalMinutes / 60);
+  minute = totalMinutes % 60;
 
   hour = h24 % 12;
   if (hour === 0) hour = 12;
@@ -276,50 +272,53 @@ function addMinutes(mins) {
   updateTimeDisplay();
 }
 
+/* -------- BUTTON ACTIONS -------- */
 function timeUp() {
-  addMinutes(STEP);
+  addMinutes(STEP);      // +10 min
 }
 
 function timeDown() {
-  addMinutes(-STEP);
+  addMinutes(-STEP);     // -10 min
 }
 
-/* ================================
-   DISPLAY
-================================ */
+/* -------- DISPLAY -------- */
 function updateTimeDisplay() {
-  document.getElementById("timeDisplay").textContent =
-    `${hour.toString().padStart(2, "0")}:${minute
-      .toString()
-      .padStart(2, "0")} ${isPM ? "PM" : "AM"}`;
+  const timeDisplayEl = document.getElementById("freeTimeDisplay");
+  if (timeDisplayEl) {
+    timeDisplayEl.innerText =
+      (hour < 10 ? "0" : "") + hour + ":" +
+      (minute < 10 ? "0" : "") + minute + " " +
+      (isPM ? "PM" : "AM");
+  }
 }
 
-/* ================================
-   BOOK NOW
-================================ */
+/* -------- BOOK NOW -------- */
 function bookNow() {
-  const date = dateInput.value;
+  var dateInput = document.getElementById("appointmentDate");
+  var date = dateInput.value;
+
   if (!date) {
     alert("❌ Please select date");
     return;
   }
 
-  /* ----- convert selected time to minutes ----- */
-  let selectedMinutes =
+  // convert selected time to minutes
+  var selectedMinutes =
     (hour % 12) * 60 +
     minute +
     (isPM ? 720 : 0);
 
-  let logicalMinutes =
+  // logical window: 4 AM → 2 AM
+  var logicalMinutes =
     selectedMinutes < RANGE_START
       ? selectedMinutes + 1440
       : selectedMinutes;
 
-  /* ----- RANGE CHECK (4 AM → 2 AM) ----- */
+  // ❌ out of allowed range
   if (logicalMinutes < RANGE_START || logicalMinutes > RANGE_END) {
     alert("❌ Booking allowed only between 4:00 AM and 2:00 AM");
 
-    // force reset to 4:00 AM
+    // reset to 4:00 AM
     hour = 4;
     minute = 0;
     isPM = false;
@@ -327,11 +326,11 @@ function bookNow() {
     return;
   }
 
-  /* ----- PAST TIME CHECK FOR TODAY ----- */
-  const now = new Date();
-  const bookingTime = new Date(date);
+  // ❌ past time for today
+  var now = new Date();
+  var bookingTime = new Date(date);
 
-  let hour24 = hour % 12;
+  var hour24 = hour % 12;
   if (isPM) hour24 += 12;
 
   bookingTime.setHours(hour24, minute, 0, 0);
@@ -341,19 +340,21 @@ function bookNow() {
     return;
   }
 
-  /* ----- WHATSAPP REDIRECT ----- */
-  const msg =
-    `🄸🅃🄶 Hello Tax Filing Guru,
-📞 I would like to Schedule a free consultation
-📅 Date: ${date}
-⏰ Time: ${bookingTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-Please assist me with the process.\n Thank you!`;
+  // ✅ WhatsApp redirect
+  var timeText = document.getElementById("freeTimeDisplay").innerText;
+  var msg =
+    "🄸🅃🄶 Hello Tax Filing Guru\n" +
+    "📅 Date: " + date + "\n" +
+    "⏰ Time: " + timeText;
 
   window.location.href =
-    `whatsapp://send?phone=919811945176&text=${encodeURIComponent(msg)}`;
+    "whatsapp://send?phone=919811945176&text=" +
+    encodeURIComponent(msg);
 
   closeBookingModal();
 }
+
+
 
 
 function toggleFaq(button) {
@@ -636,3 +637,11 @@ function togglePackage(button) {
   }
 }
 
+// Initialize free consultation time display on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    updateTimeDisplay();
+  });
+} else {
+  updateTimeDisplay();
+}

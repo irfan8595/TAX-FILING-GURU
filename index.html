@@ -221,9 +221,10 @@
   <!-- Booking Modal -->
   <!-- Booking Modal -->
 <div id="bookingModal"
-     class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-50">
+     class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-50"
+     onclick="if(event.target === this) closeBookingModal()">
 
-  <div class="bg-white rounded-2xl p-6 w-full max-w-md relative">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-md relative" onclick="event.stopPropagation()">
 
     <!-- Close -->
     <button onclick="closeBookingModal()"
@@ -257,7 +258,7 @@
         <div class="clock-picker small">
           <button class="arrow" onclick="timeUp()">▲</button>
 
-          <span id="timeDisplay">04:00 AM</span>
+          <span id="freeTimeDisplay">04:00 AM</span>
 
           <button class="arrow" onclick="timeDown()">▼</button>
         </div>
@@ -887,9 +888,7 @@
   <!-- script for FAQ toggle -->
   <script src="script.js"></script>
 
-  <script>
-    
-  </script>
+  
 </body>
 
 </html>
