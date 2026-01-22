@@ -343,13 +343,15 @@ function bookNow() {
   // ✅ WhatsApp redirect
   var timeText = document.getElementById("freeTimeDisplay").innerText;
   var msg =
-    "🄸🅃🄶 Hello Tax Filing Guru\n" +
-    "📅 Date: " + date + "\n" +
-    "⏰ Time: " + timeText;
-
+    `🄸🅃🄶 Hello Tax Filing Guru,
+📞 I would like to Schedule a free consultation
+📅 Date: ${date}
+⏰ Time: ${timeText}
+Please assist me with the process.
+ Thank you!`
   window.location.href =
-    "whatsapp://send?phone=919811945176&text=" +
-    encodeURIComponent(msg);
+    `whatsapp://send?phone=919811945176&text=${encodeURIComponent(msg)}`;
+
 
   closeBookingModal();
 }
@@ -589,6 +591,7 @@ function vcBookNow() {
    INIT
 ================================ */
 vcSetMinDate();
+vcSelectDuration(45);
 vcUpdateTimeDisplay();
 
 function setUserType(type) {
