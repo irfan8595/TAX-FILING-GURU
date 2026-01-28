@@ -636,7 +636,11 @@ function togglePackage(button) {
   alert(`You have successfully added ${packageName} package`);
 
   // REDIRECT LAST
+  if (window.location.pathname.endsWith("nri.html")){
+  window.location.href = "reg.html?type=nri";
+  } else {
   window.location.href = "reg.html";
+  }
 }
 
 /* ===============================
