@@ -599,46 +599,75 @@ function setUserType(type) {
 }
 
 function togglePackage(button) {
-  const card = button.closest('div');
+  const card = button.closest('.package-card');
+
   const packageName = card.querySelector('h3').textContent.trim();
+  const packageRate = card.querySelector('.rate').textContent.trim();
+  const desc = card.querySelector('.package-desc').textContent.trim();
 
-  // Check current state
-  const isAdded = button.dataset.added === "true";
+  const packageFeatures = Array.from(
+    card.querySelectorAll('.package-features li')
+  ).map(el => el.textContent.trim());
 
-  if (!isAdded) {
-    // ADD PACKAGE
-    alert(`You have successfully added ${packageName} package`);
+  // STORE FIRST
+  localStorage.setItem(
+    "selectedPackage",
+    JSON.stringify({
+      name: packageName,
+      description: desc,
+      rate: packageRate,
+      features: packageFeatures
+    })
+  );
 
-    button.textContent = "Package Added";
-    button.dataset.added = "true";
+  // UI update
+  button.textContent = "Package Added";
+  button.dataset.added = "true";
 
-    button.classList.remove(
-      "from-blue-600",
-      "to-blue-700",
-      "hover:-translate-y-1",
-      "hover:scale-105"
-    );
-    button.classList.add("bg-gray-400", "cursor-pointer");
-  } else {
-    // ASK TO REMOVE
-    const confirmRemove = confirm(`Do you want to remove ${packageName} package?`);
+  button.classList.remove(
+    "from-blue-600",
+    "to-blue-700",
+    "hover:-translate-y-1",
+    "hover:scale-105"
+  );
+  button.classList.add("bg-gray-400", "cursor-not-allowed");
+  button.disabled = true;
 
-    if (confirmRemove) {
-      // REMOVE PACKAGE
-      button.textContent = "Add Plan";
-      button.dataset.added = "false";
+  alert(`You have successfully added ${packageName} package`);
 
-      button.classList.remove("bg-gray-400", "cursor-pointer");
-      button.classList.add(
-        "from-blue-600",
-        "to-blue-700",
-        "hover:-translate-y-1",
-        "hover:scale-105"
-      );
-    }
-    // If CANCEL → do nothing
-  }
+  // REDIRECT LAST
+  window.location.href = "reg.html";
 }
+
+/* ===============================
+   MAKE PAYMENT CLICK
+================================ */
+function makePayment() {
+  // Store payment start time
+  localStorage.setItem("paymentStartedAt", Date.now());
+
+  // Continue your payment logic here
+  // Razorpay / API / redirect etc.
+  console.log("Payment initiated");
+}
+
+/* ===============================
+   AUTO CLEAR AFTER 5 MINUTES
+   (Runs on every page load)
+================================ */
+(function autoClearAfter5Minutes() {
+  const startedAt = localStorage.getItem("paymentStartedAt");
+  if (!startedAt) return;
+
+  const FIVE_MIN = 5 * 60 * 1000;
+  const now = Date.now();
+
+  if (now - startedAt >= FIVE_MIN) {
+    localStorage.removeItem("selectedPackage");
+    localStorage.removeItem("paymentStartedAt");
+    console.log("⏱ Local data cleared after 5 minutes");
+  }
+})();
 
 // Initialize free consultation time display on page load
 if (document.readyState === 'loading') {

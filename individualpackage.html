@@ -202,13 +202,12 @@
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group package-card">
                             <div class="h-16 flex items-end justify-center mb-1">
-                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Basic
-                                    Tax Filing</h3>
+                                <h3 class="package-name font-heading text-xl font-bold text-gray-900 text-center leading-tight">Basic Tax Filing</h3>
                             </div>
                             <div class="h-8 flex items-start justify-center mb-4">
-                                <p class="text-sm text-gray-500 text-center">For simple salary returns</p>
+                                <p class="package-desc text-sm text-gray-500 text-center">For simple salary returns</p>
                             </div>
                             <div
                                 class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
@@ -218,10 +217,10 @@
                                         class="bg-red-300 text-white-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
                                         OFF</span>
                                 </div>
-                                <div class="text-3xl font-bold text-gray-900 font-heading">₹199 <span
+                                <div id="rate" class="rate text-3xl font-bold text-gray-900 font-heading">₹199 <span
                                         class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
                             </div>
-                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                            <ul class="package-features space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
                                 <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Salary
                                     individuals</li>
                                 <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Form 16
@@ -232,7 +231,7 @@
                                     Filing & Confirmation</li>
                             </ul>
                             <a href="#"
-                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300" onclick="togglePackage(this)">Add
                                 Plan</a>
                         </div>
 
