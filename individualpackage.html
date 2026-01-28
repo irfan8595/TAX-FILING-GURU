@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Individual Packages - Tax Filing Guru</title>
     <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/favicon/favicon.icon" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
     <link
@@ -41,14 +41,14 @@
 </head>
 
 <body class="h-full overflow-x-hidden premium-bg flex flex-col">
-<!-- Header -->
-  <header class="w-full bg-white/80 backdrop-blur-md shadow-sm top-0 z-50 border-b border-gray-100">
+    <!-- Header -->
+    <header class="w-full bg-white/80 backdrop-blur-md shadow-sm top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-6 py-4">
             <div class="flex justify-between items-center min-h-[80px] relative">
 
                 <div class="flex items-center space-x-3">
                     <a href="index.html" class="flex items-center">
-                       <img src="assets/images/TFG_LOGO.png" alt="Logo" class="h-16 w-auto"
+                        <img src="assets/images/TFG_LOGO.png" alt="Logo" class="h-16 w-auto"
                             onerror="this.style.display='none';">
                     </a>
                     <div class="flex flex-col items-center leading-none text-center">
@@ -112,392 +112,535 @@
             </div>
         </div>
     </header>
- <a href="whatsapp://send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website"
-  onclick="setTimeout(()=>{window.location.href='https://api.whatsapp.com/send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website'},400)"
-   class="whatsapp-float" target="_blank" rel="nofollow noopener"
-        aria-label="Chat on WhatsApp">
+    <a href="whatsapp://send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website"
+        onclick="setTimeout(()=>{window.location.href='https://api.whatsapp.com/send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website'},400)"
+        class="whatsapp-float" target="_blank" rel="nofollow noopener" aria-label="Chat on WhatsApp">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
             alt="WhatsApp chat with TaxFilingGuru" />
-</a>
-<div id="rightTab" onclick="vcOpenBooking()">
-            Book Video Consultation 
-            <span class="video-icon">📹</span>
-        </div>
-        <div id="bookingOverlay" class="overlay hidden">
-            <div class="booking-box">
-                <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
-        
-                <h3>📹 Book Video Consultation</h3>
-                <p class="subtitle" style="text-align: center;">Book Your Video Consultation Here</p>
-        
-                <!-- Duration -->
-                <div class="duration">
-                    <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
-                    <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
-                </div>
-        
-                <!-- Name -->
-                <input id="clientName" placeholder="Your Name" required>
-                <input id="clientEmail" placeholder="Your Email" required>
-                <input id="clientNo" placeholder="Your Mobile No." required>
-        
-      <div class="date-time-row">
-  <!-- Date -->
-  <div class="date-box">
-    <label>Select Date</label>
-    <input type="date" id="datePicker" required>
-  </div>
-
-  <!-- Time -->
-  <div class="time-box">
-    <label>Select Time</label>
-
-    <div class="clock-picker small">
-      <button class="arrow" onclick="vcTimeUp()">▲</button>
-
-      <span id="timeDisplay">09:00 AM</span>
-
-      <button class="arrow" onclick="vcTimeDown()">▼</button>
+    </a>
+    <div id="rightTab" onclick="vcOpenBooking()">
+        Book Video Consultation
+        <span class="video-icon">📹</span>
     </div>
-  </div>
+    <div id="bookingOverlay" class="overlay hidden">
+        <div class="booking-box">
+            <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
+
+            <h3>📹 Book Video Consultation</h3>
+            <p class="subtitle" style="text-align: center;">Book Your Video Consultation Here</p>
+
+            <!-- Duration -->
+            <div class="duration">
+                <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
+                <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
+            </div>
+
+            <!-- Name -->
+            <input id="clientName" placeholder="Your Name" required>
+            <input id="clientEmail" placeholder="Your Email" required>
+            <input id="clientNo" placeholder="Your Mobile No." required>
+
+            <div class="date-time-row">
+                <!-- Date -->
+                <div class="date-box">
+                    <label>Select Date</label>
+                    <input type="date" id="datePicker" required>
+                </div>
+
+                <!-- Time -->
+                <div class="time-box">
+                    <label>Select Time</label>
+
+                    <div class="clock-picker small">
+                        <button class="arrow" onclick="vcTimeUp()">▲</button>
+
+                        <span id="timeDisplay">09:00 AM</span>
+
+                        <button class="arrow" onclick="vcTimeDown()">▼</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Book -->
+            <button class="book-btn" onclick="vcBookNow()">Book Now</button>
+        </div>
+    </div>
+    <div id="closeTab" class="overflow hidden" onclick="vcCloseBooking()">
+        Close
+    </div>
+    <!--packages content and hero section-->
+<section class="w-full hero-bg pt-10 pb-40 px-4 relative">
+  <div class="max-w-7xl mx-auto relative z-10 text-center">
+        <h2
+        class="font-heading text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight drop-shadow-sm">
+        Residential <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Packages</span>
+    </h2>
+    
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light">
+        Simple, transparent pricing. Choose the expert assistance level that fits your life.
+    </p>
 </div>
-
-
-
-
-        
-                <!-- Book -->
-                <button class="book-btn" onclick="vcBookNow()">Book Now</button>
-            </div>
-        </div>
-        <div id="closeTab" class="overflow hidden" onclick="vcCloseBooking()">
-            Close
-        </div>
-<!--packages content and hero section-->
-   <main class="w-full relative">
-     <div class="text-center mb-2 pt-20 px-4">
-                <h2 class="font-heading text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight drop-shadow-sm">
-                    Residential <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Packages</span>
-                </h2>
-                
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light">
-                    Simple, transparent pricing. Choose the expert assistance level that fits your life.
-                </p>
-            </div>
-            <!--main package container-->
-    <section id="packages" class="w-full pt-20 pb-2 pb-10 px-4">
-        <div class="w-full relative z-10 bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-lg shadow-gray-200 border border-white">
-            
-             <div class="mb-20">
-                <div class="text-center mb-10">
-                    <h3 class="font-heading text-xl md:text-2xl font-extrabold text-gray-900 mb-2 tracking-tight">
-                        Individual <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Packages</span>
-                    </h3>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-                        <div class="h-16 flex items-end justify-center mb-1">
-                            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Basic Tax Filing</h3>
-                        </div>
-                        <div class="h-8 flex items-start justify-center mb-4">
-                            <p class="text-sm text-gray-500 text-center">For simple salary returns</p>
-                        </div>
-                        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                            <div class="flex items-center gap-2 h-5 mb-1">
-                                <span class="text-gray-400 line-through text-sm font-medium">₹400</span>
-                                <span class="bg-red-300 text-white-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50% OFF</span>
-                            </div>
-                            <div class="text-3xl font-bold text-gray-900 font-heading">₹199 <span class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
-                        </div>
-                        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Salary individuals</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Form 16 Review</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Basic Deductions</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> ITR Filing & Confirmation</li>
-                        </ul>
-                        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add Plan</a>
-                    </div>
-
-                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-                        <div class="h-16 flex items-end justify-center mb-1">
-                            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Standard Tax Filing</h3>
-                        </div>
-                        <div class="h-8 flex items-start justify-center mb-4">
-                            <p class="text-sm text-gray-500 text-center">For professionals</p>
-                        </div>
-                        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                            <div class="flex items-center gap-2 h-5 mb-1">
-                                <span class="text-gray-400 line-through text-sm font-medium">₹999</span>
-                                <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50% OFF</span>
-                            </div>
-                            <div class="text-3xl font-bold text-gray-900 font-heading">₹499 <span class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
-                        </div>
-                        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Salary + Other income</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Interest & basic gains</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Deduction Optimization</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Basic notice support</li>
-                        </ul>
-                        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add Plan</a>
-                    </div>
-
-                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-                        <span class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl shadow-md z-20">Recommended</span>
-                        <div class="h-16 flex items-end justify-center mb-1">
-                            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Business Professional</h3>
-                        </div>
-                        <div class="h-8 flex items-start justify-center mb-4">
-                            <p class="text-sm text-gray-500 text-center">Multiple income sources</p>
-                        </div>
-                        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                            <div class="flex items-center gap-2 h-5 mb-1">
-                                <span class="text-gray-400 line-through text-sm font-medium">₹1,999</span>
-                                <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50% OFF</span>
-                            </div>
-                            <div class="text-3xl font-bold text-gray-900 font-heading">₹999 <span class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
-                        </div>
-                        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Freelancers & small business</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Profit & Loss Review</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Expense & Tax Advisory</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Advance Tax Calc</li>
-                        </ul>
-                        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add Plan</a>
-                    </div>
-
-                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-                        <div class="h-16 flex items-end justify-center mb-1">
-                            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Premium Tax Package</h3>
-                        </div>
-                        <div class="h-8 flex items-start justify-center mb-4">
-                            <p class="text-sm text-gray-500 text-center">Complex & Foreign</p>
-                        </div>
-                        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                            <div class="flex items-center gap-2 h-5 mb-1">
-                                <span class="text-gray-400 line-through text-sm font-medium">₹4,999</span>
-                                <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50% OFF</span>
-                            </div>
-                            <div class="text-3xl font-bold text-gray-900 font-heading">₹2,499 <span class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
-                        </div>
-                        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Multiple Income Sources</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Shares, funds & property</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Tax planning</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Notice handling</li>
-                        </ul>
-                        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add Plan</a>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="border-gray-100 mb-16">
-
-            <div>
-                <div class="mb-10 text-center">
-                    <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 mb-4 tracking-tight">
-                        Salary <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Specialized Plans</span>
-                    </h3>
-                    <p class="text-md text-gray-600 max-w-2xl mx-auto font-light">
-                        Expert-led tax filing designed for every career stage.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-        <div class="h-16 flex items-end justify-center mb-1">
-            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Salary Essential</h3>
-        </div>
-        <div class="h-8 flex items-start justify-center mb-4">
-            <p class="text-xs text-gray-500 text-center">Income up to ₹12 Lakh</p>
-        </div>
-        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-            <div class="text-3xl font-bold text-gray-900 font-heading">₹2,500 <span class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
-            <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Simple Structure</div>
-        </div>
-        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> One or Multiple Employers</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Form 16, AIS & TIS Review</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Savings & FD Interest</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Old vs New Regime Comparison</li>
-        </ul>
-        <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Early to mid-career professionals</p>
-        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-    </div>
-
-    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-        <div class="h-16 flex items-end justify-center mb-1">
-            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Salary Advanced</h3>
-        </div>
-        <div class="h-8 flex items-start justify-center mb-4">
-            <p class="text-xs text-gray-500 text-center">₹12 Lakh to ₹25 Lakh</p>
-        </div>
-        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-            <div class="text-3xl font-bold text-gray-900 font-heading">₹5,000 <span class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
-            <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Tax Optimisation</div>
-        </div>
-        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> One House Property</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> HRA, LTA & 80C/D Optimization</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Perquisites & Allowances Review</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> ITR Revision Support</li>
-        </ul>
-        <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Managers & Job Switchers</p>
-        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-    </div>
-
-    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-        <span class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl shadow-md z-20">Popular for Sr. Pros</span>
-        <div class="h-16 flex items-end justify-center mb-1">
-            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Salary Professional</h3>
-        </div>
-        <div class="h-8 flex items-start justify-center mb-4">
-            <p class="text-xs text-gray-500 text-center">₹25 Lakh to ₹50 Lakh</p>
-        </div>
-        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-            <div class="text-3xl font-bold text-gray-900 font-heading">₹10,000 <span class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
-            <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Complex Structures</div>
-        </div>
-        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> ESOPs / RSUs Basic Taxation</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Capital Gains (Basic)</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Multiple House Properties</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Priority Expert Support</li>
-        </ul>
-        <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Senior Executives & Directors</p>
-        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-    </div>
-
-    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-        <div class="h-16 flex items-end justify-center mb-1">
-            <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Salary Elite (HNI)</h3>
-        </div>
-        <div class="h-8 flex items-start justify-center mb-4">
-            <p class="text-xs text-gray-500 text-center">Above ₹50 Lakh</p>
-        </div>
-        <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-            <div class="text-2xl font-bold text-gray-900 font-heading text-center">₹20k - ₹30k <span class="text-xs font-normal text-gray-500 font-sans">+ GST</span></div>
-            <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">HNI Concierge</div>
-        </div>
-        <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Complex ESOPs & Stock Comp</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Scrutiny-ready Computation</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Dedicated CA Handling</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Foreign Income Basic Review</li>
-        </ul>
-        <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: CXOs & Top Executives</p>
-        <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-    </div>
-</div>
-</div>
-<!--capital gain packages-->
-<div class="mt-20">
-    <div class="mb-10 text-center">
-        <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 mb-4 tracking-tight">
-            Specialized & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Business Services</span>
-        </h3>
-        <p class="text-md text-gray-600 max-w-2xl mx-auto font-light">
-            Comprehensive tax solutions for investors, entrepreneurs, and global citizens.
-        </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mb-12">
-        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-            <div class="h-16 flex items-end justify-center mb-1">
-                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Capital Gains</h3>
-            </div>
-            <div class="h-8 flex items-start justify-center mb-4">
-                <p class="text-xs text-gray-500 text-center">Shares, Funds & Property</p>
-            </div>
-            <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
-                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Asset Analysis</div>
-            </div>
-            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> STCG & LTCG Calculation</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Broker Statement & AIS Review</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Loss Set-off & Carry-forward</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Tax Optimization Advisory</li>
-            </ul>
-            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Active Investors</p>
-            <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-        </div>
-
-        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-            <div class="h-16 flex items-end justify-center mb-1">
-                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Freelancer/Gig</h3>
-            </div>
-            <div class="h-8 flex items-start justify-center mb-4">
-                <p class="text-xs text-gray-500 text-center">Professionals & Consultants</p>
-            </div>
-            <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
-                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Presumptive Taxation</div>
-            </div>
-            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> 44ADA / 44AD Filing</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Expense Optimization</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Advance Tax Guidance</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Compliance Check</li>
-            </ul>
-            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Self-employed Pros</p>
-            <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-        </div>
-
-        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-            <div class="h-16 flex items-end justify-center mb-1">
-                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Business Owner</h3>
-            </div>
-            <div class="h-8 flex items-start justify-center mb-4">
-                <p class="text-xs text-gray-500 text-center">Proprietors & Small Biz</p>
-            </div>
-            <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
-                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Full Compliance</div>
-            </div>
-            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> P&L and Balance Sheet</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Depreciation Treatment</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Audit Applicability Check</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> CA Review & Filing</li>
-            </ul>
-            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Traders & Shop Owners</p>
-            <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-        </div>
-
-        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
-            <div class="h-16 flex items-end justify-center mb-1">
-                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">NRI Tax Package</h3>
-            </div>
-            <div class="h-8 flex items-start justify-center mb-4">
-                <p class="text-xs text-gray-500 text-center">Global & Indian Income</p>
-            </div>
-            <div class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
-                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
-                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Cross-Border Support</div>
-            </div>
-            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> DTAA & Foreign Tax Credit</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Residential Status Determination</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> NRE/NRO Interest Treatment</li>
-                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Repatriation Advisory</li>
-            </ul>
-            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: NRIs & Returning Indians</p>
-            <a href="#" class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add Plan</a>
-        </div>
-    </div> 
 </section>
+<main class="w-full relative">
+        <!--main package container-->
+        <section id="packages" class="w-full py-16 px-4 relative z-10 bg-gray-50 overflow-hidden border-b ">
+            <div
+                class="w-full relative z-10 rounded-3xl p-8 ">
 
-<!-- Premium Packages Section -->
+                <div class="mb-20">
+                    <div class="text-center mb-10">
+                        <h3 class="font-heading text-xl md:text-2xl font-extrabold text-gray-900 mb-2 tracking-tight">
+                            Individual <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Packages</span>
+                        </h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">Basic
+                                    Tax Filing</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-sm text-gray-500 text-center">For simple salary returns</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="flex items-center gap-2 h-5 mb-1">
+                                    <span class="text-gray-400 line-through text-sm font-medium">₹400</span>
+                                    <span
+                                        class="bg-red-300 text-white-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
+                                        OFF</span>
+                                </div>
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹199 <span
+                                        class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Salary
+                                    individuals</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Form 16
+                                    Review</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Basic
+                                    Deductions</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> ITR
+                                    Filing & Confirmation</li>
+                            </ul>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Standard Tax Filing</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-sm text-gray-500 text-center">For professionals</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="flex items-center gap-2 h-5 mb-1">
+                                    <span class="text-gray-400 line-through text-sm font-medium">₹999</span>
+                                    <span
+                                        class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
+                                        OFF</span>
+                                </div>
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹499 <span
+                                        class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Salary
+                                    + Other income</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Interest & basic gains</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Deduction Optimization</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Basic
+                                    notice support</li>
+                            </ul>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <span
+                                class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl shadow-md z-20">Recommended</span>
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Business Professional</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-sm text-gray-500 text-center">Multiple income sources</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="flex items-center gap-2 h-5 mb-1">
+                                    <span class="text-gray-400 line-through text-sm font-medium">₹1,999</span>
+                                    <span
+                                        class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
+                                        OFF</span>
+                                </div>
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹999 <span
+                                        class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Freelancers & small business</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Profit
+                                    & Loss Review</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Expense
+                                    & Tax Advisory</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Advance
+                                    Tax Calc</li>
+                            </ul>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Premium Tax Package</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-sm text-gray-500 text-center">Complex & Foreign</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="flex items-center gap-2 h-5 mb-1">
+                                    <span class="text-gray-400 line-through text-sm font-medium">₹4,999</span>
+                                    <span
+                                        class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
+                                        OFF</span>
+                                </div>
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹2,499 <span
+                                        class="text-sm font-normal text-gray-500 font-sans">/ Filing</span></div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Multiple Income Sources</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Shares,
+                                    funds & property</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Tax
+                                    planning</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Notice
+                                    handling</li>
+                            </ul>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:scale-105 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100 mb-16">
+
+                <div>
+                    <div class="mb-10 text-center">
+                        <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 mb-4 tracking-tight">
+                            Salary <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Specialized
+                                Plans</span>
+                        </h3>
+                        <p class="text-md text-gray-600 max-w-2xl mx-auto font-light">
+                            Expert-led tax filing designed for every career stage.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Salary Essential</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">Income up to ₹12 Lakh</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹2,500 <span
+                                        class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Simple Structure</div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> One or
+                                    Multiple Employers</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Form
+                                    16, AIS & TIS Review</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Savings
+                                    & FD Interest</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Old vs
+                                    New Regime Comparison</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Early to mid-career
+                                professionals</p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Salary Advanced</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">₹12 Lakh to ₹25 Lakh</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹5,000 <span
+                                        class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Tax Optimisation</div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> One
+                                    House Property</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> HRA,
+                                    LTA & 80C/D Optimization</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Perquisites & Allowances Review</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> ITR
+                                    Revision Support</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Managers & Job
+                                Switchers</p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <span
+                                class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl shadow-md z-20">Popular
+                                for Sr. Pros</span>
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Salary Professional</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">₹25 Lakh to ₹50 Lakh</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹10,000 <span
+                                        class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Complex Structures</div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> ESOPs /
+                                    RSUs Basic Taxation</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Capital
+                                    Gains (Basic)</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Multiple House Properties</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Priority Expert Support</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Senior Executives &
+                                Directors</p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Salary Elite (HNI)</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">Above ₹50 Lakh</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-2xl font-bold text-gray-900 font-heading text-center">₹20k - ₹30k <span
+                                        class="text-xs font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">HNI Concierge</div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Complex
+                                    ESOPs & Stock Comp</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Scrutiny-ready Computation</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Dedicated CA Handling</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Foreign
+                                    Income Basic Review</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: CXOs & Top Executives
+                            </p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <!--capital gain packages-->
+                <div class="mt-20">
+                    <div class="mb-10 text-center">
+                        <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 mb-4 tracking-tight">
+                            Specialized & <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Business
+                                Services</span>
+                        </h3>
+                        <p class="text-md text-gray-600 max-w-2xl mx-auto font-light">
+                            Comprehensive tax solutions for investors, entrepreneurs, and global citizens.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mb-12">
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Capital Gains</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">Shares, Funds & Property</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span
+                                        class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Asset Analysis</div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> STCG &
+                                    LTCG Calculation</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Broker
+                                    Statement & AIS Review</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Loss
+                                    Set-off & Carry-forward</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Tax
+                                    Optimization Advisory</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Active Investors</p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Freelancer/Gig</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">Professionals & Consultants</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span
+                                        class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Presumptive Taxation
+                                </div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> 44ADA /
+                                    44AD Filing</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Expense
+                                    Optimization</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Advance
+                                    Tax Guidance</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Compliance Check</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Self-employed Pros
+                            </p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
+                                    Business Owner</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">Proprietors & Small Biz</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span
+                                        class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Full Compliance</div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> P&L and
+                                    Balance Sheet</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Depreciation Treatment</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> Audit
+                                    Applicability Check</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> CA
+                                    Review & Filing</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: Traders & Shop Owners
+                            </p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            <div class="h-16 flex items-end justify-center mb-1">
+                                <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">NRI
+                                    Tax Package</h3>
+                            </div>
+                            <div class="h-8 flex items-start justify-center mb-4">
+                                <p class="text-xs text-gray-500 text-center">Global & Indian Income</p>
+                            </div>
+                            <div
+                                class="h-20 flex flex-col justify-center items-center mb-6 border-b border-gray-100 pb-4 w-full">
+                                <div class="text-3xl font-bold text-gray-900 font-heading">₹___ <span
+                                        class="text-sm font-normal text-gray-500 font-sans">+ GST</span></div>
+                                <div class="text-[10px] text-blue-600 font-bold uppercase mt-1">Cross-Border Support
+                                </div>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8 flex-grow px-2">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> DTAA &
+                                    Foreign Tax Credit</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Residential Status Determination</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span> NRE/NRO
+                                    Interest Treatment</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 shrink-0">✔</span>
+                                    Repatriation Advisory</li>
+                            </ul>
+                            <p class="text-[11px] text-gray-400 mb-4 italic text-center">Best for: NRIs & Returning
+                                Indians</p>
+                            <a href="#"
+                                class="mt-auto w-full inline-flex justify-center items-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300">Add
+                                Plan</a>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- Premium Packages Section -->
 
         <section id="premium-packages"
             class="w-full py-16 px-4 relative z-10 bg-slate-900 overflow-hidden border-b border-slate-700">
-            <div
-                class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[100px] opacity-20 pointer-events-none">
-            </div>
-            <div
-                class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600 rounded-full blur-[100px] opacity-20 pointer-events-none">
-            </div>
 
             <div class="max-w-7xl mx-auto relative z-10">
                 <div class="text-center mb-12">
@@ -859,199 +1002,273 @@
         </section>
         <!-- FAQ SECTION -->
         <section id="faq" class="relative w-full py-24 px-4 bg-gray-50 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-        <div class="absolute left-[-10%] top-[20%] w-96 h-96 bg-blue-200 rounded-full blur-3xl mix-blend-multiply"></div>
-        <div class="absolute right-[-10%] bottom-[20%] w-96 h-96 bg-purple-200 rounded-full blur-3xl mix-blend-multiply"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto relative z-10">
-        <div class="grid lg:grid-cols-12 gap-12 items-start">
-
-            <div class="lg:col-span-5 lg:sticky lg:top-32">
-                <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Support</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
-                    Got Questions? <br> We've Got <span class="text-blue-600">Answers.</span>
-                </h2>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Tax filing doesn't have to be confusing. Here are the most common questions our users ask.
-                </p>
-
-                <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl transform translate-x-10 -translate-y-10 transition group-hover:scale-110"></div>
-                    <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-2">Still confused?</h3>
-                        <p class="text-blue-100 mb-6">Can't find the answer you're looking for? Chat with our friendly team.</p>
-                        <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition shadow-sm">
-                            Contact Support
-                        </a>
-                    </div>
+            <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+                <div
+                    class="absolute left-[-10%] top-[20%] w-96 h-96 bg-blue-200 rounded-full blur-3xl mix-blend-multiply">
+                </div>
+                <div
+                    class="absolute right-[-10%] bottom-[20%] w-96 h-96 bg-purple-200 rounded-full blur-3xl mix-blend-multiply">
                 </div>
             </div>
 
-            <div class="lg:col-span-7 space-y-4">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
 
-                <div class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-lg font-bold text-gray-900">How do I know which package is right for me?</span>
-                        <span class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <div class="text-gray-600 leading-relaxed">
-                            If you only have income from a single employer and standard interest, the <strong>Salary Essential</strong> is perfect. If you have traded in stocks or sold property, choose the <strong>Capital Gains</strong> plan. For business owners or gig workers, our <strong>Specialized & Business Services</strong> row covers all professional needs.
+                    <div class="lg:col-span-5 lg:sticky lg:top-32">
+                        <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Support</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
+                            Got Questions? <br> We've Got <span class="text-blue-600">Answers.</span>
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Tax filing doesn't have to be confusing. Here are the most common questions our users ask.
+                        </p>
+
+                        <div
+                            class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden group">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl transform translate-x-10 -translate-y-10 transition group-hover:scale-110">
+                            </div>
+                            <div class="relative z-10">
+                                <h3 class="text-2xl font-bold mb-2">Still confused?</h3>
+                                <p class="text-blue-100 mb-6">Can't find the answer you're looking for? Chat with our
+                                    friendly team.</p>
+                                <a href="contact.html"
+                                    class="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition shadow-sm">
+                                    Contact Support
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-lg font-bold text-gray-900">What happens after I click "Add Plan" and pay?</span>
-                        <span class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Once you select a plan, you will be redirected to our secure dashboard. There, you can instantly <strong>upload your documents</strong> (like Form 16 or Bank Statements). A dedicated tax expert will then manually review your data before the final filing.
-                        </p>
+                    <div class="lg:col-span-7 space-y-4">
+
+                        <div
+                            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                onclick="toggleFaq(this)">
+                                <span class="text-lg font-bold text-gray-900">How do I know which package is right for
+                                    me?</span>
+                                <span
+                                    class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-6">
+                                <div class="text-gray-600 leading-relaxed">
+                                    If you only have income from a single employer and standard interest, the
+                                    <strong>Salary Essential</strong> is perfect. If you have traded in stocks or sold
+                                    property, choose the <strong>Capital Gains</strong> plan. For business owners or gig
+                                    workers, our <strong>Specialized & Business Services</strong> row covers all
+                                    professional needs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                onclick="toggleFaq(this)">
+                                <span class="text-lg font-bold text-gray-900">What happens after I click "Add Plan" and
+                                    pay?</span>
+                                <span
+                                    class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Once you select a plan, you will be redirected to our secure dashboard. There, you
+                                    can instantly <strong>upload your documents</strong> (like Form 16 or Bank
+                                    Statements). A dedicated tax expert will then manually review your data before the
+                                    final filing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                onclick="toggleFaq(this)">
+                                <span class="text-lg font-bold text-gray-900">I received a tax notice for a previous
+                                    year. Can you help?</span>
+                                <span
+                                    class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Yes! We have a specialized <strong>Notice Handling</strong> service. Our legal
+                                    experts will analyze the notice, draft a professional reply, and manage the
+                                    departmental compliance and follow-ups until the case is closed.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                onclick="toggleFaq(this)">
+                                <span class="text-lg font-bold text-gray-900">Are my documents and financial data
+                                    safe?</span>
+                                <span
+                                    class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Absolutely. We use <strong>bank-grade encryption</strong> for all document storage.
+                                    Your information is strictly confidential and only accessible to the assigned CA or
+                                    Tax Expert assigned to your filing to ensure privacy and accuracy.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                onclick="toggleFaq(this)">
+                                <span class="text-lg font-bold text-gray-900">Does the Elite package support RSUs or
+                                    ESOPs?</span>
+                                <span
+                                    class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Yes, the <strong>Salary Elite (HNI)</strong> and <strong>NRI Tax Packages</strong>
+                                    are specifically designed for complex structures, including stock compensation
+                                    (RSUs/ESOPs) and foreign income. We provide scrutiny-ready computations for
+                                    high-value cases.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                onclick="toggleFaq(this)">
+                                <span class="text-lg font-bold text-gray-900">What if I make a mistake while
+                                    uploading?</span>
+                                <span
+                                    class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Don’t worry. <strong>Step 3</strong> of our process is manual expert review. We
+                                    verify your data against your AIS and TIS. If any discrepancy is found, we will
+                                    contact you via WhatsApp or Email to rectify it before final submission.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="w-full bg-gray-900 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="flex flex-col items-start">
+                    <a href="/index.html" class="inline-block">
+                        <div class="inline-flex flex-col items-start leading-none">
 
-                <div class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-lg font-bold text-gray-900">I received a tax notice for a previous year. Can you help?</span>
-                        <span class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Yes! We have a specialized <strong>Notice Handling</strong> service. Our legal experts will analyze the notice, draft a professional reply, and manage the departmental compliance and follow-ups until the case is closed.
-                        </p>
-                    </div>
+                            <!-- Logo + Name -->
+                            <div class="flex items-center space-x-2">
+                                <img src="assets/images/TFG_LOGO.png" alt="Tax Filing Guru Logo" class="h-10 w-auto">
+                                <h4 class="text-white font-bold text-lg">
+                                    Tax Filing <span class="text-blue-500">Guru</span>
+                                </h4>
+                            </div>
+
+                            <!-- Divider -->
+                            <span class="h-[2px] bg-white w-full mt-1"></span>
+
+                            <!-- Tagline -->
+                            <p class="text-xs text-white mt-1 text-center">
+                                Smart Taxes Need a Guru.
+                            </p>
+
+                        </div>
+                    </a>
                 </div>
 
-                <div class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-lg font-bold text-gray-900">Are my documents and financial data safe?</span>
-                        <span class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Absolutely. We use <strong>bank-grade encryption</strong> for all document storage. Your information is strictly confidential and only accessible to the assigned CA or Tax Expert assigned to your filing to ensure privacy and accuracy.
-                        </p>
-                    </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
+                        <li><a href="nri.html" class="text-gray-400 hover:text-white text-sm transition">NRI
+                                Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
+                    </ul>
                 </div>
-
-                <div class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-lg font-bold text-gray-900">Does the Elite package support RSUs or ESOPs?</span>
-                        <span class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Yes, the <strong>Salary Elite (HNI)</strong> and <strong>NRI Tax Packages</strong> are specifically designed for complex structures, including stock compensation (RSUs/ESOPs) and foreign income. We provide scrutiny-ready computations for high-value cases.
-                        </p>
-                    </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
+                        <li><a href="tools.html" class="text-gray-400 hover:text-white text-sm transition">Tools</a>
+                        </li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white text-sm transition">About Us</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition">AID</a>
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="text-lg font-bold text-gray-900">What if I make a mistake while uploading?</span>
-                        <span class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Don’t worry. <strong>Step 3</strong> of our process is manual expert review. We verify your data against your AIS and TIS. If any discrepancy is found, we will contact you via WhatsApp or Email to rectify it before final submission.
-                        </p>
-                    </div>
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-gray-400">📧 <a href="mailto:info@taxfilingguru.com"
+                                class="hover:underline font-medium">
+                                info@taxfilingguru.com
+                            </a></li>
+                        <li class="text-gray-400">📞 <a href="tel:+919811945176" class="hover:underline font-medium">
+                                +91 98119
+                                45176
+                            </a>
+                        </li>
+                        <li class="text-gray-400">📍 India</li>
+                    </ul>
                 </div>
+            </div>
+            <div class="border-t border-gray-800 mt-6 pt-6">
+                <p class="text-gray-500 text-xs leading-relaxed max-w-5xl mx-auto text-center">
+                    <strong>Disclaimer:</strong> We assist in filing income tax returns based on the information
+                    provided by the
+                    taxpayer.
+                    The final legal responsibility for accuracy, completeness, and compliance remains with the taxpayer.
+                </p>
+            </div>
 
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p id="footer-text" class="text-gray-400 text-sm">© 2026 Tax Filing Guru. All rights reserved.</p>
             </div>
         </div>
-    </div>
-</section>
-</main>
-<!-- FOOTER -->
-<footer class="w-full bg-gray-900 py-12 px-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div class="flex flex-col items-start">
-          <a href="/index.html" class="inline-block">
-            <div class="inline-flex flex-col items-start leading-none">
-
-              <!-- Logo + Name -->
-              <div class="flex items-center space-x-2">
-                <img src="assets/images/TFG_LOGO.png" alt="Tax Filing Guru Logo" class="h-10 w-auto">
-                <h4 class="text-white font-bold text-lg">
-                  Tax Filing <span class="text-blue-500">Guru</span>
-                </h4>
-              </div>
-
-              <!-- Divider -->
-              <span class="h-[2px] bg-white w-full mt-1"></span>
-
-              <!-- Tagline -->
-              <p class="text-xs text-white mt-1 text-center">
-                Smart Taxes Need a Guru.
-              </p>
-
-            </div>
-          </a>
-        </div>
-
-        <div>
-          <h4 class="text-white font-bold text-lg mb-4">Services</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
-            <li><a href="nri.html" class="text-gray-400 hover:text-white text-sm transition">NRI Services</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
-            <li><a href="tools.html" class="text-gray-400 hover:text-white text-sm transition">Tools</a></li>
-            <li><a href="about.html" class="text-gray-400 hover:text-white text-sm transition">About Us</a></li>
-            <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition">AID</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
-          <ul class="space-y-2 text-sm">
-            <li class="text-gray-400">📧 <a href="mailto:info@taxfilingguru.com" class="hover:underline font-medium">
-                info@taxfilingguru.com
-              </a></li>
-            <li class="text-gray-400">📞 <a href="tel:+919811945176" class="hover:underline font-medium"> +91 98119
-                45176
-              </a>
-            </li>
-            <li class="text-gray-400">📍 India</li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-6 pt-6">
-        <p class="text-gray-500 text-xs leading-relaxed max-w-5xl mx-auto text-center">
-          <strong>Disclaimer:</strong> We assist in filing income tax returns based on the information provided by the
-          taxpayer.
-          The final legal responsibility for accuracy, completeness, and compliance remains with the taxpayer.
-        </p>
-      </div>
-
-      <div class="border-t border-gray-800 pt-8 text-center">
-        <p id="footer-text" class="text-gray-400 text-sm">© 2026 Tax Filing Guru. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <!-- Video Consultation Booking (floating tab + overlay) -->
     <div id="rightTab" onclick="vcOpenBooking()">
@@ -1104,7 +1321,7 @@
         Close
     </div>
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
     <a href="whatsapp://send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website"
         onclick="setTimeout(()=>{window.location.href='https://api.whatsapp.com/send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website'},400)"
         class="whatsapp-float" target="_blank" rel="nofollow noopener" aria-label="Chat on WhatsApp">
