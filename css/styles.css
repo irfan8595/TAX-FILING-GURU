@@ -338,7 +338,14 @@
             filter: brightness(0) invert(1);
         }
 
-
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
 .buttonclient:hover {
   background-color: #003ea8;
   /* transform: translateY(-1px); */

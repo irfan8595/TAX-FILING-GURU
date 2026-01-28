@@ -677,3 +677,17 @@ if (document.readyState === 'loading') {
 } else {
   updateTimeDisplay();
 }
+  function scrollPackages(button, direction) {
+    const container = button
+      .parentElement
+      .querySelector('[data-scroll-container]');
+
+    const card = container.querySelector('div');
+    const gap = 24; // Tailwind gap-6
+    const scrollAmount = card.offsetWidth + gap;
+
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }

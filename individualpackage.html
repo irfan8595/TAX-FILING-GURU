@@ -202,9 +202,24 @@
 
                     </div>
 
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+                    <div class="relative ">
+                         <button
+    onclick="scrollPackages(this, -1)"
+    class="absolute -left-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 hidden md:flex">
+    ◀
+  </button>
+
+  <!-- RIGHT ARROW -->
+  <button
+    onclick="scrollPackages(this, 1)"
+    class="absolute -right-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 hidden md:flex">
+    ▶
+  </button>
+   <div
+    class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar bg-white backdrop-blur-sm p-4 rounded-2xl"
+    data-scroll-container>
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group package-card">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group package-card min-w-[32%] min-h-[550px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="package-name font-heading text-xl font-bold text-gray-900 text-center leading-tight">Basic Tax Filing</h3>
                             </div>
@@ -238,7 +253,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[550px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Standard Tax Filing</h3>
@@ -251,7 +266,7 @@
                                 <div class="flex items-center gap-2 h-5 mb-1">
                                     <span class="text-gray-400 line-through text-sm font-medium">₹999</span>
                                     <span
-                                        class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
+                                        class="bg-red-300 text-white-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
                                         OFF</span>
                                 </div>
                                 <div class="text-3xl font-bold text-gray-900 font-heading">₹499 <span
@@ -273,7 +288,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[550px]">
                             <span
                                 class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl shadow-md z-20">Recommended</span>
                             <div class="h-16 flex items-end justify-center mb-1">
@@ -288,7 +303,7 @@
                                 <div class="flex items-center gap-2 h-5 mb-1">
                                     <span class="text-gray-400 line-through text-sm font-medium">₹1,999</span>
                                     <span
-                                        class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
+                                        class="bg-red-300 text-white-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
                                         OFF</span>
                                 </div>
                                 <div class="text-3xl font-bold text-gray-900 font-heading">₹999 <span
@@ -310,7 +325,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[550px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Premium Tax Package</h3>
@@ -323,7 +338,7 @@
                                 <div class="flex items-center gap-2 h-5 mb-1">
                                     <span class="text-gray-400 line-through text-sm font-medium">₹4,999</span>
                                     <span
-                                        class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
+                                        class="bg-red-300 text-white-700 text-[10px] font-bold px-2 py-0.5 rounded-full">50%
                                         OFF</span>
                                 </div>
                                 <div class="text-3xl font-bold text-gray-900 font-heading">₹2,499 <span
@@ -359,10 +374,24 @@
                             Expert-led tax filing designed for every career stage.
                         </p>
                     </div>
+<div class="relative ">
+                         <button
+    onclick="scrollPackages(this, -1)"
+    class="absolute -left-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 hidden md:flex">
+    ◀
+  </button>
 
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-                        <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+  <!-- RIGHT ARROW -->
+  <button
+    onclick="scrollPackages(this, 1)"
+    class="absolute -right-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 hidden md:flex">
+    ▶
+  </button>
+   <div
+    class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar bg-white backdrop-blur-sm p-4 rounded-2xl"
+    data-scroll-container>
+                            <div
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[550px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Salary Essential</h3>
@@ -394,7 +423,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[550px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Salary Advanced</h3>
@@ -426,7 +455,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[550px]">
                             <span
                                 class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl shadow-md z-20">Popular
                                 for Sr. Pros</span>
@@ -461,7 +490,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[550px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Salary Elite (HNI)</h3>
@@ -494,6 +523,7 @@
                     </div>
                 </div>
                 <!--capital gain packages-->
+
                 <div class="mt-20">
                     <div class="mb-10 text-center">
                         <h3 class="font-heading text-xl md:text-2xl font-bold text-gray-900 mb-4 tracking-tight">
@@ -505,10 +535,24 @@
                             Comprehensive tax solutions for investors, entrepreneurs, and global citizens.
                         </p>
                     </div>
+                <div class="relative ">
+                         <button
+    onclick="scrollPackages(this, -1)"
+    class="absolute -left-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 hidden md:flex">
+    ◀
+  </button>
 
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mb-12">
+  <!-- RIGHT ARROW -->
+  <button
+    onclick="scrollPackages(this, 1)"
+    class="absolute -right-6 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 hidden md:flex">
+    ▶
+  </button>
+   <div
+    class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar bg-white backdrop-blur-sm p-4 rounded-2xl"
+    data-scroll-container>
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[600px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Capital Gains</h3>
@@ -539,7 +583,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[600px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Freelancer/Gig</h3>
@@ -572,7 +616,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[600px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">
                                     Business Owner</h3>
@@ -604,7 +648,7 @@
                         </div>
 
                         <div
-                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group">
+                            class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-xl hover:shadow-2xl hover:border-blue-400 border-4 flex flex-col h-full relative transition-all duration-300 group min-w-[32%] min-h-[600px]">
                             <div class="h-16 flex items-end justify-center mb-1">
                                 <h3 class="font-heading text-xl font-bold text-gray-900 text-center leading-tight">NRI
                                     Tax Package</h3>
