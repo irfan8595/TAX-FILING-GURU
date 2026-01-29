@@ -430,6 +430,13 @@ function vcCloseBooking() {
     tab.classList.remove("hide");
   }, 300);
 }
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    vcCloseBooking();
+    closeBookingModal();
+  }
+});
+
 
 /* ================================
    DATE
