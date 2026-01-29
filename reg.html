@@ -86,35 +86,29 @@
                     <a href="login.html" class=" buttonclient h-10">Client Login</a>
                 </nav>
                 <div class="flex justify-between items-center min-h-[80px] relative">
-<!-- HAMBURGER (MOBILE ONLY) -->
-<button
-  id="hamburgerBtn"
-  class="md:hidden flex items-center justify-center p-2 rounded-lg text-gray-900 hover:bg-gray-100 focus:outline-none z-50"
-  aria-label="Open menu">
+                    <!-- HAMBURGER (MOBILE ONLY) -->
+                    <button id="hamburgerBtn"
+                        class="md:hidden flex items-center justify-center p-2 rounded-lg text-gray-900 hover:bg-gray-100 focus:outline-none z-50"
+                        aria-label="Open menu">
 
-  <svg xmlns="http://www.w3.org/2000/svg"
-    class="h-7 w-7"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-      d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
 
+                </div>
             </div>
-        </div>
-        <!-- MOBILE MENU -->
-<div
-  id="mobileMenu"
-  class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+            <!-- MOBILE MENU -->
+            <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
 
-  <a href="individualpackage.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">Residents</a>
-  <a href="nri.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">NRI</a>
-  <a href="tools.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">Tools</a>
-  <a href="contact.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">AID</a>
-  <a href="login.html" class="block px-6 py-4 text-blue-600 font-semibold">Client Login</a>
-</div>
+                <a href="individualpackage.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">Residents</a>
+                <a href="nri.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">NRI</a>
+                <a href="tools.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">Tools</a>
+                <a href="contact.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">AID</a>
+                <a href="login.html" class="block px-6 py-4 text-blue-600 font-semibold">Client Login</a>
+            </div>
 
     </header>
     <a href="whatsapp://send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website"
@@ -194,14 +188,14 @@
     </section>
 
 
-    <main class="w-full py-20 px-4 bg-gray-50">
+    <main class="w-full py-10 md:py-20 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <!-- Registration Card -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden grid md:grid-cols-2">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col-reverse md:grid md:grid-cols-2">
 
                 <!-- LEFT IMAGE PAMPHLET -->
                 <div id="selectedPackageCard"
-                    class="hidden md:flex items-center justify-center relative bg-cover bg-center min-h-[520px]">
+                    class="flex items-center justify-center relative bg-cover bg-center min-h-[300px] md:min-h-[520px]">
 
                 </div>
 
@@ -334,29 +328,29 @@
     </div>
     <script>document.addEventListener("DOMContentLoaded", () => {
 
-  const type = new URLSearchParams(window.location.search).get("type");
+            const type = new URLSearchParams(window.location.search).get("type");
 
-  const heroTitle = document.getElementById("page-title");
-  const heroSubtitle = document.getElementById("page-subtitle");
+            const heroTitle = document.getElementById("page-title");
+            const heroSubtitle = document.getElementById("page-subtitle");
 
-  // ---------- HERO SECTION ----------
-  if (type === "nri") {
-    heroTitle.innerText = "NRI Details";
-    heroSubtitle.innerText =
-      "Specialized tax filing for foreign income, DTAA & global compliance.\nExpert handling of overseas income and Indian tax obligations.";
-    document.title = "NRI Details - Tax Filing Guru";
-  } else {
-  }
+            // ---------- HERO SECTION ----------
+            if (type === "nri") {
+                heroTitle.innerText = "NRI Details";
+                heroSubtitle.innerText =
+                    "Specialized tax filing for foreign income, DTAA & global compliance.\nExpert handling of overseas income and Indian tax obligations.";
+                document.title = "NRI Details - Tax Filing Guru";
+            } else {
+            }
 
-  // ---------- PACKAGE DETAILS ----------
-  const data = JSON.parse(localStorage.getItem("selectedPackage"));
-  if (!data) return;
+            // ---------- PACKAGE DETAILS ----------
+            const data = JSON.parse(localStorage.getItem("selectedPackage"));
+            if (!data) return;
 
-  const card = document.getElementById("selectedPackageCard");
-  if (!card) return;
-    document.getElementById("packageName").innerText = data.name;
-    document.getElementById("packageRate").innerText = data.rate;
-  card.innerHTML = `
+            const card = document.getElementById("selectedPackageCard");
+            if (!card) return;
+            document.getElementById("packageName").innerText = data.name;
+            document.getElementById("packageRate").innerText = data.rate;
+            card.innerHTML = `
     <div class="rounded-2xl border shadow-lg p-9 bg-white">
       <h1 class="text-4xl font-bold mb-4">${data.name}</h1>
 
@@ -367,21 +361,21 @@
       </ul>
     </div>
   `;
-  // ---------- FORM SUBMIT ----------
-  document.getElementById("registrationForm")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
+            // ---------- FORM SUBMIT ----------
+            document.getElementById("registrationForm")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault();
 
-      alert("✅ Details Submission Successful! Please proceed for payment.");
+                    alert("✅ Details Submission Successful! Please proceed for payment.");
 
-      window.location.href =
-        type === "nri"
-          ? "login.html?type=nri"
-          : "login.html?type=resident";
-    });
+                    window.location.href =
+                        type === "nri"
+                            ? "login.html?type=nri"
+                            : "login.html?type=resident";
+                });
 
-});
-</script>
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 

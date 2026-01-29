@@ -217,7 +217,8 @@
 }
 
 .booking-box {
-  width: 390px;
+  width: 95%; /* Responsive width */
+  max-width: 390px; /* Max width */
   max-height: 620px;   /* ⬅️ NOT full height */
   background: #fff;
   padding: 15px;
