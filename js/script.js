@@ -428,7 +428,7 @@ function vcCloseBooking() {
     overlay.classList.add("hidden");
     closeTab.classList.add("hidden");
     tab.classList.remove("hide");
-  }, 300);
+  });
 }
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
@@ -436,6 +436,8 @@ document.addEventListener("keydown", (e) => {
     closeBookingModal();
   }
 });
+document.getElementById("bookingOverlay").addEventListener("click", vcCloseBooking);
+
 
 
 /* ================================

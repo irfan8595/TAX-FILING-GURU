@@ -109,12 +109,12 @@
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
       alt="WhatsApp chat with TaxFilingGuru" />
   </a>
-  <div id="rightTab" onclick="vcOpenBooking()">
+    <div id="rightTab" onclick="vcOpenBooking()">
     Book Video Consultation
     <span class="video-icon">📹</span>
   </div>
-  <div id="bookingOverlay" class="overlay hidden" onclick="vcCloseBooking()">
-    <div class="booking-box">
+  <div id="bookingOverlay" class="overlay hidden" >
+    <div class="booking-box" onclick="event.stopPropagation()">
       <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
 
       <h3>📹 Book Video Consultation</h3>
@@ -162,8 +162,7 @@
   </div>
   <div id="closeTab" class="overflow hidden" onclick="vcCloseBooking()">
     Close
-  </div>
-  <!-- Client Login button (desktop) - Fixed position -->
+  </div><!-- Client Login button (desktop) - Fixed position -->
 
   <section class="w-full hero-bg pt-10 pb-10 px-4 relative">
     <div class="max-w-7xl mx-auto relative z-10 text-center">

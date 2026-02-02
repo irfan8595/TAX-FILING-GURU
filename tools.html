@@ -125,8 +125,8 @@
     Book Video Consultation
     <span class="video-icon">📹</span>
   </div>
-  <div id="bookingOverlay" class="overlay hidden" onclick="vcCloseBooking()">
-    <div class="booking-box">
+  <div id="bookingOverlay" class="overlay hidden" >
+    <div class="booking-box" onclick="event.stopPropagation()">
       <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
 
       <h3>📹 Book Video Consultation</h3>
