@@ -7,17 +7,24 @@
 
 /* Animation for the scrolling strip */
 @keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
+
 .animate-strip {
-    animation: scroll-left 25s linear infinite;
-    white-space: nowrap;
-    display: inline-block;
+  animation: scroll-left 25s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
 }
+
 /* Pause animation on hover so users can read it */
 .ticker-container:hover .animate-strip {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .hero-bg {
@@ -25,10 +32,13 @@
   position: relative;
   overflow: hidden;
 }
+
 .buttonclient {
   /* position: relative; */
-  height: 40px;                  /* 🔑 SAME height as nav items */
-  padding: 0 22px;               /* horizontal only */
+  height: 40px;
+  /* 🔑 SAME height as nav items */
+  padding: 0 22px;
+  /* horizontal only */               
   background-color: #2973eb;
   color: white;
   font-weight: 500;
@@ -48,6 +58,7 @@
   width: max-content;
   animation: marquee-scroll 30s linear infinite;
 }
+
 /* strips */
 
 .marquee__content {
@@ -56,16 +67,19 @@
   padding-right: 5rem;
   white-space: nowrap;
 }
+
 /* strips */
 
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
 }
+
 /* book now free popup */
 .time-slot {
   padding: 10px;
@@ -88,7 +102,8 @@
   background: #2563eb;
   color: white;
 }
-  /* ===== Book Video Consultation ===== */
+
+/* ===== Book Video Consultation ===== */
 
 .date-time-row {
   display: flex;
@@ -99,7 +114,7 @@
 .date-box,
 .time-box {
   flex: 1;
-  
+
 }
 
 .date-box label,
@@ -154,7 +169,8 @@
 #rightTab {
   position: fixed;
   top: 50%;
-  right: -120px; /* ⬅️ pull into edge (IMPORTANT) */
+  right: -120px;
+  /* ⬅️ pull into edge (IMPORTANT) */
   transform: translateY(-50%) rotate(-90deg);
 
   background: #2563eb;
@@ -165,23 +181,54 @@
   z-index: 9999;
 
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
 }
+
 #rightTab.hide {
   transform: translateX(120%);
   opacity: 0;
-  pointer-events: none; /* 👈 important */
+  pointer-events: none;
+  /* 👈 important */
 }
 
 .video-icon {
-    font-size: 20px;          /* BIG */
-    display: inline-block;
-    transform: rotate(95deg); /* ROTATE */
+  font-size: 20px;
+  /* BIG */
+  display: inline-block;
+  transform: rotate(95deg);
+  /* ROTATE */
 }
+
+@media (max-width: 767px) {
+  #rightTab {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: none;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .video-icon {
+    transform: none;
+    margin-left: 8px;
+  }
+}
+
 #closeTab {
   position: fixed;
   top: 50%;
-  right: 385px; /* ⬅️ pull into edge (IMPORTANT) */
+  right: 385px;
+  /* ⬅️ pull into edge (IMPORTANT) */
   transform: translateY(-50%) rotate(-90deg);
 
   background: #2563eb;
@@ -192,19 +239,21 @@
   z-index: 9998;
 
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
 }
+
 #closeTab.hide {
   transform: translateX(120%);
   opacity: 0;
-  pointer-events: none; /* 👈 important */
+  pointer-events: none;
+  /* 👈 important */
 }
 
 /* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 9998;
   display: flex;
   justify-content: flex-end;
@@ -217,20 +266,28 @@
 }
 
 .booking-box {
-  width: 95%; /* Responsive width */
-  max-width: 390px; /* Max width */
-  max-height: 620px;   /* ⬅️ NOT full height */
+  width: 95%;
+  /* Responsive width */
+  max-width: 390px;
+  /* Max width */
+  max-height: 620px;
+  /* ⬅️ NOT full height */
   background: #fff;
   padding: 15px;
   border-radius: 14px;
-  box-shadow: 0 25px 60px rgba(0,0,0,.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .3);
   position: relative;
   overflow-y: auto;
 }
 
 @keyframes slideIn {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .booking-box h3 {
@@ -238,6 +295,7 @@
   font-weight: 700;
   margin-left: 6px;
 }
+
 .subtitle {
   color: #555;
   margin-bottom: 15px;
@@ -249,6 +307,7 @@
   gap: 10px;
   margin-bottom: 15px;
 }
+
 .duration button {
   flex: 1;
   padding: 10px;
@@ -259,6 +318,7 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .duration button.active {
   background: #2563eb;
   color: #fff;
@@ -280,6 +340,7 @@
   gap: 8px;
   margin-bottom: 15px;
 }
+
 .times button {
   padding: 8px;
   border: 1px solid #ccc;
@@ -288,6 +349,7 @@
   cursor: pointer;
   font-size: 13px;
 }
+
 .times button.active {
   background: #16a34a;
   color: #fff;
@@ -311,42 +373,50 @@
 
 /* whatsapp floating */
 .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 58px;
-            height: 58px;
-            border-radius: 9999px;
-            background: #25D366;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-            z-index: 70;
-            opacity: 0.95;
-        }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 58px;
+  height: 58px;
+  border-radius: 9999px;
+  background: #25D366;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  z-index: 70;
+  opacity: 0.95;
+}
 
-        .whatsapp-float:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
-            opacity: 1;
-        }
+.whatsapp-float:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
 
-        .whatsapp-float img {
-            width: 28px;
-            height: 28px;
-            filter: brightness(0) invert(1);
-        }
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 767px) {
+  .whatsapp-float {
+    bottom: 66px;
+    right: 20px;
+  }
+}
 
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .buttonclient:hover {
   background-color: #003ea8;
   /* transform: translateY(-1px); */
@@ -488,6 +558,7 @@
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -516,8 +587,8 @@
   backdrop-filter: blur(10px);
 }
 
-@view-transition { 
-  navigation: auto; 
+@view-transition {
+  navigation: auto;
 }
 
 /* Client Login button positioning */
@@ -538,13 +609,13 @@ header a[href="#home"]:hover {
 /* Trusted badge above hero title */
 .trusted-badge {
   display: inline-block;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
   padding: 8px 18px;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 0.95rem;
-  box-shadow: 0 8px 20px rgba(2,6,23,0.18);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.18);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   animation: fadeInUp 900ms ease both;
@@ -555,28 +626,40 @@ header a[href="#home"]:hover {
     opacity: 0;
     transform: translateY(8px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
+
 /* Continuous Fading Animation */
 @keyframes loopFade {
-  0% { 
-    opacity: 0.2; /* Starts nearly invisible */
+  0% {
+    opacity: 0.2;
+    /* Starts nearly invisible */
   }
-  50% { 
-    opacity: 1;   /* Fully visible in the middle */
+
+  50% {
+    opacity: 1;
+    /* Fully visible in the middle */
   }
-  100% { 
-    opacity: 0.2; /* Fades back out */
+
+  100% {
+    opacity: 0.2;
+    /* Fades back out */
   }
 }
 
 .fade-loop {
   /* infinite = loop forever */
   /* ease-in-out = smooth start and end */
-  animation: loopFade 3s infinite ease-in-out; 
+  animation: loopFade 3s infinite ease-in-out;
 }
 
-
+/* Resident Hero Section (Matching NRI style) */
+.resident-hero {
+  background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+}

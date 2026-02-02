@@ -645,10 +645,10 @@ function togglePackage(button) {
   alert(`You have successfully added ${packageName} package`);
 
   // REDIRECT LAST
-  if (window.location.pathname.endsWith("nri.html")){
-  window.location.href = "reg.html?type=nri";
+  if (window.location.pathname.endsWith("nri.html")) {
+    window.location.href = "reg.html?type=nri";
   } else {
-  window.location.href = "reg.html";
+    window.location.href = "reg.html";
   }
 }
 
@@ -684,30 +684,77 @@ function makePayment() {
 
 // Initialize free consultation time display on page load
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     updateTimeDisplay();
   });
 } else {
   updateTimeDisplay();
 }
-  function scrollPackages(button, direction) {
-    const container = button
-      .parentElement
-      .querySelector('[data-scroll-container]');
+function scrollPackages(button, direction) {
+  const container = button
+    .parentElement
+    .querySelector('[data-scroll-container]');
 
-    const card = container.querySelector('div');
-    const gap = 24; // Tailwind gap-6
-    const scrollAmount = card.offsetWidth + gap;
+  const card = container.querySelector('div');
+  const gap = 24; // Tailwind gap-6
+  const scrollAmount = card.offsetWidth + gap;
 
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
-    });
-  }
-  
-  const hamburgerBtn = document.getElementById("hamburgerBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  hamburgerBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
   });
+}
+
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburgerBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+/* ===============================
+   ACTIVE LINK HIGHLIGHTING & AUTO-OPEN
+=============================== */
+function highlightActiveLink() {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll("nav a, #mobileMenu a");
+
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute("href");
+    if (linkHref === currentPath) {
+      link.classList.add("text-blue-600", "font-bold");
+      link.classList.remove("text-gray-700");
+
+      // Check if inside mobile submenu (e.g., Tools dropdown)
+      const submenu = link.closest('div[id$="Submenu"]');
+      if (submenu) {
+        // Auto-open the submenu
+        submenu.classList.remove("hidden");
+
+        // Rotate the arrow icon in the button
+        const btn = submenu.previousElementSibling;
+        if (btn) {
+          btn.classList.add("text-blue-600", "font-bold");
+          btn.classList.remove("text-gray-700");
+          const icon = btn.querySelector("svg");
+          if (icon) icon.classList.add("rotate-180");
+        }
+      }
+    }
+  });
+}
+
+/* ===============================
+   MOBILE SUBMENU TOGGLE
+=============================== */
+function toggleMobileSubmenu(id) {
+  const submenu = document.getElementById(id);
+  if (submenu) {
+    submenu.classList.toggle("hidden");
+    const icon = submenu.previousElementSibling.querySelector("svg");
+    if (icon) icon.classList.toggle("rotate-180");
+  }
+}
+
+// Run on load
+document.addEventListener("DOMContentLoaded", highlightActiveLink);

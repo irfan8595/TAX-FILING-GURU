@@ -15,8 +15,8 @@
 
 <body class="h-full overflow-auto">
   <!-- Header -->
-  <header class="w-full bg-white/80 backdrop-blur-md shadow-sm top-0 z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-6 py-4">
+  <header class="relative w-full bg-white/80 backdrop-blur-md shadow-sm top-0 z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-2 lg:py-4">
       <div class="flex justify-between items-center min-h-[80px] relative">
 
         <div class="flex items-center space-x-3">
@@ -38,7 +38,8 @@
           </div>
         </div>
 
-        <nav class="hidden md:flex items-center space-x-8 leading-none">
+        <nav class="hidden md:flex items-center space-x-8 leading-none ml-auto">
+
           <a href="individualpackage.html"
             class="h-10 flex items-center text-gray-700 hover:text-blue-600 font-medium transition">Residents</a>
           <a href="nri.html"
@@ -97,7 +98,28 @@
 
         <a href="individualpackage.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">Residents</a>
         <a href="nri.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">NRI</a>
-        <a href="tools.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">Tools</a>
+
+        <div>
+          <button onclick="toggleMobileSubmenu('toolsSubmenu')"
+            class="w-full flex justify-between items-center px-6 py-4 text-gray-700 hover:bg-blue-50 focus:outline-none">
+            Tools
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="toolsSubmenu" class="hidden bg-gray-50 border-t border-gray-100">
+            <a href="refund-maximizer.html"
+              class="block pl-10 pr-6 py-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Refund
+              Maximizer</a>
+            <a href="regime-comparison.html"
+              class="block pl-10 pr-6 py-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Regime
+              Comparison</a>
+            <a href="tools.html"
+              class="block pl-10 pr-6 py-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">All Tools</a>
+          </div>
+        </div>
+
         <a href="contact.html" class="block px-6 py-4 text-gray-700 hover:bg-blue-50">AID</a>
         <a href="login.html" class="block px-6 py-4 text-blue-600 font-semibold">Client Login</a>
       </div>
@@ -109,11 +131,11 @@
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
       alt="WhatsApp chat with TaxFilingGuru" />
   </a>
-    <div id="rightTab" onclick="vcOpenBooking()">
+  <div id="rightTab" onclick="vcOpenBooking()">
     Book Video Consultation
     <span class="video-icon">📹</span>
   </div>
-  <div id="bookingOverlay" class="overlay hidden" >
+  <div id="bookingOverlay" class="overlay hidden">
     <div class="booking-box" onclick="event.stopPropagation()">
       <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
 
