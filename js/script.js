@@ -611,12 +611,18 @@ function togglePackage(button) {
   const card = button.closest('.package-card');
 
   const packageName = card.querySelector('h3').textContent.trim();
-  const packageRate = card.querySelector('.rate').textContent.trim();
+  let packageRate = card.querySelector('.rate').textContent.trim();
   const desc = card.querySelector('.package-desc').textContent.trim();
 
   const packageFeatures = Array.from(
     card.querySelectorAll('.package-features li')
   ).map(el => el.textContent.trim());
+
+  // Check if NRI page and append / Filing if missing
+  const isNRI = window.location.pathname.endsWith("nri.html");
+  if (isNRI && !packageRate.includes("/ Filing")) {
+    packageRate += " / Filing";
+  }
 
   // STORE FIRST
   localStorage.setItem(
@@ -628,24 +634,8 @@ function togglePackage(button) {
       features: packageFeatures
     })
   );
-
-  // UI update
-  button.textContent = "Package Added";
-  button.dataset.added = "true";
-
-  button.classList.remove(
-    "from-blue-600",
-    "to-blue-700",
-    "hover:-translate-y-1",
-    "hover:scale-105"
-  );
-  button.classList.add("bg-gray-400", "cursor-not-allowed");
-  button.disabled = true;
-
-  alert(`You have successfully added ${packageName} package`);
-
   // REDIRECT LAST
-  if (window.location.pathname.endsWith("nri.html")) {
+  if (isNRI) {
     window.location.href = "reg.html?type=nri";
   } else {
     window.location.href = "reg.html";
