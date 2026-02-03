@@ -2,23 +2,23 @@
 <html lang="en" class="h-full">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resident Details - Tax Filing Guru</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resident Details - Tax Filing Guru</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.icon" type="image/x-icon">
-    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.icon" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
 </head>
 
 <body class="h-full overflow-auto">
 
 
 
-    <!-- Header -->
-    <!-- Header -->
+  <!-- Header -->
+  <!-- Header -->
   <header class="relative w-full bg-white/80 backdrop-blur-md shadow-sm top-0 z-50 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-2 lg:py-4">
       <div class="flex justify-between items-center min-h-[80px] relative">
@@ -129,271 +129,318 @@
       </div>
 
   </header>
-    <a href="whatsapp://send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website"
-        onclick="setTimeout(()=>{window.location.href='https://api.whatsapp.com/send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website'},400)"
-        class="whatsapp-float" target="_blank" rel="nofollow noopener" aria-label="Chat on WhatsApp">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-            alt="WhatsApp chat with TaxFilingGuru" />
-    </a>
-    <div id="rightTab" onclick="vcOpenBooking()">
-        Book Video Consultation
-        <span class="video-icon">📹</span>
-    </div>
-    <div id="bookingOverlay" class="overlay hidden">
-        <div class="booking-box" onclick="event.stopPropagation()">
-            <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
+  <a href="whatsapp://send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website"
+    onclick="setTimeout(()=>{window.location.href='https://api.whatsapp.com/send?phone=919811945176&text=%F0%9F%84%B8%F0%9F%85%83%F0%9F%84%B6%20%20I%20Want%20To%20Enquire%20About%20Your%20Tax%20Filing%20Guru%20Website'},400)"
+    class="whatsapp-float" target="_blank" rel="nofollow noopener" aria-label="Chat on WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+      alt="WhatsApp chat with TaxFilingGuru" />
+  </a>
+  <div id="rightTab" onclick="vcOpenBooking()">
+    Book Video Consultation
+    <span class="video-icon">📹</span>
+  </div>
+  <div id="bookingOverlay" class="overlay hidden">
+    <div class="booking-box" onclick="event.stopPropagation()">
+      <!-- <button class="close-btn" onclick="vcCloseBooking()">×</button> -->
 
-            <h3>📹 Book Video Consultation</h3>
-            <p class="subtitle" style="text-align: center;">Book Your Video Consultation Here</p>
+      <h3>📹 Book Video Consultation</h3>
+      <p class="subtitle" style="text-align: center;">Book Your Video Consultation Here</p>
 
-            <!-- Duration -->
-            <div class="duration">
-                <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
-                <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
-            </div>
+      <!-- Duration -->
+      <div class="duration">
+        <button onclick="vcSelectDuration(45)" id="d45">45 Minutes</button>
+        <button onclick="vcSelectDuration(90)" id="d90">1.5 Hour</button>
+      </div>
 
-            <!-- Name -->
-            <input id="clientName" placeholder="Your Name" required>
-            <input id="clientEmail" placeholder="Your Email" required>
-            <input id="clientNo" placeholder="Your Mobile No." required>
+      <!-- Name -->
+      <input id="clientName" placeholder="Your Name" required>
+      <input id="clientEmail" placeholder="Your Email" required>
+      <input id="clientNo" placeholder="Your Mobile No." required>
 
-            <div class="date-time-row">
-                <!-- Date -->
-                <div class="date-box">
-                    <label>Select Date</label>
-                    <input type="date" id="datePicker" required>
-                </div>
-
-                <!-- Time -->
-                <div class="time-box">
-                    <label>Select Time</label>
-
-                    <div class="clock-picker small">
-                        <button class="arrow" onclick="vcTimeUp()">▲</button>
-
-                        <span id="timeDisplay">09:00 AM</span>
-
-                        <button class="arrow" onclick="vcTimeDown()">▼</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <!-- Book -->
-            <button class="book-btn" onclick="vcBookNow()">Book Now</button>
+      <div class="date-time-row">
+        <!-- Date -->
+        <div class="date-box">
+          <label>Select Date</label>
+          <input type="date" id="datePicker" required>
         </div>
-    </div>
-    <div id="closeTab" class="overflow hidden" onclick="vcCloseBooking()">
-        Close
-    </div>
-    <!-- Client Login button (desktop) - Fixed position -->
 
-    <!-- Page Heading -->
-    <section class="w-full hero-bg pt-10 pb-10 px-4 relative">
-        <div class="max-w-7xl mx-auto relative z-10 text-center">
-            <h2 id="page-title" class="text-4xl md:text-5xl font-bold text-white mb-4">
-                Resident Details
-            </h2>
-            <p id="page-subtitle" class="text-gray-100">
-                Specialized tax filing for residential income, rtc. <br> Expert handling of national income and Indian
-                tax obligations.
+        <!-- Time -->
+        <div class="time-box">
+          <label>Select Time</label>
+
+          <div class="clock-picker small">
+            <button class="arrow" onclick="vcTimeUp()">▲</button>
+
+            <span id="timeDisplay">09:00 AM</span>
+
+            <button class="arrow" onclick="vcTimeDown()">▼</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- Book -->
+      <button class="book-btn" onclick="vcBookNow()">Book Now</button>
+    </div>
+  </div>
+  <div id="closeTab" class="overflow hidden" onclick="vcCloseBooking()">
+    Close
+  </div>
+  <!-- Client Login button (desktop) - Fixed position -->
+
+  <!-- Page Heading -->
+  <section class="w-full hero-bg pt-10 pb-10 px-4 relative">
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+      <h2 id="page-title" class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Resident Details
+      </h2>
+      <p id="page-subtitle" class="text-gray-100">
+        Specialized tax filing for residential income, rtc. <br> Expert handling of national income and Indian
+        tax obligations.
+      </p>
+    </div>
+  </section>
+
+
+  <main class="w-full py-10 md:py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Registration Card -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col-reverse md:grid md:grid-cols-2">
+
+        <!-- LEFT IMAGE PAMPHLET -->
+        <div id="selectedPackageCard"
+          class="flex items-center justify-center relative bg-cover bg-center min-h-[300px] md:min-h-[520px]">
+
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="p-10">
+
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">
+            Provide Your Details
+          </h3>
+
+          <form id="registrationForm" class="space-y-5">
+
+            <input required type="text" placeholder="Full Name*"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+
+            <input required type="email" placeholder="Email Address*"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+
+            <input required type="tel" placeholder="Phone Number*"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+            <label class="text-sm text-gray-500">Selected Package</label>
+            <div id="packageName" class="text-lg font-semibold"></div>
+
+            <label class="text-sm text-gray-500">Amount</label>
+            <div id="packageRate" class="text-lg font-semibold"></div>
+
+            <label class="flex items-center gap-2 text-sm text-gray-600">
+              <input type="checkbox" required>
+              I agree to the
+              <a href="#" class="text-blue-600 underline">Terms</a> &
+              <a href="#" class="text-blue-600 underline">Privacy Policy</a>
+            </label>
+
+            <button class="w-full py-3 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition"
+              onclick="makePayment()">
+              File Your Tax Now
+            </button>
+
+            <p class="text-center text-sm text-gray-500">
+              Already Registered?
+              <a href="login.html" class="text-blue-600 font-semibold">Log in</a>
             </p>
+
+          </form>
         </div>
-    </section>
-
-
-    <main class="w-full py-10 md:py-20 px-4 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
-            <!-- Registration Card -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col-reverse md:grid md:grid-cols-2">
-
-                <!-- LEFT IMAGE PAMPHLET -->
-                <div id="selectedPackageCard"
-                    class="flex items-center justify-center relative bg-cover bg-center min-h-[300px] md:min-h-[520px]">
-
-                </div>
-
-                <!-- RIGHT FORM -->
-                <div class="p-10">
-
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">
-                        Provide Your Details
-                    </h3>
-
-                    <form id="registrationForm" class="space-y-5">
-
-                        <input required type="text" placeholder="Full Name*"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
-
-                        <input required type="email" placeholder="Email Address*"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
-
-                        <input required type="tel" placeholder="Phone Number*"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
-                        <label class="text-sm text-gray-500">Selected Package</label>
-                        <div id="packageName" class="text-lg font-semibold"></div>
-
-                        <label class="text-sm text-gray-500">Amount</label>
-                        <div id="packageRate" class="text-lg font-semibold"></div>
-
-                        <label class="flex items-center gap-2 text-sm text-gray-600">
-                            <input type="checkbox" required>
-                            I agree to the
-                            <a href="#" class="text-blue-600 underline">Terms</a> &
-                            <a href="#" class="text-blue-600 underline">Privacy Policy</a>
-                        </label>
-
-                        <button
-                            class="w-full py-3 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition"
-                            onclick="makePayment()">
-                            File Your Tax Now
-                        </button>
-
-                        <p class="text-center text-sm text-gray-500">
-                            Already Registered?
-                            <a href="login.html" class="text-blue-600 font-semibold">Log in</a>
-                        </p>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="w-full bg-gray-900 py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="flex flex-col items-start">
-                    <a href="/index.html" class="inline-block">
-                        <div class="inline-flex flex-col items-start leading-none">
-
-                            <!-- Logo + Name -->
-                            <div class="flex items-center space-x-2">
-                                <img src="assets/images/TFG_LOGO.png" alt="Tax Filing Guru Logo" class="h-10 w-auto">
-                                <h4 class="text-white font-bold text-lg">
-                                    Tax Filing <span class="text-blue-500">Guru</span>
-                                </h4>
-                            </div>
-
-                            <!-- Divider -->
-                            <span class="h-[2px] bg-white w-full mt-1"></span>
-
-                            <!-- Tagline -->
-                            <p class="text-xs text-white mt-1 text-center">
-                                Smart Taxes Need a Guru.
-                            </p>
-
-                        </div>
-                    </a>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
-                        <li><a href="nri.html" class="text-gray-400 hover:text-white text-sm transition">NRI
-                                Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
-                        <li><a href="tools.html" class="text-gray-400 hover:text-white text-sm transition">Tools</a>
-                        </li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white text-sm transition">About Us</a>
-                        </li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition">AID</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="text-gray-400">📧 <a href="mailto:info@taxfilingguru.com"
-                                class="hover:underline font-medium">
-                                info@taxfilingguru.com
-                            </a></li>
-                        <li class="text-gray-400">📞 <a href="tel:+919811945176" class="hover:underline font-medium">
-                                +91 98119
-                                45176
-                            </a>
-                        </li>
-                        <li class="text-gray-400">📍 India</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-6 pt-6">
-                <p class="text-gray-500 text-xs leading-relaxed max-w-5xl mx-auto text-center">
-                    <strong>Disclaimer:</strong> We assist in filing income tax returns based on the information
-                    provided by the
-                    taxpayer.
-                    The final legal responsibility for accuracy, completeness, and compliance remains with the taxpayer.
-                </p>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p id="footer-text" class="text-gray-400 text-sm">© 2026 Tax Filing Guru. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+      </div>
     </div>
-    <script>document.addEventListener("DOMContentLoaded", () => {
+  </main>
 
-            const type = new URLSearchParams(window.location.search).get("type");
+  <footer class="w-full bg-gray-900 py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div class="flex flex-col items-start">
+          <a href="/index.html" class="inline-block">
+            <div class="inline-flex flex-col items-start leading-none">
 
-            const heroTitle = document.getElementById("page-title");
-            const heroSubtitle = document.getElementById("page-subtitle");
+              <!-- Logo + Name -->
+              <div class="flex items-center space-x-2">
+                <img src="assets/images/TFG_LOGO.png" alt="Tax Filing Guru Logo" class="h-10 w-auto">
+                <h4 class="text-white font-bold text-lg">
+                  Tax Filing <span class="text-blue-500">Guru</span>
+                </h4>
+              </div>
 
-            // ---------- HERO SECTION ----------
-            if (type === "nri") {
-                heroTitle.innerText = "NRI Details";
-                heroSubtitle.innerText =
-                    "Specialized tax filing for foreign income, DTAA & global compliance.\nExpert handling of overseas income and Indian tax obligations.";
-                document.title = "NRI Details - Tax Filing Guru";
-            } else {
-            }
+              <!-- Divider -->
+              <span class="h-[2px] bg-white w-full mt-1"></span>
 
-            // ---------- PACKAGE DETAILS ----------
-            const data = JSON.parse(localStorage.getItem("selectedPackage"));
-            if (!data) return;
+              <!-- Tagline -->
+              <p class="text-xs text-white mt-1 text-center">
+                Smart Taxes Need a Guru.
+              </p>
 
-            const card = document.getElementById("selectedPackageCard");
-            if (!card) return;
-            document.getElementById("packageName").innerText = data.name;
-            document.getElementById("packageRate").innerText = data.rate;
-            card.innerHTML = `
-    <div class="rounded-2xl border shadow-lg p-9 bg-white">
-      <h1 class="text-4xl font-bold mb-4">${data.name}</h1>
+            </div>
+          </a>
+        </div>
 
-      <p class="text-gray-600 mb-10">${data.description}</p>
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">ITR Filing</a></li>
+            <li><a href="nri.html" class="text-gray-400 hover:text-white text-sm transition">NRI
+                Services</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Consultation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Services</a></li>
+            <li><a href="tools.html" class="text-gray-400 hover:text-white text-sm transition">Tools</a>
+            </li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white text-sm transition">About Us</a>
+            </li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm transition">AID</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="text-gray-400">📧 <a href="mailto:info@taxfilingguru.com" class="hover:underline font-medium">
+                info@taxfilingguru.com
+              </a></li>
+            <li class="text-gray-400">📞 <a href="tel:+919811945176" class="hover:underline font-medium">
+                +91 98119
+                45176
+              </a>
+            </li>
+            <li class="text-gray-400">📍 India</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-6 pt-6">
+        <p class="text-gray-500 text-xs leading-relaxed max-w-5xl mx-auto text-center">
+          <strong>Disclaimer:</strong> We assist in filing income tax returns based on the information
+          provided by the
+          taxpayer.
+          The final legal responsibility for accuracy, completeness, and compliance remains with the taxpayer.
+        </p>
+      </div>
 
-      <ul class="list-disc pl-5 space-y-2 mb-10">
-        ${data.features.map(f => `<li>${f}</li>`).join("")}
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p id="footer-text" class="text-gray-400 text-sm">© 2026 Tax Filing Guru. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  </div>
+  <script>document.addEventListener("DOMContentLoaded", () => {
+
+      const type = new URLSearchParams(window.location.search).get("type");
+
+      const heroTitle = document.getElementById("page-title");
+      const heroSubtitle = document.getElementById("page-subtitle");
+
+      // ---------- HERO SECTION ----------
+      if (type === "nri") {
+        heroTitle.innerText = "NRI Details";
+        heroSubtitle.innerText =
+          "Specialized tax filing for foreign income, DTAA & global compliance.\nExpert handling of overseas income and Indian tax obligations.";
+        document.title = "NRI Details - Tax Filing Guru";
+      } else if (type === "TaxNotice") {
+        heroTitle.innerText = "Tax Notice";
+        heroSubtitle.innerText =
+          "Expert assistance in handling income tax notices and drafting responses.\nProtect your rights with our professional support.";
+        document.title = "Tax Notice - Tax Filing Guru";
+      }
+      else if (type === "AdvanceTaxCalculation") {
+        heroTitle.innerText = "Advance Tax Calculation";
+        heroSubtitle.innerText =
+          "Accurate calculation and timely planning of your advance tax liabilities.\nEnsure compliance and avoid penalties with our expert services.";
+        document.title = "Advance Tax Calculation - Tax Filing Guru";
+      }
+      else if (type === "TaxConsultation") {
+        heroTitle.innerText = "Tax Consultation";
+        heroSubtitle.innerText =
+          "Expert tax planning and consultation services for all needs.\nOptimize your tax strategy with personalized advice.";
+        document.title = "Tax Consultation - Tax Filing Guru";
+      }
+      else if (type === "GSTCompliance") {
+        heroTitle.innerText = "GST Compliance";
+        heroSubtitle.innerText =
+          "Hassle-free GST registration, monthly filing, and regulatory compliance. \nExpert support for your business needs.";
+        document.title = "GST Compliance - Tax Filing Guru";
+      }
+      else {
+      }
+
+      // ---------- PACKAGE DETAILS ----------
+      const packageData = JSON.parse(localStorage.getItem("selectedPackage"));
+      const serviceData = JSON.parse(localStorage.getItem("selectedService"));
+      const data = packageData || serviceData;
+      if (!data) return;
+
+      const card = document.getElementById("selectedPackageCard");
+      if (!card) return;
+      document.getElementById("packageName").innerText = data.name;
+      document.getElementById("packageRate").innerText = data.rate;
+      card.innerHTML = `
+    <!-- Full Background Layer -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url('assets/images/pamphlet-resident.jpg'); filter: blur(8px); transform: scale(1);">
+        </div>
+        <div class="absolute inset-0 bg-black/10"></div>
+    </div>
+
+    <!-- Centered Content Card (75% width) -->
+    <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-6 md:p-8 w-[90%] md:w-[75%] max-h-[90%] overflow-y-auto custom-scrollbar">
+      
+      ${data.icon ? `
+      <div class="mb-5 flex justify-center md:justify-start">
+         <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center shadow-md">
+            ${data.icon}
+         </div>
+      </div>` : ''}
+              
+      <h1 class="text-2xl md:text-3xl font-bold mb-3 text-gray-900 leading-tight">${data.name}</h1>
+
+      <p class="text-gray-600 text-sm md:text-base mb-6 leading-relaxed border-b border-gray-100 pb-4">${data.description}</p>
+
+      <ul class="space-y-3">
+        ${data.features.map(f => `
+        <li class="flex items-start text-gray-700 text-sm md:text-base font-medium">
+            <svg class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            ${f}
+        </li>`).join("")}
       </ul>
     </div>
   `;
-            // ---------- FORM SUBMIT ----------
-            document.getElementById("registrationForm")
-                .addEventListener("submit", function (e) {
-                    e.preventDefault();
+      // ---------- FORM SUBMIT ----------
+      document.getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-                    alert("✅ Details Submission Successful! Please proceed for payment.");
+          alert("✅ Details Submission Successful! Please proceed for payment.");
 
-                    window.location.href =
-                        type === "nri"
-                            ? "login.html?type=nri"
-                            : "login.html?type=resident";
-                });
-
+          window.location.href =
+            type === "nri"
+              ? "login.html?type=nri"
+              : "login.html?type=resident";
         });
-    </script>
-    <script src="js/script.js"></script>
+
+    });
+  </script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

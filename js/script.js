@@ -758,3 +758,79 @@ function toggleMobileSubmenu(id) {
 
 // Run on load
 document.addEventListener("DOMContentLoaded", highlightActiveLink);
+
+/* ===============================
+   SERVICE CARD DATA
+   -----------------------------
+   Edit the details below to change the Service Name, Rate, Description, and Features
+   displayed on the Registration Page (reg.html).
+=============================== */
+const servicesData = {
+  "AdvanceTaxCalculation": {
+    name: "Advance Tax Calculation",
+    rate: "₹ 1,499",
+    description: "Accurate calculation and timely planning of your advance tax liabilities to avoid interest under section 234B/C.",
+    features: [
+      "Quarterly Liability Estimation",
+      "Challan Generation Support",
+      "Interest Saving Strategies",
+      "Detailed Report"
+    ],
+    icon: `<svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
+  },
+  "TaxConsultation": {
+    name: "Tax Consultation",
+    rate: "₹ 999",
+    description: "One-on-one consultation with our tax experts to resolve your specific queries and optimize your tax planning.",
+    features: [
+      "30-Minute Video Call",
+      "Personalized Tax Simplification",
+      "Investment Proof Review",
+      "Notice Discussion"
+    ],
+    icon: `<svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>`
+  },
+  "GSTCompliance": {
+    name: "GST Compliance",
+    rate: "₹ 2,499 / Month",
+    description: "End-to-end GST support for freelancers and small businesses including registration and monthly returns.",
+    features: [
+      "GST Registration",
+      "GSTR-1 & GSTR-3B Filing",
+      "Input Tax Credit Reconciliation",
+      "LUT Filing for Exports"
+    ],
+    icon: `<svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
+  },
+  "TaxNotice": {
+    name: "Tax Notice",
+    rate: "₹ 1,999",
+    description: "Expert assistance in drafting and filing responses to Income Tax Notices.",
+    features: [
+      "Notice Analysis",
+      "Response Drafting",
+      "Rectification Requests",
+      "Expert Representation"
+    ],
+    icon: `<svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 3v4a1 1 0 001 1h4"></path></svg>`
+  }
+};
+
+/* ===============================
+   SELECT SERVICE & REDIRECT
+=============================== */
+function selectService(serviceId) {
+  const data = servicesData[serviceId];
+  if (data) {
+    // Save selected service data to LocalStorage
+    localStorage.setItem("selectedService", JSON.stringify(data));
+
+    // Clear any selected package to avoid conflicts
+    localStorage.removeItem("selectedPackage");
+
+    // Redirect to registration page with type param for Hero Text customization
+    window.location.href = `reg.html?type=${serviceId}`;
+  } else {
+    console.error("Service ID not found:", serviceId);
+  }
+}
