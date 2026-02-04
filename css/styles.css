@@ -15,6 +15,7 @@
     transform: translateX(-100%);
   }
 }
+
 .about-video {
   width: 90%;
   height: 100%;
@@ -42,7 +43,7 @@
   height: 40px;
   /* 🔑 SAME height as nav items */
   padding: 0 22px;
-  /* horizontal only */               
+  /* horizontal only */
   background-color: #2973eb;
   color: white;
   font-weight: 500;
@@ -666,4 +667,31 @@ header a[href="#home"]:hover {
   background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
   background-position: center;
+}
+
+/* Responsive Booking Modal */
+@media (max-width: 475px) {
+  #closeTab {
+    display: none !important;
+  }
+
+  .booking-box .close-btn {
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+  }
+}
+
+@media (min-width: 476px) {
+  .booking-box .close-btn {
+    display: none !important;
+  }
 }
