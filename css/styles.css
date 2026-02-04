@@ -15,6 +15,10 @@
     transform: translateX(-100%);
   }
 }
+.about-video {
+  width: 90%;
+  height: 100%;
+}
 
 .animate-strip {
   animation: scroll-left 25s linear infinite;
