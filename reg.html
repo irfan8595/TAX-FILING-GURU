@@ -262,12 +262,21 @@
     </div>
   </main>
 
+  <!-- Dynamic FAQ Section -->
+  <section class="max-w-4xl mx-auto mb-20 px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center font-heading">Frequently Asked Questions
+    </h2>
+    <div id="dynamic-faq-container" class="space-y-4">
+      <!-- FAQs will be injected here via script.js -->
+    </div>
+  </section>
+
   <footer class="w-full bg-gray-900 py-12 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div class="flex flex-col items-start">
           <a href="/index.html" class="inline-block">
-            <div class="inline-flex flex-col items-start leading-none">
+            <div class="inline-flex flex-col items-center leading-none">
 
               <!-- Logo + Name -->
               <div class="flex items-center space-x-2">
@@ -437,6 +446,23 @@
               ? "login.html?type=nri"
               : "login.html?type=resident";
         });
+
+      // Render Dynamic FAQs based on Type or Service ID
+      if (typeof renderDynamicFaq === 'function') {
+        // Determine context: Type URL param OR Package Name OR Service ID
+        // Priority: Service > Type > Package
+        let context = type;
+        if (!context && data) {
+          // If data came from localStorage, try to find a matching key in servicesData
+          // But servicesData keys are like "TaxConsultation"
+          // data.name might be "Tax Consultation"
+          // Let's pass the 'type' param if it exists, otherwise pass the name from localStorage
+          // Actually, script.js selectService sets reg.html?type=ServiceId. So type param should be present for services.
+          // For Residents/NRI clicking from menu, type might be undefined or 'nri'.
+          // If type is undefined, default to 'resident'.
+        }
+        renderDynamicFaq(type || 'resident');
+      }
 
     });
   </script>
