@@ -937,3 +937,17 @@ function scrollPackages(button, direction) {
     });
   }
 }
+
+function togglePackageSection(header) {
+  const container = header.parentElement;
+  const content = container.querySelector('.package-content');
+  const icon = header.querySelector('.toggle-icon');
+
+  if (content.classList.contains('hidden')) {
+    content.classList.remove('hidden');
+    if (icon) icon.classList.add('rotate-180');
+  } else {
+    content.classList.add('hidden');
+    if (icon) icon.classList.remove('rotate-180');
+  }
+}
