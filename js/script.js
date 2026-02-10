@@ -917,3 +917,23 @@ function renderDynamicFaq(type) {
     </div>
   `).join("");
 }
+
+function scrollPackages(button, direction) {
+  const container = button
+    .parentElement
+    .querySelector('[data-scroll-container]');
+
+  if (container) {
+    const card = container.querySelector('div');
+    const gap = 24;
+    let scrollAmount = 300; // Default
+    if (card) {
+      scrollAmount = card.offsetWidth + gap;
+    }
+
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+}

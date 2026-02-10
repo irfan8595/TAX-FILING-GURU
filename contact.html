@@ -195,7 +195,7 @@
   <main class="w-full py-10 md:py-20 px-4 bg-gray-50">
     <div class="max-w-7xl mx-auto">
 
-      <section id="contact" class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+      <section id="contact" class="bg-white rounded-2xl p-4 md:p-8 shadow-sm border border-gray-100">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="md:col-span-1">
 
@@ -276,7 +276,7 @@
           </div>
 
           <div class="md:col-span-2">
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+            <div class="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-100">
               <h3 class="text-xl font-bold text-gray-900 mb-4">Send Us A Message</h3>
               <form action="#" class="space-y-4">
                 <div class="grid md:grid-cols-2 gap-4">
@@ -298,6 +298,109 @@
       </section>
     </div>
   </main>
+
+  <section id="faq" class="relative w-full py-12 md:py-24 px-4 bg-gray-50 overflow-hidden border-t border-gray-100">
+    <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+      <div class="absolute left-[-10%] top-[20%] w-96 h-96 bg-blue-200 rounded-full blur-3xl mix-blend-multiply"></div>
+      <div class="absolute right-[-10%] bottom-[20%] w-96 h-96 bg-purple-200 rounded-full blur-3xl mix-blend-multiply">
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+        <div class="lg:col-span-5 lg:sticky lg:top-32">
+          <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Support</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
+            Got Questions? <br> We've Got <span class="text-blue-600">Answers.</span>
+          </h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Here are some common questions about contacting us and our support process.
+          </p>
+
+          <div
+            class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden group">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl transform translate-x-10 -translate-y-10 transition group-hover:scale-110">
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold mb-2">Still need help?</h3>
+              <p class="text-blue-100 mb-6">Reach out directly via the form above or call us.</p>
+              <a href="tel:+919811945176"
+                class="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition shadow-sm">
+                Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+              onclick="toggleFaq(this)">
+              <span class="text-lg font-bold text-gray-900">How quickly will you respond to my query?</span>
+              <span
+                class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed">
+                We typically respond to all emails and contact form submissions within 24 hours. For urgent matters,
+                please call us directly.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+              onclick="toggleFaq(this)">
+              <span class="text-lg font-bold text-gray-900">Do you offer in-person consultations?</span>
+              <span
+                class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed">
+                Primary consultations are conducted via video call or phone for efficiency. However, in specific complex
+                cases, an in-person meeting can be arranged at our office.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+            <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+              onclick="toggleFaq(this)">
+              <span class="text-lg font-bold text-gray-900">Can I send my documents via email?</span>
+              <span
+                class="icon-wrapper w-8 h-8 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-transform duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed">
+                Yes, you can email your documents to info@taxfilingguru.com. However, for better tracking and security,
+                we
+                recommend using our secure client portal after registration.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="w-full bg-gray-900 py-12 px-4">
     <div class="max-w-7xl mx-auto">
@@ -368,6 +471,10 @@
 
       <div class="border-t border-gray-800 pt-8 text-center">
         <p id="footer-text" class="text-gray-400 text-sm">© 2026 Tax Filing Guru. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+          <a href="terms.html" class="text-gray-500 hover:text-white text-xs transition">Terms & Conditions</a>
+          <a href="privacy.html" class="text-gray-500 hover:text-white text-xs transition">Privacy Policy</a>
+        </div>
       </div>
     </div>
   </footer>
